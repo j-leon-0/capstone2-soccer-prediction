@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EPL Prediction &mdash; Model vs Market</title>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#f4f7f4; --surface:#ffffff; --surface-2:#eef2ee; --panel:#f9fbf9;
+    --ink:#111814; --ink-2:#48534b; --ink-3:#7a857d;
+    --line:rgba(17,24,20,.11); --line-2:rgba(17,24,20,.20);
+    --accent:#1c8a5a; --accent-ink:#12603e; --accent-bg:rgba(28,138,90,.10);
+    --market:#b07414; --market-ink:#7f520c; --market-bg:rgba(176,116,20,.12);
+    --warn:#c0392f; --warn-bg:rgba(192,57,47,.10);
+    --grid:rgba(17,24,20,.07);
+    --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --maxw:1060px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d1210; --surface:#141b17; --surface-2:#1a221d; --panel:#121815;
+      --ink:#e9f1eb; --ink-2:#a4b1a8; --ink-3:#738078;
+      --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.20);
+      --accent:#3aad77; --accent-ink:#9ce0be; --accent-bg:rgba(58,173,119,.14);
+      --market:#d99a34; --market-ink:#e9c48a; --market-bg:rgba(217,154,52,.15);
+      --warn:#e0685e; --warn-bg:rgba(224,104,94,.14);
+      --grid:rgba(255,255,255,.06);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1210; --surface:#141b17; --surface-2:#1a221d; --panel:#121815;
+    --ink:#e9f1eb; --ink-2:#a4b1a8; --ink-3:#738078;
+    --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.20);
+    --accent:#3aad77; --accent-ink:#9ce0be; --accent-bg:rgba(58,173,119,.14);
+    --market:#d99a34; --market-ink:#e9c48a; --market-bg:rgba(217,154,52,.15);
+    --warn:#e0685e; --warn-bg:rgba(224,104,94,.14); --grid:rgba(255,255,255,.06);
+  }
+  :root[data-theme="light"]{
+    --bg:#f4f7f4; --surface:#ffffff; --surface-2:#eef2ee; --panel:#f9fbf9;
+    --ink:#111814; --ink-2:#48534b; --ink-3:#7a857d;
+    --line:rgba(17,24,20,.11); --line-2:rgba(17,24,20,.20);
+    --accent:#1c8a5a; --accent-ink:#12603e; --accent-bg:rgba(28,138,90,.10);
+    --market:#b07414; --market-ink:#7f520c; --market-bg:rgba(176,116,20,.12);
+    --warn:#c0392f; --warn-bg:rgba(192,57,47,.10); --grid:rgba(17,24,20,.07);
+  }
+  *{box-sizing:border-box}
+  .wrap{background:var(--bg);color:var(--ink);font-family:var(--font-sans);
+    line-height:1.6;padding:2.2rem 1.25rem 3rem;-webkit-font-smoothing:antialiased}
+  .inner{max-width:var(--maxw);margin:0 auto}
+  .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+  h1,h2,h3{margin:0;text-wrap:balance;font-weight:600;letter-spacing:-.01em}
+  h2{font-size:1.28rem;margin-bottom:.2rem}
+  p{margin:0}
+  .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-3)}
+  .lede{color:var(--ink-2);max-width:64ch}
+
+  /* header */
+  .masthead{border:1px solid var(--line);background:var(--surface);border-radius:16px;
+    padding:1.5rem 1.6rem;position:relative;overflow:hidden}
+  .masthead::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;
+    background:linear-gradient(var(--accent),var(--market))}
+  .scoreline{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem .9rem;margin:.55rem 0 .7rem}
+  .scoreline .v{font-family:var(--font-mono);font-weight:600;font-size:clamp(2.4rem,7vw,3.6rem);
+    line-height:1;letter-spacing:-.02em}
+  .vmodel{color:var(--accent)} .vmkt{color:var(--market)}
+  .eq{font-family:var(--font-mono);color:var(--ink-3);font-size:1.6rem}
+  .tag{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);
+    font-size:.72rem;letter-spacing:.04em;padding:.28rem .55rem;border-radius:999px;
+    border:1px solid var(--line-2);color:var(--ink-2)}
+  .dot{width:.5rem;height:.5rem;border-radius:50%;display:inline-block}
+
+  /* grid + cards */
+  .grid{display:grid;gap:14px;margin-top:14px}
+  .grid>*{min-width:0}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+  .tile .k{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-3)}
+  .tile .v{font-family:var(--font-mono);font-weight:600;font-size:2.05rem;line-height:1.15;margin-top:.35rem}
+  .tile .s{font-size:.82rem;color:var(--ink-2);margin-top:.15rem}
+  .tile .s b{color:var(--ink);font-weight:600}
+  .accent{color:var(--accent)} .amber{color:var(--market)} .red{color:var(--warn)}
+
+  .two{grid-template-columns:1fr 1fr}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  .sec{margin-top:2rem}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:.6rem}
+
+  /* chart bits */
+  .bars{display:flex;flex-direction:column;gap:.5rem;margin-top:.3rem}
+  .barrow{display:grid;grid-template-columns:132px 1fr 52px;align-items:center;gap:.6rem;font-size:.83rem}
+  .barrow .lab{color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track{position:relative;height:20px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+  .fill{position:absolute;inset:0 auto 0 0;border-radius:5px;transform-origin:left;
+    animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+  .num{font-family:var(--font-mono);text-align:right;color:var(--ink);font-size:.82rem}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media(prefers-reduced-motion:reduce){.fill{animation:none}}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;font-size:.76rem;color:var(--ink-2);margin-top:.8rem}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  /* confusion matrix */
+  .cm{display:grid;grid-template-columns:auto repeat(3,1fr);gap:6px;font-family:var(--font-mono);margin-top:.4rem}
+  .cm .h{font-size:.72rem;color:var(--ink-3);display:flex;align-items:center;justify-content:center;letter-spacing:.04em}
+  .cm .rh{font-size:.72rem;color:var(--ink-3);display:flex;align-items:center;justify-content:flex-end;padding-right:.3rem}
+  .cell{aspect-ratio:1.7/1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    border:1px solid var(--line);min-height:52px}
+  .cell .c{font-size:1.15rem;font-weight:600} .cell .p{font-size:.66rem;color:var(--ink-3)}
+  .diag{color:#fff}
+
+  table.tbl{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.2rem}
+  table.tbl th,table.tbl td{text-align:left;padding:.55rem .5rem;border-bottom:1px solid var(--line)}
+  table.tbl th{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+  table.tbl td.n{font-family:var(--font-mono);text-align:right}
+  .pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-family:var(--font-mono);
+    padding:.16rem .5rem;border-radius:999px}
+  .pill.ok{background:var(--accent-bg);color:var(--accent-ink)}
+  .pill.no{background:var(--warn-bg);color:var(--warn)}
+
+  .findings{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.findings{grid-template-columns:1fr}}
+  .finding{border:1px solid var(--line);border-radius:14px;padding:1.05rem 1.15rem;background:var(--panel)}
+  .finding h3{font-size:.98rem;display:flex;align-items:center;gap:.5rem}
+  .finding p{color:var(--ink-2);font-size:.87rem;margin-top:.4rem}
+  .chip{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;
+    padding:.15rem .45rem;border-radius:6px;border:1px solid var(--line-2);color:var(--ink-3)}
+
+  .pipe{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:.5rem;font-size:.82rem}
+  .node{font-family:var(--font-mono);font-size:.76rem;padding:.35rem .6rem;border-radius:8px;
+    border:1px solid var(--line-2);background:var(--surface)}
+  .node.m{border-color:var(--market);color:var(--market-ink);background:var(--market-bg)}
+  .node.a{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-bg)}
+  .arrow{color:var(--ink-3)}
+  .srcgrid{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:720px){.srcgrid{grid-template-columns:repeat(2,1fr)}}
+  .src{border:1px solid var(--line);border-radius:12px;padding:.85rem .9rem;background:var(--surface)}
+  .src .nm{font-weight:600;font-size:.9rem} .src .d{font-size:.78rem;color:var(--ink-2);margin-top:.2rem}
+  .foot{margin-top:2.2rem;padding-top:1rem;border-top:1px solid var(--line);
+    font-size:.78rem;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
+  /* game picker */
+  .pickwrap{display:flex;flex-direction:column;gap:1rem}
+  .picker-controls{display:flex;gap:.6rem;flex-wrap:wrap}
+  select#gamesel{flex:1;min-width:200px;font-family:var(--font-sans);font-size:.9rem;padding:.6rem .7rem;
+    border-radius:10px;border:1px solid var(--line-2);background:var(--surface-2);color:var(--ink);cursor:pointer}
+  select#gamesel:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .btn{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.03em;padding:.4rem .8rem;
+    border-radius:9px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .pcard-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem}
+  .teams{font-size:1.15rem;font-weight:600} .vs{color:var(--ink-3);font-weight:400;font-size:.9rem}
+  .pdate{font-size:.78rem;color:var(--ink-3);margin-top:.15rem}
+  .pickbox{text-align:right}
+  .pickbox .k{font-family:var(--font-mono);font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+  .pickv{font-size:1.35rem;font-weight:600;color:var(--accent);line-height:1.15}
+  .conf{font-size:.72rem;color:var(--ink-2)}
+  .pbars{display:flex;flex-direction:column;gap:.5rem}
+  .prow{display:grid;grid-template-columns:52px 1fr 44px;align-items:center;gap:.6rem;font-size:.82rem}
+  .plab{color:var(--ink-2)} .pnum{text-align:right;color:var(--ink);font-family:var(--font-mono)}
+  .presult{margin-top:1.1rem;padding-top:.85rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--ink-2)}
+  .rchip{font-family:var(--font-mono);font-size:.72rem;margin-left:.4rem;padding:.14rem .5rem;border-radius:999px;border:1px solid var(--line-2)}
+
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+</style>
+
+<div class="wrap">
+<div class="inner">
+  <h2 class="sr-only">Premier League match-prediction model dashboard: the model matches the betting market at about 0.50 three-class accuracy and reaches 0.64 predicting home wins.</h2>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;align-items:center">
+      <span class="eyebrow">Premier League &middot; Home / Draw / Away &middot; test season 2025/26</span>
+      <span class="tag"><span class="dot" style="background:var(--accent)"></span>380 matches &middot; held-out</span>
+    </div>
+    <h1 style="font-size:clamp(1.5rem,3.6vw,2.15rem);margin-top:.7rem">Matching the market is the ceiling &mdash; here&rsquo;s the evidence</h1>
+    <div class="scoreline">
+      <span class="v vmodel mono">0.495</span>
+      <span class="eq">&equiv;</span>
+      <span class="v vmkt mono">0.495</span>
+      <span style="color:var(--ink-2);font-size:.9rem;max-width:30ch">Our best model and the bookmakers' closing odds land on the <b>same</b> three-class accuracy.</span>
+    </div>
+    <p class="lede">A calibrated ensemble anchored to the closing betting line. On the full Home / Draw / Away task it ties the market at ~0.50; asked the practical question <b>&ldquo;will the home team win?&rdquo;</b> the same approach reaches <b>0.64 (AUC 0.69)</b>. The honest story, not an overfit headline.</p>
+  </header>
+
+  <!-- KPI TILES -->
+  <div class="grid kpis">
+    <div class="card tile">
+      <div class="k">3-class accuracy</div>
+      <div class="v accent">0.495</div>
+      <div class="s">same as the betting market</div>
+    </div>
+    <div class="card tile">
+      <div class="k">Home win? (binary)</div>
+      <div class="v accent">0.645</div>
+      <div class="s">real skill &middot; AUC 0.69</div>
+    </div>
+    <div class="card tile">
+      <div class="k">Away win? (binary)</div>
+      <div class="v accent">0.682</div>
+      <div class="s">real skill &middot; AUC 0.67</div>
+    </div>
+    <div class="card tile">
+      <div class="k">Top-10% confident</div>
+      <div class="v accent">0.763</div>
+      <div class="s">accuracy on the 38 surest games</div>
+    </div>
+  </div>
+
+  <!-- TRY THE MODEL -->
+  <section class="sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Try the model</span><h2>Pick a fixture, see the model&rsquo;s call</h2></div>
+    </div>
+    <div class="card pickwrap">
+      <div class="picker-controls">
+        <select id="gamesel" aria-label="Choose a fixture"></select>
+        <button class="btn" id="rnd" type="button">&#8635;&nbsp; surprise me</button>
+      </div>
+      <div id="pcard"></div>
+      <p style="font-size:.78rem;color:var(--ink-3);margin-top:.2rem">All 380 games of the 2025/26 test season &mdash; the model&rsquo;s predictions on matches it never trained on, plus what actually happened. A truly upcoming fixture would need live odds; this page ships the completed season.</p>
+    </div>
+  </section>
+
+  <!-- THE WALL -->
+  <section class="sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">The wall</span><h2>Nothing beats the closing odds</h2></div>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <p style="font-size:.87rem;color:var(--ink-2);margin-bottom:.7rem">Every model we built, scored on the test season. When we tuned a blend of our model and the market, the best blend leaned <b>entirely</b> on the market &mdash; none of our models improved on the odds.</p>
+        <div class="bars" id="wallbars"></div>
+        <div class="legend">
+          <span><span class="sw" style="background:var(--accent)"></span>our models</span>
+          <span><span class="sw" style="background:var(--market)"></span>market (closing odds)</span>
+          <span><span class="sw" style="background:var(--ink-3)"></span>na&iuml;ve baseline</span>
+          <span style="color:var(--ink-3)">dashed = market ceiling 0.495</span>
+        </div>
+      </div>
+      <div class="card">
+        <p style="font-size:.87rem;color:var(--ink-2);margin-bottom:.5rem">Keep only the games the model is most sure about and accuracy climbs steeply &mdash; the model knows <i>when</i> it knows.</p>
+        <div id="confchart"></div>
+        <p style="font-size:.78rem;color:var(--ink-3);margin-top:.5rem">Share of the 380 games kept, ranked by model confidence &rarr;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE ACCURACY LIVES -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="eyebrow">Where accuracy lives</span><h2>Change the question, and skill appears</h2></div></div>
+    <div class="grid two">
+      <div class="card">
+        <table class="tbl">
+          <thead><tr><th>Question</th><th style="text-align:right">Accuracy</th><th style="text-align:right">AUC</th><th style="text-align:right">Skill</th></tr></thead>
+          <tbody>
+            <tr><td>Will <b>home</b> win?</td><td class="n">0.645</td><td class="n">0.687</td><td style="text-align:right"><span class="pill ok">real</span></td></tr>
+            <tr><td>Will <b>away</b> win?</td><td class="n">0.682</td><td class="n">0.665</td><td style="text-align:right"><span class="pill ok">real</span></td></tr>
+            <tr><td>Will it be a <b>draw</b>?</td><td class="n">0.726</td><td class="n">0.520</td><td style="text-align:right"><span class="pill no">mirage</span></td></tr>
+            <tr><td>Full 3-class (H/D/A)</td><td class="n">0.495</td><td class="n">&mdash;</td><td style="text-align:right"><span class="pill no">= market</span></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.78rem;color:var(--ink-2);margin-top:.7rem">The draw model&rsquo;s <b>0.726</b> is a trap: AUC &asymp; 0.5 means <b>no skill</b> &mdash; it just always guesses &ldquo;not a draw&rdquo; and rides the 73% base rate. We flag it so it can&rsquo;t masquerade as a win.</p>
+      </div>
+      <div class="card">
+        <p style="font-size:.85rem;color:var(--ink-2);margin-bottom:.2rem">Confusion matrix &middot; 3-class model &middot; 380 test games</p>
+        <div class="cm" id="cm"></div>
+        <p style="font-size:.8rem;color:var(--ink-2);margin-top:.7rem"><b>The empty middle column</b> is the whole story: a model tuned for accuracy <b>never</b> predicts a draw, because a draw is never the single most-likely result &mdash; not in any of 3,800 matches since 2016.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MODEL -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="eyebrow">The model</span><h2>A calibrated ensemble, anchored to the market</h2></div></div>
+    <div class="card">
+      <div class="pipe">
+        <span class="node">closing odds + line movement</span><span class="arrow">+</span>
+        <span class="node">Elo &middot; xG-form &middot; squad value &middot; form</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node">LightGBM &middot; RandomForest &middot; HistGB &middot; Logistic</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node a">calibrate (sigmoid)</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node m">blend toward the market</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node a">pick the winner</span>
+      </div>
+      <p style="font-size:.85rem;color:var(--ink-2);margin-top:.9rem">~17 features, chosen deliberately &mdash; a small set matched a 300-feature version, so extra features only added noise. Trained through 2023/24, tuned on 2024/25, and evaluated once on 2025/26. The new signals we added &mdash; <b>how the odds moved before kickoff</b> and <b>real expected goals (xG)</b> &mdash; carried genuine information but added almost nothing beyond the odds, which already reflect them.</p>
+    </div>
+  </section>
+
+  <!-- HONEST FINDINGS -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="eyebrow">What we learned</span><h2>Four honest findings</h2></div></div>
+    <div class="grid findings">
+      <div class="finding">
+        <h3><span class="chip">ceiling</span> The market is the ceiling</h3>
+        <p>The betting odds already reflect everything public &mdash; form, injuries, spending. No model we built on public data beat the closing odds, mostly because draws are close to unpredictable. It&rsquo;s a structural limit, not a gap we could feature-engineer past.</p>
+      </div>
+      <div class="finding">
+        <h3><span class="chip">leakage caught</span> Understat&rsquo;s &ldquo;forecast&rdquo; is a retrodiction</h3>
+        <p>Understat&rsquo;s per-match forecast correlates <b>0.96</b> with that same match&rsquo;s realised xG &mdash; it&rsquo;s computed <i>after</i> the fact. Using it inflated accuracy to 0.52. We found it and dropped it. Rigor over a fake number.</p>
+      </div>
+      <div class="finding">
+        <h3><span class="chip">tested, no lift</span> Fixture congestion doesn&rsquo;t help</h3>
+        <p>We scraped all-competition fixtures (FA Cup, EFL Cup, UCL, UEL, UECL) to build true rest-day and midweek-load features. They don&rsquo;t improve prediction &mdash; congestion is confounded with team quality the market already captures.</p>
+      </div>
+      <div class="finding">
+        <h3><span class="chip">reality check</span> Flipping the picks doesn&rsquo;t help</h3>
+        <p>A tempting shortcut: can you &ldquo;flip&rdquo; a mediocre model to make it good? No &mdash; that&rsquo;s binary thinking. When we reversed a Home/Away-only model, its correct calls became misses and accuracy fell from 0.50 to <b>0.23</b>. Worth ruling out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA SOURCES -->
+  <section class="sec">
+    <div class="sec-head"><div><span class="eyebrow">Built on</span><h2>Data scraped &amp; engineered</h2></div></div>
+    <div class="grid srcgrid">
+      <div class="src"><div class="nm">Football-Data</div><div class="d">10 seasons of results &amp; odds (opening + closing)</div></div>
+      <div class="src"><div class="nm">ClubElo</div><div class="d">Pre-match Elo ratings &middot; 0 missing / 3,800</div></div>
+      <div class="src"><div class="nm">Understat</div><div class="d">Real expected-goals (xG) form, per match</div></div>
+      <div class="src"><div class="nm">Transfermarkt</div><div class="d">Season-start squad market value</div></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Test season 2025/26 &middot; 380 matches &middot; held out, scored once</span>
+    <span>Baselines &mdash; always predict Home 0.426 &middot; market 0.495</span>
+    <span class="mono">capstone2-soccer-prediction</span>
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  var MKT=0.495, xMin=0.30, xMax=0.52;
+  var x0=120, x1=380, top=16, rowH=23, barH=13, base=16+7*23;   // baseline y=177
+  function sx(v){var c=Math.max(xMin,Math.min(xMax,v));return x0+(c-xMin)/(xMax-xMin)*(x1-x0);}
+  var data=[['Blend = market',0.495,'--market'],['RandomForest',0.479,'--accent'],
+            ['Cal. ensemble',0.474,'--accent'],['HistGB',0.466,'--accent'],
+            ['LightGBM',0.461,'--accent'],['Logistic',0.450,'--accent'],
+            ['Always Home',0.426,'--ink-3']];
+  var mx=sx(MKT).toFixed(1);
+  var g='<line x1="'+x0+'" y1="'+base+'" x2="'+x1+'" y2="'+base+'" stroke="var(--line)"/>';
+  [0.30,0.40,0.50].forEach(function(t){var x=sx(t).toFixed(1);
+    g+='<line x1="'+x+'" y1="'+top+'" x2="'+x+'" y2="'+base+'" stroke="var(--grid)"/>'+
+       '<text x="'+x+'" y="'+(base+13)+'" text-anchor="middle" font-size="9" fill="var(--ink-3)" font-family="var(--font-mono)">'+t.toFixed(2)+'</text>';});
+  g+='<line x1="'+mx+'" y1="'+(top-6)+'" x2="'+mx+'" y2="'+base+'" stroke="var(--market)" stroke-dasharray="3 3" stroke-width="1.2"/>'+
+     '<text x="'+mx+'" y="'+(top-9)+'" text-anchor="middle" font-size="9" fill="var(--market)" font-family="var(--font-mono)">market 0.495</text>';
+  data.forEach(function(r,i){var rowY=top+i*rowH, by=rowY+(rowH-barH)/2;
+    g+='<rect x="'+x0+'" y="'+by.toFixed(1)+'" width="'+(sx(r[1])-x0).toFixed(1)+'" height="'+barH+'" rx="2.5" fill="var('+r[2]+')"/>'+
+       '<text x="'+(x0-8)+'" y="'+(by+barH-2.5).toFixed(1)+'" text-anchor="end" font-size="10" fill="var(--ink-2)">'+r[0]+'</text>'+
+       '<text x="'+(sx(r[1])+5).toFixed(1)+'" y="'+(by+barH-2.5).toFixed(1)+'" font-size="10" fill="var(--ink)" font-family="var(--font-mono)">'+r[1].toFixed(3)+'</text>';});
+  g+='<text x="'+((x0+x1)/2).toFixed(0)+'" y="'+(base+27)+'" text-anchor="middle" font-size="10" fill="var(--ink-3)">accuracy &middot; 2025/26 test season</text>';
+  document.getElementById('wallbars').innerHTML=
+    '<svg viewBox="0 0 460 212" width="100%" role="img" aria-label="Bar chart of test-season accuracy. The market blend is highest at 0.495; the other models range 0.450 to 0.479; the always-Home baseline is 0.426. A dashed line marks the 0.495 market ceiling that no model exceeds.">'+g+'</svg>';
+
+  // confidence curve (inline SVG area+line)
+  var pts=[[10,0.763],[25,0.674],[50,0.574],[75,0.512],[100,0.495]];
+  var W=300,H=170,pad=28, x0=pad,x1=W-8,y0=8,y1=H-22;
+  var yMin=0.44,yMax=0.80;
+  function X(p){return x0+(p-10)/(100-10)*(x1-x0);}
+  function Y(a){return y1-(a-yMin)/(yMax-yMin)*(y1-y0);}
+  var line=pts.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1);}).join(' ');
+  var area=line+' L'+X(100).toFixed(1)+' '+y1+' L'+X(10).toFixed(1)+' '+y1+' Z';
+  var grid='';[0.5,0.6,0.7,0.8].forEach(function(g){var yy=Y(g).toFixed(1);
+    grid+='<line x1="'+x0+'" y1="'+yy+'" x2="'+x1+'" y2="'+yy+'" stroke="var(--grid)"/>'+
+    '<text x="'+(x0-4)+'" y="'+(+yy+3)+'" text-anchor="end" font-size="8" fill="var(--ink-3)" font-family="var(--font-mono)">'+g.toFixed(1)+'</text>';});
+  var xl='';[[10,'10%'],[50,'50%'],[100,'all']].forEach(function(t){
+    xl+='<text x="'+X(t[0]).toFixed(1)+'" y="'+(H-8)+'" text-anchor="middle" font-size="8" fill="var(--ink-3)" font-family="var(--font-mono)">'+t[1]+'</text>';});
+  var dots=pts.map(function(p){return '<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3.2" fill="var(--accent)" stroke="var(--surface)" stroke-width="1.5"/>';}).join('');
+  var mline='<line x1="'+x0+'" y1="'+Y(MKT).toFixed(1)+'" x2="'+x1+'" y2="'+Y(MKT).toFixed(1)+'" stroke="var(--market)" stroke-dasharray="3 3" stroke-width="1.2"/>';
+  document.getElementById('confchart').innerHTML=
+    '<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Accuracy rises from 0.495 on all games to 0.76 on the most confident 10 percent">'+
+    grid+mline+'<path d="'+area+'" fill="var(--accent-bg)"/><path d="'+line+'" fill="none" stroke="var(--accent)" stroke-width="2"/>'+dots+xl+
+    '<text x="'+(x1)+'" y="'+(Y(MKT)-4).toFixed(1)+'" text-anchor="end" font-size="8" fill="var(--market)" font-family="var(--font-mono)">market</text></svg>';
+
+  // confusion matrix
+  var cm=[[126,0,36],[59,0,45],[52,0,62]]; // rows actual H,D,A ; cols pred H,D,A
+  var rowT=cm.map(function(r){return r[0]+r[1]+r[2];});
+  var labs=['Home','Draw','Away'];
+  var g=document.getElementById('cm'),h='<div class="h"></div>';
+  ['pred H','pred D','pred A'].forEach(function(t){h+='<div class="h">'+t+'</div>';});
+  for(var i=0;i<3;i++){
+    h+='<div class="rh">actual '+labs[i][0]+'</div>';
+    for(var j=0;j<3;j++){
+      var v=cm[i][j],frac=v/rowT[i],diag=(i===j);
+      var bg=diag?('rgba(28,138,90,'+(0.35+0.6*frac).toFixed(2)+')'):('var(--surface-2)');
+      var cls='cell'+(diag&&v>0?' diag':'');
+      var pct=rowT[i]?Math.round(frac*100)+'%':'';
+      h+='<div class="'+cls+'" style="background:'+bg+'">'+
+         '<span class="c" style="'+(diag&&v>0?'color:#fff':(v===0?'color:var(--ink-3)':''))+'">'+v+'</span>'+
+         '<span class="p" style="'+(diag&&v>0?'color:rgba(255,255,255,.85)':'')+'">'+pct+'</span></div>';
+    }
+  }
+  g.innerHTML=h;
+})();
+</script>
+<script>
+(function(){
+  var G=[{"h":"Liverpool","a":"Bournemouth","d":"2025-08-15","ph":0.734,"pd":0.157,"pa":0.109,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Newcastle","d":"2025-08-16","ph":0.398,"pd":0.278,"pa":0.324,"pk":"H","r":"D"},{"h":"Brighton","a":"Fulham","d":"2025-08-16","ph":0.518,"pd":0.26,"pa":0.222,"pk":"H","r":"D"},{"h":"Sunderland","a":"West Ham","d":"2025-08-16","ph":0.279,"pd":0.299,"pa":0.422,"pk":"A","r":"H"},{"h":"Tottenham","a":"Burnley","d":"2025-08-16","ph":0.61,"pd":0.236,"pa":0.154,"pk":"H","r":"H"},{"h":"Wolves","a":"Man City","d":"2025-08-16","ph":0.152,"pd":0.22,"pa":0.628,"pk":"A","r":"A"},{"h":"Chelsea","a":"Crystal Palace","d":"2025-08-17","ph":0.522,"pd":0.255,"pa":0.223,"pk":"H","r":"D"},{"h":"Nott'm Forest","a":"Brentford","d":"2025-08-17","ph":0.496,"pd":0.276,"pa":0.228,"pk":"H","r":"H"},{"h":"Man United","a":"Arsenal","d":"2025-08-17","ph":0.251,"pd":0.257,"pa":0.492,"pk":"A","r":"A"},{"h":"Leeds","a":"Everton","d":"2025-08-18","ph":0.405,"pd":0.295,"pa":0.3,"pk":"H","r":"H"},{"h":"West Ham","a":"Chelsea","d":"2025-08-22","ph":0.2,"pd":0.248,"pa":0.552,"pk":"A","r":"A"},{"h":"Man City","a":"Tottenham","d":"2025-08-23","ph":0.617,"pd":0.21,"pa":0.174,"pk":"H","r":"A"},{"h":"Bournemouth","a":"Wolves","d":"2025-08-23","ph":0.527,"pd":0.254,"pa":0.22,"pk":"H","r":"H"},{"h":"Brentford","a":"Aston Villa","d":"2025-08-23","ph":0.291,"pd":0.274,"pa":0.434,"pk":"A","r":"H"},{"h":"Burnley","a":"Sunderland","d":"2025-08-23","ph":0.399,"pd":0.306,"pa":0.295,"pk":"H","r":"H"},{"h":"Arsenal","a":"Leeds","d":"2025-08-23","ph":0.716,"pd":0.178,"pa":0.106,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Nott'm Forest","d":"2025-08-24","ph":0.397,"pd":0.293,"pa":0.31,"pk":"H","r":"D"},{"h":"Everton","a":"Brighton","d":"2025-08-24","ph":0.327,"pd":0.284,"pa":0.39,"pk":"A","r":"H"},{"h":"Fulham","a":"Man United","d":"2025-08-24","ph":0.275,"pd":0.27,"pa":0.455,"pk":"A","r":"D"},{"h":"Newcastle","a":"Liverpool","d":"2025-08-25","ph":0.325,"pd":0.26,"pa":0.415,"pk":"A","r":"A"},{"h":"Chelsea","a":"Fulham","d":"2025-08-30","ph":0.569,"pd":0.242,"pa":0.189,"pk":"H","r":"H"},{"h":"Man United","a":"Burnley","d":"2025-08-30","ph":0.688,"pd":0.188,"pa":0.125,"pk":"H","r":"H"},{"h":"Sunderland","a":"Brentford","d":"2025-08-30","ph":0.306,"pd":0.291,"pa":0.403,"pk":"A","r":"H"},{"h":"Tottenham","a":"Bournemouth","d":"2025-08-30","ph":0.501,"pd":0.252,"pa":0.247,"pk":"H","r":"A"},{"h":"Wolves","a":"Everton","d":"2025-08-30","ph":0.285,"pd":0.305,"pa":0.409,"pk":"A","r":"A"},{"h":"Leeds","a":"Newcastle","d":"2025-08-30","ph":0.258,"pd":0.282,"pa":0.46,"pk":"A","r":"D"},{"h":"Brighton","a":"Man City","d":"2025-08-31","ph":0.273,"pd":0.26,"pa":0.467,"pk":"A","r":"H"},{"h":"Nott'm Forest","a":"West Ham","d":"2025-08-31","ph":0.574,"pd":0.236,"pa":0.19,"pk":"H","r":"A"},{"h":"Liverpool","a":"Arsenal","d":"2025-08-31","ph":0.4,"pd":0.285,"pa":0.315,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Crystal Palace","d":"2025-08-31","ph":0.454,"pd":0.27,"pa":0.276,"pk":"H","r":"A"},{"h":"Arsenal","a":"Nott'm Forest","d":"2025-09-13","ph":0.674,"pd":0.199,"pa":0.127,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Brighton","d":"2025-09-13","ph":0.393,"pd":0.271,"pa":0.337,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Sunderland","d":"2025-09-13","ph":0.565,"pd":0.26,"pa":0.175,"pk":"H","r":"D"},{"h":"Everton","a":"Aston Villa","d":"2025-09-13","ph":0.363,"pd":0.297,"pa":0.34,"pk":"H","r":"D"},{"h":"Fulham","a":"Leeds","d":"2025-09-13","ph":0.466,"pd":0.282,"pa":0.253,"pk":"H","r":"H"},{"h":"Newcastle","a":"Wolves","d":"2025-09-13","ph":0.698,"pd":0.19,"pa":0.112,"pk":"H","r":"H"},{"h":"West Ham","a":"Tottenham","d":"2025-09-13","ph":0.291,"pd":0.271,"pa":0.438,"pk":"A","r":"A"},{"h":"Brentford","a":"Chelsea","d":"2025-09-13","ph":0.226,"pd":0.255,"pa":0.519,"pk":"A","r":"D"},{"h":"Burnley","a":"Liverpool","d":"2025-09-14","ph":0.11,"pd":0.171,"pa":0.719,"pk":"A","r":"A"},{"h":"Man City","a":"Man United","d":"2025-09-14","ph":0.575,"pd":0.229,"pa":0.196,"pk":"H","r":"H"},{"h":"Liverpool","a":"Everton","d":"2025-09-20","ph":0.63,"pd":0.219,"pa":0.151,"pk":"H","r":"H"},{"h":"Brighton","a":"Tottenham","d":"2025-09-20","ph":0.437,"pd":0.261,"pa":0.302,"pk":"H","r":"D"},{"h":"Burnley","a":"Nott'm Forest","d":"2025-09-20","ph":0.278,"pd":0.287,"pa":0.435,"pk":"A","r":"D"},{"h":"West Ham","a":"Crystal Palace","d":"2025-09-20","ph":0.312,"pd":0.277,"pa":0.411,"pk":"A","r":"A"},{"h":"Wolves","a":"Leeds","d":"2025-09-20","ph":0.328,"pd":0.306,"pa":0.366,"pk":"A","r":"A"},{"h":"Man United","a":"Chelsea","d":"2025-09-20","ph":0.36,"pd":0.262,"pa":0.378,"pk":"A","r":"H"},{"h":"Fulham","a":"Brentford","d":"2025-09-20","ph":0.447,"pd":0.288,"pa":0.265,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Newcastle","d":"2025-09-21","ph":0.398,"pd":0.288,"pa":0.314,"pk":"H","r":"D"},{"h":"Sunderland","a":"Aston Villa","d":"2025-09-21","ph":0.25,"pd":0.286,"pa":0.465,"pk":"A","r":"D"},{"h":"Arsenal","a":"Man City","d":"2025-09-21","ph":0.464,"pd":0.267,"pa":0.269,"pk":"H","r":"D"},{"h":"Brentford","a":"Man United","d":"2025-09-27","ph":0.288,"pd":0.254,"pa":0.459,"pk":"A","r":"H"},{"h":"Chelsea","a":"Brighton","d":"2025-09-27","ph":0.48,"pd":0.254,"pa":0.266,"pk":"H","r":"A"},{"h":"Crystal Palace","a":"Liverpool","d":"2025-09-27","ph":0.237,"pd":0.256,"pa":0.508,"pk":"A","r":"H"},{"h":"Leeds","a":"Bournemouth","d":"2025-09-27","ph":0.321,"pd":0.294,"pa":0.386,"pk":"A","r":"D"},{"h":"Man City","a":"Burnley","d":"2025-09-27","ph":0.798,"pd":0.135,"pa":0.067,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Sunderland","d":"2025-09-27","ph":0.542,"pd":0.257,"pa":0.201,"pk":"H","r":"A"},{"h":"Tottenham","a":"Wolves","d":"2025-09-27","ph":0.621,"pd":0.222,"pa":0.157,"pk":"H","r":"D"},{"h":"Aston Villa","a":"Fulham","d":"2025-09-28","ph":0.422,"pd":0.293,"pa":0.284,"pk":"H","r":"H"},{"h":"Newcastle","a":"Arsenal","d":"2025-09-28","ph":0.279,"pd":0.291,"pa":0.43,"pk":"A","r":"A"},{"h":"Everton","a":"West Ham","d":"2025-09-29","ph":0.575,"pd":0.245,"pa":0.18,"pk":"H","r":"D"},{"h":"Bournemouth","a":"Fulham","d":"2025-10-03","ph":0.487,"pd":0.277,"pa":0.237,"pk":"H","r":"H"},{"h":"Leeds","a":"Tottenham","d":"2025-10-04","ph":0.345,"pd":0.283,"pa":0.372,"pk":"A","r":"A"},{"h":"Arsenal","a":"West Ham","d":"2025-10-04","ph":0.805,"pd":0.13,"pa":0.065,"pk":"H","r":"H"},{"h":"Man United","a":"Sunderland","d":"2025-10-04","ph":0.589,"pd":0.225,"pa":0.186,"pk":"H","r":"H"},{"h":"Chelsea","a":"Liverpool","d":"2025-10-04","ph":0.33,"pd":0.26,"pa":0.41,"pk":"A","r":"H"},{"h":"Aston Villa","a":"Burnley","d":"2025-10-05","ph":0.611,"pd":0.234,"pa":0.155,"pk":"H","r":"H"},{"h":"Everton","a":"Crystal Palace","d":"2025-10-05","ph":0.358,"pd":0.306,"pa":0.336,"pk":"H","r":"H"},{"h":"Newcastle","a":"Nott'm Forest","d":"2025-10-05","ph":0.629,"pd":0.215,"pa":0.157,"pk":"H","r":"H"},{"h":"Wolves","a":"Brighton","d":"2025-10-05","ph":0.274,"pd":0.269,"pa":0.457,"pk":"A","r":"D"},{"h":"Brentford","a":"Man City","d":"2025-10-05","ph":0.188,"pd":0.227,"pa":0.585,"pk":"A","r":"A"},{"h":"Nott'm Forest","a":"Chelsea","d":"2025-10-18","ph":0.308,"pd":0.276,"pa":0.416,"pk":"A","r":"A"},{"h":"Brighton","a":"Newcastle","d":"2025-10-18","ph":0.332,"pd":0.276,"pa":0.392,"pk":"A","r":"H"},{"h":"Burnley","a":"Leeds","d":"2025-10-18","ph":0.272,"pd":0.294,"pa":0.433,"pk":"A","r":"H"},{"h":"Crystal Palace","a":"Bournemouth","d":"2025-10-18","ph":0.445,"pd":0.28,"pa":0.275,"pk":"H","r":"D"},{"h":"Man City","a":"Everton","d":"2025-10-18","ph":0.658,"pd":0.212,"pa":0.13,"pk":"H","r":"H"},{"h":"Sunderland","a":"Wolves","d":"2025-10-18","ph":0.38,"pd":0.312,"pa":0.307,"pk":"H","r":"H"},{"h":"Fulham","a":"Arsenal","d":"2025-10-18","ph":0.14,"pd":0.227,"pa":0.633,"pk":"A","r":"A"},{"h":"Tottenham","a":"Aston Villa","d":"2025-10-19","ph":0.423,"pd":0.282,"pa":0.295,"pk":"H","r":"A"},{"h":"Liverpool","a":"Man United","d":"2025-10-19","ph":0.57,"pd":0.221,"pa":0.209,"pk":"H","r":"A"},{"h":"West Ham","a":"Brentford","d":"2025-10-20","ph":0.344,"pd":0.288,"pa":0.368,"pk":"A","r":"A"},{"h":"Leeds","a":"West Ham","d":"2025-10-24","ph":0.531,"pd":0.261,"pa":0.208,"pk":"H","r":"H"},{"h":"Chelsea","a":"Sunderland","d":"2025-10-25","ph":0.659,"pd":0.21,"pa":0.132,"pk":"H","r":"A"},{"h":"Newcastle","a":"Fulham","d":"2025-10-25","ph":0.593,"pd":0.238,"pa":0.169,"pk":"H","r":"H"},{"h":"Man United","a":"Brighton","d":"2025-10-25","ph":0.476,"pd":0.246,"pa":0.278,"pk":"H","r":"H"},{"h":"Brentford","a":"Liverpool","d":"2025-10-25","ph":0.242,"pd":0.237,"pa":0.521,"pk":"A","r":"H"},{"h":"Arsenal","a":"Crystal Palace","d":"2025-10-26","ph":0.689,"pd":0.194,"pa":0.118,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Man City","d":"2025-10-26","ph":0.228,"pd":0.251,"pa":0.521,"pk":"A","r":"H"},{"h":"Bournemouth","a":"Nott'm Forest","d":"2025-10-26","ph":0.487,"pd":0.264,"pa":0.249,"pk":"H","r":"H"},{"h":"Wolves","a":"Burnley","d":"2025-10-26","ph":0.494,"pd":0.287,"pa":0.219,"pk":"H","r":"A"},{"h":"Everton","a":"Tottenham","d":"2025-10-26","ph":0.431,"pd":0.284,"pa":0.285,"pk":"H","r":"A"},{"h":"Brighton","a":"Leeds","d":"2025-11-01","ph":0.492,"pd":0.263,"pa":0.245,"pk":"H","r":"H"},{"h":"Burnley","a":"Arsenal","d":"2025-11-01","ph":0.07,"pd":0.164,"pa":0.766,"pk":"A","r":"A"},{"h":"Crystal Palace","a":"Brentford","d":"2025-11-01","ph":0.46,"pd":0.276,"pa":0.263,"pk":"H","r":"H"},{"h":"Fulham","a":"Wolves","d":"2025-11-01","ph":0.53,"pd":0.257,"pa":0.214,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Man United","d":"2025-11-01","ph":0.29,"pd":0.262,"pa":0.448,"pk":"A","r":"D"},{"h":"Tottenham","a":"Chelsea","d":"2025-11-01","ph":0.314,"pd":0.276,"pa":0.41,"pk":"A","r":"A"},{"h":"Liverpool","a":"Aston Villa","d":"2025-11-01","ph":0.575,"pd":0.222,"pa":0.203,"pk":"H","r":"H"},{"h":"West Ham","a":"Newcastle","d":"2025-11-02","ph":0.19,"pd":0.232,"pa":0.578,"pk":"A","r":"H"},{"h":"Man City","a":"Bournemouth","d":"2025-11-02","ph":0.674,"pd":0.187,"pa":0.139,"pk":"H","r":"H"},{"h":"Sunderland","a":"Everton","d":"2025-11-03","ph":0.293,"pd":0.307,"pa":0.4,"pk":"A","r":"D"},{"h":"Tottenham","a":"Man United","d":"2025-11-08","ph":0.327,"pd":0.274,"pa":0.399,"pk":"A","r":"D"},{"h":"Everton","a":"Fulham","d":"2025-11-08","ph":0.411,"pd":0.296,"pa":0.294,"pk":"H","r":"H"},{"h":"West Ham","a":"Burnley","d":"2025-11-08","ph":0.51,"pd":0.266,"pa":0.224,"pk":"H","r":"H"},{"h":"Sunderland","a":"Arsenal","d":"2025-11-08","ph":0.129,"pd":0.223,"pa":0.648,"pk":"A","r":"D"},{"h":"Chelsea","a":"Wolves","d":"2025-11-08","ph":0.697,"pd":0.186,"pa":0.117,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Bournemouth","d":"2025-11-09","ph":0.412,"pd":0.282,"pa":0.306,"pk":"H","r":"H"},{"h":"Brentford","a":"Newcastle","d":"2025-11-09","ph":0.335,"pd":0.281,"pa":0.384,"pk":"A","r":"H"},{"h":"Crystal Palace","a":"Brighton","d":"2025-11-09","ph":0.399,"pd":0.28,"pa":0.32,"pk":"H","r":"D"},{"h":"Nott'm Forest","a":"Leeds","d":"2025-11-09","ph":0.425,"pd":0.302,"pa":0.274,"pk":"H","r":"H"},{"h":"Man City","a":"Liverpool","d":"2025-11-09","ph":0.502,"pd":0.241,"pa":0.257,"pk":"H","r":"H"},{"h":"Burnley","a":"Chelsea","d":"2025-11-22","ph":0.173,"pd":0.228,"pa":0.598,"pk":"A","r":"A"},{"h":"Bournemouth","a":"West Ham","d":"2025-11-22","ph":0.569,"pd":0.239,"pa":0.192,"pk":"H","r":"D"},{"h":"Brighton","a":"Brentford","d":"2025-11-22","ph":0.451,"pd":0.276,"pa":0.273,"pk":"H","r":"H"},{"h":"Fulham","a":"Sunderland","d":"2025-11-22","ph":0.468,"pd":0.284,"pa":0.248,"pk":"H","r":"H"},{"h":"Liverpool","a":"Nott'm Forest","d":"2025-11-22","ph":0.651,"pd":0.205,"pa":0.144,"pk":"H","r":"A"},{"h":"Wolves","a":"Crystal Palace","d":"2025-11-22","ph":0.215,"pd":0.26,"pa":0.525,"pk":"A","r":"A"},{"h":"Newcastle","a":"Man City","d":"2025-11-22","ph":0.258,"pd":0.256,"pa":0.486,"pk":"A","r":"H"},{"h":"Leeds","a":"Aston Villa","d":"2025-11-23","ph":0.295,"pd":0.287,"pa":0.418,"pk":"A","r":"A"},{"h":"Arsenal","a":"Tottenham","d":"2025-11-23","ph":0.646,"pd":0.221,"pa":0.133,"pk":"H","r":"H"},{"h":"Man United","a":"Everton","d":"2025-11-24","ph":0.511,"pd":0.257,"pa":0.232,"pk":"H","r":"A"},{"h":"Brentford","a":"Burnley","d":"2025-11-29","ph":0.64,"pd":0.217,"pa":0.143,"pk":"H","r":"H"},{"h":"Man City","a":"Leeds","d":"2025-11-29","ph":0.775,"pd":0.144,"pa":0.082,"pk":"H","r":"H"},{"h":"Sunderland","a":"Bournemouth","d":"2025-11-29","ph":0.302,"pd":0.287,"pa":0.412,"pk":"A","r":"H"},{"h":"Everton","a":"Newcastle","d":"2025-11-29","ph":0.354,"pd":0.288,"pa":0.358,"pk":"A","r":"A"},{"h":"Tottenham","a":"Fulham","d":"2025-11-29","ph":0.405,"pd":0.283,"pa":0.312,"pk":"H","r":"A"},{"h":"Crystal Palace","a":"Man United","d":"2025-11-30","ph":0.458,"pd":0.263,"pa":0.279,"pk":"H","r":"A"},{"h":"Aston Villa","a":"Wolves","d":"2025-11-30","ph":0.649,"pd":0.212,"pa":0.139,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Brighton","d":"2025-11-30","ph":0.333,"pd":0.289,"pa":0.378,"pk":"A","r":"A"},{"h":"West Ham","a":"Liverpool","d":"2025-11-30","ph":0.187,"pd":0.212,"pa":0.601,"pk":"A","r":"A"},{"h":"Chelsea","a":"Arsenal","d":"2025-11-30","ph":0.314,"pd":0.301,"pa":0.385,"pk":"A","r":"D"},{"h":"Bournemouth","a":"Everton","d":"2025-12-02","ph":0.437,"pd":0.279,"pa":0.284,"pk":"H","r":"A"},{"h":"Fulham","a":"Man City","d":"2025-12-02","ph":0.185,"pd":0.233,"pa":0.583,"pk":"A","r":"A"},{"h":"Newcastle","a":"Tottenham","d":"2025-12-02","ph":0.517,"pd":0.25,"pa":0.233,"pk":"H","r":"D"},{"h":"Arsenal","a":"Brentford","d":"2025-12-03","ph":0.663,"pd":0.209,"pa":0.128,"pk":"H","r":"H"},{"h":"Brighton","a":"Aston Villa","d":"2025-12-03","ph":0.422,"pd":0.278,"pa":0.3,"pk":"H","r":"A"},{"h":"Burnley","a":"Crystal Palace","d":"2025-12-03","ph":0.19,"pd":0.262,"pa":0.548,"pk":"A","r":"A"},{"h":"Wolves","a":"Nott'm Forest","d":"2025-12-03","ph":0.306,"pd":0.294,"pa":0.4,"pk":"A","r":"A"},{"h":"Leeds","a":"Chelsea","d":"2025-12-03","ph":0.24,"pd":0.274,"pa":0.485,"pk":"A","r":"H"},{"h":"Liverpool","a":"Sunderland","d":"2025-12-03","ph":0.701,"pd":0.18,"pa":0.119,"pk":"H","r":"D"},{"h":"Man United","a":"West Ham","d":"2025-12-04","ph":0.679,"pd":0.189,"pa":0.132,"pk":"H","r":"D"},{"h":"Aston Villa","a":"Arsenal","d":"2025-12-06","ph":0.227,"pd":0.273,"pa":0.499,"pk":"A","r":"H"},{"h":"Bournemouth","a":"Chelsea","d":"2025-12-06","ph":0.285,"pd":0.253,"pa":0.462,"pk":"A","r":"D"},{"h":"Everton","a":"Nott'm Forest","d":"2025-12-06","ph":0.456,"pd":0.289,"pa":0.255,"pk":"H","r":"H"},{"h":"Man City","a":"Sunderland","d":"2025-12-06","ph":0.757,"pd":0.153,"pa":0.089,"pk":"H","r":"H"},{"h":"Newcastle","a":"Burnley","d":"2025-12-06","ph":0.729,"pd":0.171,"pa":0.1,"pk":"H","r":"H"},{"h":"Tottenham","a":"Brentford","d":"2025-12-06","ph":0.391,"pd":0.283,"pa":0.326,"pk":"H","r":"H"},{"h":"Leeds","a":"Liverpool","d":"2025-12-06","ph":0.216,"pd":0.245,"pa":0.539,"pk":"A","r":"D"},{"h":"Brighton","a":"West Ham","d":"2025-12-07","ph":0.593,"pd":0.224,"pa":0.184,"pk":"H","r":"D"},{"h":"Fulham","a":"Crystal Palace","d":"2025-12-07","ph":0.381,"pd":0.286,"pa":0.333,"pk":"H","r":"A"},{"h":"Wolves","a":"Man United","d":"2025-12-08","ph":0.188,"pd":0.232,"pa":0.579,"pk":"A","r":"A"},{"h":"Chelsea","a":"Everton","d":"2025-12-13","ph":0.554,"pd":0.247,"pa":0.199,"pk":"H","r":"H"},{"h":"Liverpool","a":"Brighton","d":"2025-12-13","ph":0.545,"pd":0.238,"pa":0.217,"pk":"H","r":"H"},{"h":"Burnley","a":"Fulham","d":"2025-12-13","ph":0.245,"pd":0.278,"pa":0.477,"pk":"A","r":"A"},{"h":"Arsenal","a":"Wolves","d":"2025-12-13","ph":0.85,"pd":0.107,"pa":0.043,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Man City","d":"2025-12-14","ph":0.236,"pd":0.253,"pa":0.511,"pk":"A","r":"A"},{"h":"Nott'm Forest","a":"Tottenham","d":"2025-12-14","ph":0.362,"pd":0.287,"pa":0.351,"pk":"H","r":"H"},{"h":"Sunderland","a":"Newcastle","d":"2025-12-14","ph":0.278,"pd":0.283,"pa":0.439,"pk":"A","r":"H"},{"h":"West Ham","a":"Aston Villa","d":"2025-12-14","ph":0.287,"pd":0.278,"pa":0.436,"pk":"A","r":"A"},{"h":"Brentford","a":"Leeds","d":"2025-12-14","ph":0.443,"pd":0.291,"pa":0.266,"pk":"H","r":"D"},{"h":"Man United","a":"Bournemouth","d":"2025-12-15","ph":0.54,"pd":0.228,"pa":0.232,"pk":"H","r":"D"},{"h":"Newcastle","a":"Chelsea","d":"2025-12-20","ph":0.339,"pd":0.268,"pa":0.393,"pk":"A","r":"D"},{"h":"Bournemouth","a":"Burnley","d":"2025-12-20","ph":0.647,"pd":0.206,"pa":0.147,"pk":"H","r":"D"},{"h":"Brighton","a":"Sunderland","d":"2025-12-20","ph":0.518,"pd":0.26,"pa":0.222,"pk":"H","r":"D"},{"h":"Man City","a":"West Ham","d":"2025-12-20","ph":0.793,"pd":0.128,"pa":0.079,"pk":"H","r":"H"},{"h":"Wolves","a":"Brentford","d":"2025-12-20","ph":0.277,"pd":0.281,"pa":0.441,"pk":"A","r":"A"},{"h":"Tottenham","a":"Liverpool","d":"2025-12-20","ph":0.267,"pd":0.264,"pa":0.469,"pk":"A","r":"A"},{"h":"Everton","a":"Arsenal","d":"2025-12-20","ph":0.151,"pd":0.235,"pa":0.614,"pk":"A","r":"A"},{"h":"Leeds","a":"Crystal Palace","d":"2025-12-20","ph":0.335,"pd":0.309,"pa":0.356,"pk":"A","r":"H"},{"h":"Aston Villa","a":"Man United","d":"2025-12-21","ph":0.472,"pd":0.259,"pa":0.269,"pk":"H","r":"H"},{"h":"Fulham","a":"Nott'm Forest","d":"2025-12-22","ph":0.371,"pd":0.284,"pa":0.344,"pk":"H","r":"H"},{"h":"Man United","a":"Newcastle","d":"2025-12-26","ph":0.384,"pd":0.26,"pa":0.356,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Man City","d":"2025-12-27","ph":0.183,"pd":0.228,"pa":0.589,"pk":"A","r":"A"},{"h":"Arsenal","a":"Brighton","d":"2025-12-27","ph":0.719,"pd":0.174,"pa":0.107,"pk":"H","r":"H"},{"h":"Brentford","a":"Bournemouth","d":"2025-12-27","ph":0.415,"pd":0.273,"pa":0.312,"pk":"H","r":"H"},{"h":"Burnley","a":"Everton","d":"2025-12-27","ph":0.259,"pd":0.306,"pa":0.435,"pk":"A","r":"D"},{"h":"Liverpool","a":"Wolves","d":"2025-12-27","ph":0.767,"pd":0.148,"pa":0.085,"pk":"H","r":"H"},{"h":"West Ham","a":"Fulham","d":"2025-12-27","ph":0.318,"pd":0.285,"pa":0.397,"pk":"A","r":"A"},{"h":"Chelsea","a":"Aston Villa","d":"2025-12-27","ph":0.535,"pd":0.241,"pa":0.224,"pk":"H","r":"A"},{"h":"Sunderland","a":"Leeds","d":"2025-12-28","ph":0.334,"pd":0.306,"pa":0.36,"pk":"A","r":"D"},{"h":"Crystal Palace","a":"Tottenham","d":"2025-12-28","ph":0.425,"pd":0.28,"pa":0.294,"pk":"H","r":"A"},{"h":"Burnley","a":"Newcastle","d":"2025-12-30","ph":0.165,"pd":0.229,"pa":0.605,"pk":"A","r":"A"},{"h":"Chelsea","a":"Bournemouth","d":"2025-12-30","ph":0.607,"pd":0.213,"pa":0.18,"pk":"H","r":"D"},{"h":"Nott'm Forest","a":"Everton","d":"2025-12-30","ph":0.498,"pd":0.281,"pa":0.221,"pk":"H","r":"A"},{"h":"West Ham","a":"Brighton","d":"2025-12-30","ph":0.285,"pd":0.264,"pa":0.451,"pk":"A","r":"D"},{"h":"Arsenal","a":"Aston Villa","d":"2025-12-30","ph":0.69,"pd":0.188,"pa":0.122,"pk":"H","r":"H"},{"h":"Man United","a":"Wolves","d":"2025-12-30","ph":0.689,"pd":0.187,"pa":0.124,"pk":"H","r":"D"},{"h":"Crystal Palace","a":"Fulham","d":"2026-01-01","ph":0.427,"pd":0.29,"pa":0.284,"pk":"H","r":"D"},{"h":"Liverpool","a":"Leeds","d":"2026-01-01","ph":0.645,"pd":0.213,"pa":0.142,"pk":"H","r":"D"},{"h":"Brentford","a":"Tottenham","d":"2026-01-01","ph":0.395,"pd":0.279,"pa":0.326,"pk":"H","r":"D"},{"h":"Sunderland","a":"Man City","d":"2026-01-01","ph":0.131,"pd":0.202,"pa":0.667,"pk":"A","r":"D"},{"h":"Aston Villa","a":"Nott'm Forest","d":"2026-01-03","ph":0.499,"pd":0.27,"pa":0.231,"pk":"H","r":"H"},{"h":"Brighton","a":"Burnley","d":"2026-01-03","ph":0.654,"pd":0.21,"pa":0.136,"pk":"H","r":"H"},{"h":"Wolves","a":"West Ham","d":"2026-01-03","ph":0.361,"pd":0.282,"pa":0.357,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Arsenal","d":"2026-01-03","ph":0.159,"pd":0.214,"pa":0.627,"pk":"A","r":"A"},{"h":"Leeds","a":"Man United","d":"2026-01-04","ph":0.347,"pd":0.287,"pa":0.366,"pk":"A","r":"D"},{"h":"Everton","a":"Brentford","d":"2026-01-04","ph":0.385,"pd":0.3,"pa":0.315,"pk":"H","r":"A"},{"h":"Newcastle","a":"Crystal Palace","d":"2026-01-04","ph":0.565,"pd":0.241,"pa":0.194,"pk":"H","r":"H"},{"h":"Tottenham","a":"Sunderland","d":"2026-01-04","ph":0.481,"pd":0.279,"pa":0.24,"pk":"H","r":"D"},{"h":"Fulham","a":"Liverpool","d":"2026-01-04","ph":0.233,"pd":0.263,"pa":0.504,"pk":"A","r":"D"},{"h":"Man City","a":"Chelsea","d":"2026-01-04","ph":0.645,"pd":0.194,"pa":0.161,"pk":"H","r":"D"},{"h":"West Ham","a":"Nott'm Forest","d":"2026-01-06","ph":0.324,"pd":0.279,"pa":0.396,"pk":"A","r":"A"},{"h":"Bournemouth","a":"Tottenham","d":"2026-01-07","ph":0.436,"pd":0.269,"pa":0.295,"pk":"H","r":"H"},{"h":"Brentford","a":"Sunderland","d":"2026-01-07","ph":0.472,"pd":0.295,"pa":0.233,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Aston Villa","d":"2026-01-07","ph":0.317,"pd":0.285,"pa":0.398,"pk":"A","r":"D"},{"h":"Everton","a":"Wolves","d":"2026-01-07","ph":0.516,"pd":0.274,"pa":0.21,"pk":"H","r":"D"},{"h":"Fulham","a":"Chelsea","d":"2026-01-07","ph":0.262,"pd":0.266,"pa":0.471,"pk":"A","r":"H"},{"h":"Man City","a":"Brighton","d":"2026-01-07","ph":0.631,"pd":0.205,"pa":0.164,"pk":"H","r":"D"},{"h":"Burnley","a":"Man United","d":"2026-01-07","ph":0.197,"pd":0.252,"pa":0.551,"pk":"A","r":"D"},{"h":"Newcastle","a":"Leeds","d":"2026-01-07","ph":0.589,"pd":0.241,"pa":0.171,"pk":"H","r":"H"},{"h":"Arsenal","a":"Liverpool","d":"2026-01-08","ph":0.604,"pd":0.228,"pa":0.168,"pk":"H","r":"D"},{"h":"Man United","a":"Man City","d":"2026-01-17","ph":0.315,"pd":0.261,"pa":0.425,"pk":"A","r":"H"},{"h":"Chelsea","a":"Brentford","d":"2026-01-17","ph":0.509,"pd":0.25,"pa":0.241,"pk":"H","r":"H"},{"h":"Leeds","a":"Fulham","d":"2026-01-17","ph":0.41,"pd":0.284,"pa":0.306,"pk":"H","r":"H"},{"h":"Liverpool","a":"Burnley","d":"2026-01-17","ph":0.772,"pd":0.149,"pa":0.08,"pk":"H","r":"D"},{"h":"Sunderland","a":"Crystal Palace","d":"2026-01-17","ph":0.397,"pd":0.302,"pa":0.3,"pk":"H","r":"H"},{"h":"Tottenham","a":"West Ham","d":"2026-01-17","ph":0.515,"pd":0.255,"pa":0.23,"pk":"H","r":"A"},{"h":"Nott'm Forest","a":"Arsenal","d":"2026-01-17","ph":0.164,"pd":0.245,"pa":0.592,"pk":"A","r":"D"},{"h":"Wolves","a":"Newcastle","d":"2026-01-18","ph":0.211,"pd":0.238,"pa":0.551,"pk":"A","r":"D"},{"h":"Aston Villa","a":"Everton","d":"2026-01-18","ph":0.594,"pd":0.241,"pa":0.165,"pk":"H","r":"A"},{"h":"Brighton","a":"Bournemouth","d":"2026-01-19","ph":0.483,"pd":0.25,"pa":0.267,"pk":"H","r":"D"},{"h":"West Ham","a":"Sunderland","d":"2026-01-24","ph":0.427,"pd":0.285,"pa":0.288,"pk":"H","r":"H"},{"h":"Burnley","a":"Tottenham","d":"2026-01-24","ph":0.246,"pd":0.284,"pa":0.47,"pk":"A","r":"D"},{"h":"Fulham","a":"Brighton","d":"2026-01-24","ph":0.368,"pd":0.289,"pa":0.343,"pk":"H","r":"H"},{"h":"Man City","a":"Wolves","d":"2026-01-24","ph":0.731,"pd":0.169,"pa":0.1,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Liverpool","d":"2026-01-24","ph":0.225,"pd":0.238,"pa":0.536,"pk":"A","r":"H"},{"h":"Brentford","a":"Nott'm Forest","d":"2026-01-25","ph":0.514,"pd":0.27,"pa":0.216,"pk":"H","r":"A"},{"h":"Crystal Palace","a":"Chelsea","d":"2026-01-25","ph":0.279,"pd":0.272,"pa":0.449,"pk":"A","r":"A"},{"h":"Newcastle","a":"Aston Villa","d":"2026-01-25","ph":0.441,"pd":0.268,"pa":0.291,"pk":"H","r":"A"},{"h":"Arsenal","a":"Man United","d":"2026-01-25","ph":0.615,"pd":0.219,"pa":0.166,"pk":"H","r":"A"},{"h":"Everton","a":"Leeds","d":"2026-01-26","ph":0.38,"pd":0.308,"pa":0.312,"pk":"H","r":"D"},{"h":"Brighton","a":"Everton","d":"2026-01-31","ph":0.495,"pd":0.273,"pa":0.232,"pk":"H","r":"D"},{"h":"Leeds","a":"Arsenal","d":"2026-01-31","ph":0.161,"pd":0.237,"pa":0.602,"pk":"A","r":"A"},{"h":"Wolves","a":"Bournemouth","d":"2026-01-31","ph":0.322,"pd":0.278,"pa":0.4,"pk":"A","r":"A"},{"h":"Chelsea","a":"West Ham","d":"2026-01-31","ph":0.596,"pd":0.218,"pa":0.185,"pk":"H","r":"H"},{"h":"Liverpool","a":"Newcastle","d":"2026-01-31","ph":0.577,"pd":0.224,"pa":0.198,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Brentford","d":"2026-02-01","ph":0.412,"pd":0.285,"pa":0.303,"pk":"H","r":"A"},{"h":"Man United","a":"Fulham","d":"2026-02-01","ph":0.623,"pd":0.204,"pa":0.173,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Crystal Palace","d":"2026-02-01","ph":0.453,"pd":0.294,"pa":0.254,"pk":"H","r":"D"},{"h":"Tottenham","a":"Man City","d":"2026-02-01","ph":0.19,"pd":0.236,"pa":0.574,"pk":"A","r":"D"},{"h":"Sunderland","a":"Burnley","d":"2026-02-02","ph":0.495,"pd":0.293,"pa":0.212,"pk":"H","r":"H"},{"h":"Leeds","a":"Nott'm Forest","d":"2026-02-06","ph":0.442,"pd":0.28,"pa":0.278,"pk":"H","r":"H"},{"h":"Man United","a":"Tottenham","d":"2026-02-07","ph":0.594,"pd":0.216,"pa":0.191,"pk":"H","r":"H"},{"h":"Arsenal","a":"Sunderland","d":"2026-02-07","ph":0.753,"pd":0.168,"pa":0.079,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Aston Villa","d":"2026-02-07","ph":0.333,"pd":0.264,"pa":0.403,"pk":"A","r":"D"},{"h":"Burnley","a":"West Ham","d":"2026-02-07","ph":0.304,"pd":0.264,"pa":0.432,"pk":"A","r":"A"},{"h":"Fulham","a":"Everton","d":"2026-02-07","ph":0.444,"pd":0.277,"pa":0.278,"pk":"H","r":"A"},{"h":"Wolves","a":"Chelsea","d":"2026-02-07","ph":0.178,"pd":0.225,"pa":0.597,"pk":"A","r":"A"},{"h":"Newcastle","a":"Brentford","d":"2026-02-07","ph":0.493,"pd":0.256,"pa":0.251,"pk":"H","r":"A"},{"h":"Brighton","a":"Crystal Palace","d":"2026-02-08","ph":0.432,"pd":0.289,"pa":0.279,"pk":"H","r":"A"},{"h":"Liverpool","a":"Man City","d":"2026-02-08","ph":0.44,"pd":0.246,"pa":0.314,"pk":"H","r":"A"},{"h":"Chelsea","a":"Leeds","d":"2026-02-10","ph":0.628,"pd":0.215,"pa":0.157,"pk":"H","r":"D"},{"h":"Everton","a":"Bournemouth","d":"2026-02-10","ph":0.408,"pd":0.277,"pa":0.315,"pk":"H","r":"A"},{"h":"Tottenham","a":"Newcastle","d":"2026-02-10","ph":0.316,"pd":0.263,"pa":0.421,"pk":"A","r":"A"},{"h":"West Ham","a":"Man United","d":"2026-02-10","ph":0.212,"pd":0.228,"pa":0.56,"pk":"A","r":"D"},{"h":"Aston Villa","a":"Brighton","d":"2026-02-11","ph":0.46,"pd":0.257,"pa":0.284,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Burnley","d":"2026-02-11","ph":0.649,"pd":0.213,"pa":0.137,"pk":"H","r":"A"},{"h":"Man City","a":"Fulham","d":"2026-02-11","ph":0.691,"pd":0.181,"pa":0.128,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Wolves","d":"2026-02-11","ph":0.547,"pd":0.25,"pa":0.203,"pk":"H","r":"D"},{"h":"Sunderland","a":"Liverpool","d":"2026-02-11","ph":0.213,"pd":0.247,"pa":0.54,"pk":"A","r":"A"},{"h":"Brentford","a":"Arsenal","d":"2026-02-12","ph":0.186,"pd":0.251,"pa":0.563,"pk":"A","r":"D"},{"h":"Wolves","a":"Arsenal","d":"2026-02-18","ph":0.077,"pd":0.16,"pa":0.764,"pk":"A","r":"D"},{"h":"Aston Villa","a":"Leeds","d":"2026-02-21","ph":0.518,"pd":0.256,"pa":0.226,"pk":"H","r":"D"},{"h":"Brentford","a":"Brighton","d":"2026-02-21","ph":0.42,"pd":0.279,"pa":0.302,"pk":"H","r":"A"},{"h":"Chelsea","a":"Burnley","d":"2026-02-21","ph":0.769,"pd":0.15,"pa":0.082,"pk":"H","r":"D"},{"h":"West Ham","a":"Bournemouth","d":"2026-02-21","ph":0.355,"pd":0.261,"pa":0.384,"pk":"A","r":"D"},{"h":"Man City","a":"Newcastle","d":"2026-02-21","ph":0.616,"pd":0.205,"pa":0.179,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Wolves","d":"2026-02-22","ph":0.533,"pd":0.254,"pa":0.213,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Liverpool","d":"2026-02-22","ph":0.246,"pd":0.249,"pa":0.504,"pk":"A","r":"A"},{"h":"Sunderland","a":"Fulham","d":"2026-02-22","ph":0.332,"pd":0.297,"pa":0.371,"pk":"A","r":"A"},{"h":"Tottenham","a":"Arsenal","d":"2026-02-22","ph":0.131,"pd":0.217,"pa":0.652,"pk":"A","r":"A"},{"h":"Everton","a":"Man United","d":"2026-02-23","ph":0.267,"pd":0.26,"pa":0.473,"pk":"A","r":"A"},{"h":"Wolves","a":"Aston Villa","d":"2026-02-27","ph":0.205,"pd":0.252,"pa":0.542,"pk":"A","r":"H"},{"h":"Bournemouth","a":"Sunderland","d":"2026-02-28","ph":0.523,"pd":0.256,"pa":0.221,"pk":"H","r":"D"},{"h":"Burnley","a":"Brentford","d":"2026-02-28","ph":0.218,"pd":0.249,"pa":0.533,"pk":"A","r":"A"},{"h":"Liverpool","a":"West Ham","d":"2026-02-28","ph":0.669,"pd":0.19,"pa":0.141,"pk":"H","r":"H"},{"h":"Newcastle","a":"Everton","d":"2026-02-28","ph":0.53,"pd":0.253,"pa":0.217,"pk":"H","r":"A"},{"h":"Leeds","a":"Man City","d":"2026-02-28","ph":0.198,"pd":0.242,"pa":0.56,"pk":"A","r":"A"},{"h":"Brighton","a":"Nott'm Forest","d":"2026-03-01","ph":0.451,"pd":0.278,"pa":0.271,"pk":"H","r":"H"},{"h":"Fulham","a":"Tottenham","d":"2026-03-01","ph":0.468,"pd":0.258,"pa":0.274,"pk":"H","r":"H"},{"h":"Man United","a":"Crystal Palace","d":"2026-03-01","ph":0.625,"pd":0.217,"pa":0.159,"pk":"H","r":"H"},{"h":"Arsenal","a":"Chelsea","d":"2026-03-01","ph":0.628,"pd":0.216,"pa":0.156,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Brentford","d":"2026-03-03","ph":0.378,"pd":0.265,"pa":0.357,"pk":"H","r":"D"},{"h":"Everton","a":"Burnley","d":"2026-03-03","ph":0.586,"pd":0.25,"pa":0.165,"pk":"H","r":"H"},{"h":"Leeds","a":"Sunderland","d":"2026-03-03","ph":0.522,"pd":0.269,"pa":0.209,"pk":"H","r":"A"},{"h":"Wolves","a":"Liverpool","d":"2026-03-03","ph":0.138,"pd":0.201,"pa":0.661,"pk":"A","r":"H"},{"h":"Aston Villa","a":"Chelsea","d":"2026-03-04","ph":0.357,"pd":0.271,"pa":0.371,"pk":"A","r":"A"},{"h":"Brighton","a":"Arsenal","d":"2026-03-04","ph":0.188,"pd":0.246,"pa":0.566,"pk":"A","r":"A"},{"h":"Fulham","a":"West Ham","d":"2026-03-04","ph":0.429,"pd":0.269,"pa":0.302,"pk":"H","r":"A"},{"h":"Man City","a":"Nott'm Forest","d":"2026-03-04","ph":0.68,"pd":0.196,"pa":0.124,"pk":"H","r":"D"},{"h":"Newcastle","a":"Man United","d":"2026-03-04","ph":0.367,"pd":0.26,"pa":0.373,"pk":"A","r":"H"},{"h":"Tottenham","a":"Crystal Palace","d":"2026-03-05","ph":0.387,"pd":0.28,"pa":0.333,"pk":"H","r":"A"},{"h":"Burnley","a":"Bournemouth","d":"2026-03-14","ph":0.241,"pd":0.24,"pa":0.519,"pk":"A","r":"D"},{"h":"Sunderland","a":"Brighton","d":"2026-03-14","ph":0.259,"pd":0.272,"pa":0.469,"pk":"A","r":"A"},{"h":"Arsenal","a":"Everton","d":"2026-03-14","ph":0.688,"pd":0.203,"pa":0.11,"pk":"H","r":"H"},{"h":"Chelsea","a":"Newcastle","d":"2026-03-14","ph":0.558,"pd":0.222,"pa":0.219,"pk":"H","r":"A"},{"h":"West Ham","a":"Man City","d":"2026-03-14","ph":0.196,"pd":0.226,"pa":0.578,"pk":"A","r":"D"},{"h":"Crystal Palace","a":"Leeds","d":"2026-03-15","ph":0.356,"pd":0.293,"pa":0.352,"pk":"H","r":"D"},{"h":"Man United","a":"Aston Villa","d":"2026-03-15","ph":0.558,"pd":0.236,"pa":0.207,"pk":"H","r":"H"},{"h":"Nott'm Forest","a":"Fulham","d":"2026-03-15","ph":0.413,"pd":0.285,"pa":0.302,"pk":"H","r":"D"},{"h":"Liverpool","a":"Tottenham","d":"2026-03-15","ph":0.725,"pd":0.161,"pa":0.114,"pk":"H","r":"D"},{"h":"Brentford","a":"Wolves","d":"2026-03-16","ph":0.617,"pd":0.22,"pa":0.163,"pk":"H","r":"D"},{"h":"Bournemouth","a":"Man United","d":"2026-03-20","ph":0.307,"pd":0.254,"pa":0.439,"pk":"A","r":"D"},{"h":"Brighton","a":"Liverpool","d":"2026-03-21","ph":0.309,"pd":0.26,"pa":0.43,"pk":"A","r":"H"},{"h":"Fulham","a":"Burnley","d":"2026-03-21","ph":0.621,"pd":0.22,"pa":0.159,"pk":"H","r":"H"},{"h":"Everton","a":"Chelsea","d":"2026-03-21","ph":0.3,"pd":0.275,"pa":0.425,"pk":"A","r":"H"},{"h":"Leeds","a":"Brentford","d":"2026-03-21","ph":0.402,"pd":0.277,"pa":0.32,"pk":"H","r":"D"},{"h":"Newcastle","a":"Sunderland","d":"2026-03-22","ph":0.615,"pd":0.224,"pa":0.161,"pk":"H","r":"A"},{"h":"Aston Villa","a":"West Ham","d":"2026-03-22","ph":0.544,"pd":0.249,"pa":0.207,"pk":"H","r":"H"},{"h":"Tottenham","a":"Nott'm Forest","d":"2026-03-22","ph":0.398,"pd":0.287,"pa":0.315,"pk":"H","r":"A"},{"h":"West Ham","a":"Wolves","d":"2026-04-10","ph":0.533,"pd":0.252,"pa":0.215,"pk":"H","r":"H"},{"h":"Arsenal","a":"Bournemouth","d":"2026-04-11","ph":0.642,"pd":0.211,"pa":0.147,"pk":"H","r":"A"},{"h":"Brentford","a":"Everton","d":"2026-04-11","ph":0.438,"pd":0.282,"pa":0.28,"pk":"H","r":"D"},{"h":"Burnley","a":"Brighton","d":"2026-04-11","ph":0.178,"pd":0.228,"pa":0.593,"pk":"A","r":"A"},{"h":"Liverpool","a":"Fulham","d":"2026-04-11","ph":0.552,"pd":0.232,"pa":0.216,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"Newcastle","d":"2026-04-12","ph":0.324,"pd":0.286,"pa":0.39,"pk":"A","r":"H"},{"h":"Nott'm Forest","a":"Aston Villa","d":"2026-04-12","ph":0.401,"pd":0.284,"pa":0.315,"pk":"H","r":"D"},{"h":"Sunderland","a":"Tottenham","d":"2026-04-12","ph":0.343,"pd":0.285,"pa":0.373,"pk":"A","r":"H"},{"h":"Chelsea","a":"Man City","d":"2026-04-12","ph":0.271,"pd":0.243,"pa":0.486,"pk":"A","r":"A"},{"h":"Man United","a":"Leeds","d":"2026-04-13","ph":0.582,"pd":0.232,"pa":0.186,"pk":"H","r":"A"},{"h":"Brentford","a":"Fulham","d":"2026-04-18","ph":0.481,"pd":0.251,"pa":0.268,"pk":"H","r":"D"},{"h":"Leeds","a":"Wolves","d":"2026-04-18","ph":0.619,"pd":0.23,"pa":0.151,"pk":"H","r":"H"},{"h":"Newcastle","a":"Bournemouth","d":"2026-04-18","ph":0.433,"pd":0.257,"pa":0.31,"pk":"H","r":"A"},{"h":"Tottenham","a":"Brighton","d":"2026-04-18","ph":0.322,"pd":0.251,"pa":0.427,"pk":"A","r":"D"},{"h":"Chelsea","a":"Man United","d":"2026-04-18","ph":0.45,"pd":0.256,"pa":0.294,"pk":"H","r":"A"},{"h":"Aston Villa","a":"Sunderland","d":"2026-04-19","ph":0.546,"pd":0.258,"pa":0.197,"pk":"H","r":"H"},{"h":"Everton","a":"Liverpool","d":"2026-04-19","ph":0.295,"pd":0.284,"pa":0.421,"pk":"A","r":"A"},{"h":"Nott'm Forest","a":"Burnley","d":"2026-04-19","ph":0.647,"pd":0.215,"pa":0.138,"pk":"H","r":"H"},{"h":"Man City","a":"Arsenal","d":"2026-04-19","ph":0.513,"pd":0.263,"pa":0.224,"pk":"H","r":"H"},{"h":"Crystal Palace","a":"West Ham","d":"2026-04-20","ph":0.374,"pd":0.284,"pa":0.342,"pk":"H","r":"D"},{"h":"Brighton","a":"Chelsea","d":"2026-04-21","ph":0.413,"pd":0.274,"pa":0.313,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Leeds","d":"2026-04-22","ph":0.516,"pd":0.25,"pa":0.235,"pk":"H","r":"D"},{"h":"Burnley","a":"Man City","d":"2026-04-22","ph":0.06,"pd":0.117,"pa":0.823,"pk":"A","r":"A"},{"h":"Sunderland","a":"Nott'm Forest","d":"2026-04-24","ph":0.354,"pd":0.304,"pa":0.342,"pk":"H","r":"A"},{"h":"Fulham","a":"Aston Villa","d":"2026-04-25","ph":0.387,"pd":0.265,"pa":0.348,"pk":"H","r":"H"},{"h":"Liverpool","a":"Crystal Palace","d":"2026-04-25","ph":0.604,"pd":0.216,"pa":0.181,"pk":"H","r":"H"},{"h":"West Ham","a":"Everton","d":"2026-04-25","ph":0.388,"pd":0.278,"pa":0.333,"pk":"H","r":"H"},{"h":"Wolves","a":"Tottenham","d":"2026-04-25","ph":0.203,"pd":0.225,"pa":0.572,"pk":"A","r":"A"},{"h":"Arsenal","a":"Newcastle","d":"2026-04-25","ph":0.683,"pd":0.193,"pa":0.124,"pk":"H","r":"H"},{"h":"Man United","a":"Brentford","d":"2026-04-27","ph":0.481,"pd":0.253,"pa":0.267,"pk":"H","r":"H"},{"h":"Leeds","a":"Burnley","d":"2026-05-01","ph":0.697,"pd":0.192,"pa":0.111,"pk":"H","r":"H"},{"h":"Brentford","a":"West Ham","d":"2026-05-02","ph":0.507,"pd":0.244,"pa":0.248,"pk":"H","r":"H"},{"h":"Newcastle","a":"Brighton","d":"2026-05-02","ph":0.355,"pd":0.262,"pa":0.383,"pk":"A","r":"H"},{"h":"Wolves","a":"Sunderland","d":"2026-05-02","ph":0.257,"pd":0.268,"pa":0.476,"pk":"A","r":"D"},{"h":"Arsenal","a":"Fulham","d":"2026-05-02","ph":0.652,"pd":0.214,"pa":0.135,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Crystal Palace","d":"2026-05-03","ph":0.602,"pd":0.222,"pa":0.175,"pk":"H","r":"H"},{"h":"Man United","a":"Liverpool","d":"2026-05-03","ph":0.401,"pd":0.254,"pa":0.344,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Tottenham","d":"2026-05-03","ph":0.42,"pd":0.266,"pa":0.315,"pk":"H","r":"A"},{"h":"Chelsea","a":"Nott'm Forest","d":"2026-05-04","ph":0.67,"pd":0.198,"pa":0.133,"pk":"H","r":"A"},{"h":"Everton","a":"Man City","d":"2026-05-04","ph":0.141,"pd":0.204,"pa":0.655,"pk":"A","r":"D"},{"h":"Liverpool","a":"Chelsea","d":"2026-05-09","ph":0.474,"pd":0.255,"pa":0.271,"pk":"H","r":"D"},{"h":"Brighton","a":"Wolves","d":"2026-05-09","ph":0.746,"pd":0.159,"pa":0.095,"pk":"H","r":"H"},{"h":"Fulham","a":"Bournemouth","d":"2026-05-09","ph":0.358,"pd":0.261,"pa":0.381,"pk":"A","r":"A"},{"h":"Sunderland","a":"Man United","d":"2026-05-09","ph":0.293,"pd":0.268,"pa":0.438,"pk":"A","r":"D"},{"h":"Man City","a":"Brentford","d":"2026-05-09","ph":0.702,"pd":0.169,"pa":0.129,"pk":"H","r":"H"},{"h":"Burnley","a":"Aston Villa","d":"2026-05-10","ph":0.149,"pd":0.214,"pa":0.638,"pk":"A","r":"D"},{"h":"Crystal Palace","a":"Everton","d":"2026-05-10","ph":0.339,"pd":0.29,"pa":0.371,"pk":"A","r":"D"},{"h":"Nott'm Forest","a":"Newcastle","d":"2026-05-10","ph":0.288,"pd":0.274,"pa":0.438,"pk":"A","r":"D"},{"h":"West Ham","a":"Arsenal","d":"2026-05-10","ph":0.161,"pd":0.227,"pa":0.611,"pk":"A","r":"A"},{"h":"Tottenham","a":"Leeds","d":"2026-05-11","ph":0.52,"pd":0.253,"pa":0.227,"pk":"H","r":"D"},{"h":"Man City","a":"Crystal Palace","d":"2026-05-13","ph":0.724,"pd":0.165,"pa":0.11,"pk":"H","r":"H"},{"h":"Aston Villa","a":"Liverpool","d":"2026-05-15","ph":0.35,"pd":0.274,"pa":0.375,"pk":"A","r":"H"},{"h":"Man United","a":"Nott'm Forest","d":"2026-05-17","ph":0.603,"pd":0.213,"pa":0.184,"pk":"H","r":"H"},{"h":"Brentford","a":"Crystal Palace","d":"2026-05-17","ph":0.546,"pd":0.241,"pa":0.213,"pk":"H","r":"D"},{"h":"Everton","a":"Sunderland","d":"2026-05-17","ph":0.51,"pd":0.262,"pa":0.227,"pk":"H","r":"A"},{"h":"Leeds","a":"Brighton","d":"2026-05-17","ph":0.273,"pd":0.269,"pa":0.459,"pk":"A","r":"H"},{"h":"Wolves","a":"Fulham","d":"2026-05-17","ph":0.233,"pd":0.258,"pa":0.509,"pk":"A","r":"D"},{"h":"Newcastle","a":"West Ham","d":"2026-05-17","ph":0.457,"pd":0.246,"pa":0.297,"pk":"H","r":"H"},{"h":"Arsenal","a":"Burnley","d":"2026-05-18","ph":0.865,"pd":0.093,"pa":0.042,"pk":"H","r":"H"},{"h":"Bournemouth","a":"Man City","d":"2026-05-19","ph":0.203,"pd":0.221,"pa":0.576,"pk":"A","r":"D"},{"h":"Chelsea","a":"Tottenham","d":"2026-05-19","ph":0.427,"pd":0.285,"pa":0.288,"pk":"H","r":"H"},{"h":"Brighton","a":"Man United","d":"2026-05-24","ph":0.501,"pd":0.23,"pa":0.269,"pk":"H","r":"A"},{"h":"Burnley","a":"Wolves","d":"2026-05-24","ph":0.393,"pd":0.274,"pa":0.333,"pk":"H","r":"D"},{"h":"Crystal Palace","a":"Arsenal","d":"2026-05-24","ph":0.237,"pd":0.257,"pa":0.506,"pk":"A","r":"A"},{"h":"Fulham","a":"Newcastle","d":"2026-05-24","ph":0.37,"pd":0.259,"pa":0.371,"pk":"A","r":"H"},{"h":"Liverpool","a":"Brentford","d":"2026-05-24","ph":0.531,"pd":0.232,"pa":0.237,"pk":"H","r":"D"},{"h":"Man City","a":"Aston Villa","d":"2026-05-24","ph":0.677,"pd":0.183,"pa":0.14,"pk":"H","r":"A"},{"h":"Nott'm Forest","a":"Bournemouth","d":"2026-05-24","ph":0.266,"pd":0.254,"pa":0.48,"pk":"A","r":"D"},{"h":"Sunderland","a":"Chelsea","d":"2026-05-24","ph":0.278,"pd":0.258,"pa":0.464,"pk":"A","r":"H"},{"h":"Tottenham","a":"Everton","d":"2026-05-24","ph":0.502,"pd":0.27,"pa":0.229,"pk":"H","r":"H"},{"h":"West Ham","a":"Leeds","d":"2026-05-24","ph":0.554,"pd":0.229,"pa":0.217,"pk":"H","r":"H"}];
+  var LAB={H:'Home',D:'Draw',A:'Away'};
+  var sel=document.getElementById('gamesel');
+  var frag=document.createDocumentFragment();
+  G.forEach(function(g,i){var o=document.createElement('option');o.value=i;
+    o.textContent=g.h+' v '+g.a+'  \u00b7  '+g.d;frag.appendChild(o);});
+  sel.appendChild(frag);
+  function esc(s){return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function render(i){
+    var g=G[i]; if(!g) return;
+    var rows=[['Home',g.ph,'H'],['Draw',g.pd,'D'],['Away',g.pa,'A']];
+    var mx=Math.max(g.ph,g.pd,g.pa);
+    var conf=mx>=0.60?'high':mx>=0.45?'moderate':'low';
+    var correct=g.pk===g.r;
+    var acc=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+    var ink3=getComputedStyle(document.documentElement).getPropertyValue('--ink-3').trim();
+    var warn=getComputedStyle(document.documentElement).getPropertyValue('--warn').trim();
+    var bars=rows.map(function(p){
+      var pct=Math.round(p[1]*100), isPick=p[2]===g.pk;
+      return '<div class="prow"><span class="plab">'+p[0]+'</span>'+
+        '<span class="track"><span class="fill" style="width:'+pct+'%;background:'+(isPick?acc:ink3)+'"></span></span>'+
+        '<span class="pnum">'+pct+'%</span></div>';
+    }).join('');
+    var rcol=correct?acc:warn;
+    document.getElementById('pcard').innerHTML=
+      '<div class="pcard-head"><div><div class="teams">'+esc(g.h)+' <span class="vs">vs</span> '+esc(g.a)+'</div>'+
+      '<div class="pdate">'+g.d+'</div></div>'+
+      '<div class="pickbox"><div class="k">model picks</div><div class="pickv">'+LAB[g.pk]+'</div>'+
+      '<div class="conf">'+conf+' confidence</div></div></div>'+
+      '<div class="pbars">'+bars+'</div>'+
+      '<div class="presult">Actual: <b style="color:'+rcol+'">'+LAB[g.r]+'</b>'+
+      '<span class="rchip" style="color:'+rcol+';border-color:'+rcol+'">'+(correct?'model correct':'model missed')+'</span></div>';
+  }
+  sel.addEventListener('change',function(){render(+sel.value);});
+  document.getElementById('rnd').addEventListener('click',function(){
+    var i=Math.floor(Math.random()*G.length);sel.value=i;render(i);});
+  render(0);
+})();
+</script>
+
+</body>
+</html>

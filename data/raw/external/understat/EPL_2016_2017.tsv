@@ -1,0 +1,380 @@
+2016-08-13	Hull	Leicester	0.740	2.456	2	1	0.054	0.125	0.822
+2016-08-13	Crystal Palace	West Bromwich Albion	0.990	0.685	0	1	0.429	0.336	0.235
+2016-08-13	Everton	Tottenham	0.790	1.123	1	1	0.231	0.332	0.436
+2016-08-13	Burnley	Swansea	1.049	1.721	0	1	0.163	0.289	0.549
+2016-08-13	Middlesbrough	Stoke	1.805	0.486	1	1	0.788	0.162	0.049
+2016-08-13	Southampton	Watford	0.937	0.180	1	1	0.542	0.392	0.066
+2016-08-13	Manchester City	Sunderland	1.955	1.099	2	1	0.598	0.251	0.151
+2016-08-14	Bournemouth	Manchester United	0.523	1.911	1	3	0.055	0.159	0.786
+2016-08-14	Arsenal	Liverpool	1.182	1.659	3	4	0.239	0.286	0.475
+2016-08-15	Chelsea	West Ham	1.460	0.446	2	1	0.686	0.236	0.078
+2016-08-19	Manchester United	Southampton	1.366	0.613	2	0	0.602	0.271	0.127
+2016-08-20	Stoke	Manchester City	1.311	2.172	1	4	0.143	0.255	0.602
+2016-08-20	Burnley	Liverpool	0.198	0.939	2	0	0.072	0.373	0.555
+2016-08-20	Swansea	Hull	1.141	2.187	0	2	0.135	0.204	0.661
+2016-08-20	Tottenham	Crystal Palace	2.256	0.358	1	0	0.871	0.105	0.024
+2016-08-20	Watford	Chelsea	0.805	1.756	1	2	0.108	0.247	0.645
+2016-08-20	West Bromwich Albion	Everton	2.019	1.839	1	2	0.398	0.256	0.345
+2016-08-20	Leicester	Arsenal	0.554	0.522	0	0	0.292	0.449	0.260
+2016-08-21	Sunderland	Middlesbrough	1.464	0.855	1	2	0.519	0.296	0.185
+2016-08-21	West Ham	Bournemouth	1.693	0.393	1	0	0.747	0.196	0.057
+2016-08-27	Tottenham	Liverpool	0.591	1.926	1	1	0.067	0.170	0.762
+2016-08-27	Watford	Arsenal	1.078	2.033	1	3	0.138	0.218	0.644
+2016-08-27	Leicester	Swansea	2.480	0.328	2	1	0.913	0.072	0.015
+2016-08-27	Southampton	Sunderland	0.614	1.391	1	1	0.121	0.257	0.622
+2016-08-27	Chelsea	Burnley	2.658	0.184	3	0	0.926	0.062	0.011
+2016-08-27	Crystal Palace	Bournemouth	2.659	0.974	1	1	0.780	0.145	0.075
+2016-08-27	Everton	Stoke	2.318	0.187	1	0	0.911	0.078	0.011
+2016-08-27	Hull	Manchester United	0.269	2.472	0	1	0.011	0.062	0.926
+2016-08-28	West Bromwich Albion	Middlesbrough	0.697	0.397	0	0	0.383	0.444	0.173
+2016-08-28	Manchester City	West Ham	3.216	1.084	3	1	0.831	0.114	0.056
+2016-09-10	Manchester United	Manchester City	1.010	1.887	1	2	0.159	0.235	0.606
+2016-09-10	Middlesbrough	Crystal Palace	0.612	1.124	1	2	0.175	0.317	0.508
+2016-09-10	Stoke	Tottenham	1.018	2.770	0	4	0.071	0.131	0.798
+2016-09-10	Arsenal	Southampton	1.892	1.175	2	1	0.552	0.262	0.186
+2016-09-10	Bournemouth	West Bromwich Albion	0.987	1.483	1	0	0.204	0.287	0.509
+2016-09-10	Burnley	Hull	0.453	0.907	1	1	0.165	0.362	0.473
+2016-09-10	West Ham	Watford	1.322	1.855	2	4	0.244	0.249	0.508
+2016-09-10	Liverpool	Leicester	2.769	1.225	4	1	0.735	0.164	0.101
+2016-09-11	Swansea	Chelsea	1.230	2.190	2	2	0.164	0.246	0.589
+2016-09-12	Sunderland	Everton	1.040	2.845	0	3	0.075	0.141	0.784
+2016-09-16	Chelsea	Liverpool	1.164	1.416	1	2	0.272	0.305	0.423
+2016-09-17	Hull	Arsenal	0.970	3.635	1	4	0.014	0.065	0.921
+2016-09-17	Leicester	Burnley	1.985	0.465	3	0	0.804	0.155	0.041
+2016-09-17	Manchester City	Bournemouth	3.387	0.390	4	0	0.971	0.025	0.004
+2016-09-17	West Bromwich Albion	West Ham	1.942	2.374	4	2	0.282	0.261	0.458
+2016-09-17	Everton	Middlesbrough	1.175	0.178	3	1	0.699	0.263	0.039
+2016-09-18	Watford	Manchester United	1.745	1.414	3	1	0.448	0.291	0.262
+2016-09-18	Crystal Palace	Stoke	1.314	1.203	4	1	0.372	0.311	0.316
+2016-09-18	Southampton	Swansea	2.152	0.491	1	0	0.797	0.149	0.054
+2016-09-18	Tottenham	Sunderland	2.526	0.961	1	0	0.755	0.165	0.080
+2016-09-24	Swansea	Manchester City	1.111	2.577	1	3	0.087	0.170	0.743
+2016-09-24	Manchester United	Leicester	2.456	0.287	4	1	0.927	0.063	0.010
+2016-09-24	Middlesbrough	Tottenham	0.362	1.416	1	2	0.080	0.253	0.667
+2016-09-24	Stoke	West Bromwich Albion	0.980	0.271	1	1	0.548	0.357	0.095
+2016-09-24	Sunderland	Crystal Palace	1.515	1.789	2	3	0.322	0.247	0.431
+2016-09-24	Liverpool	Hull	4.649	0.158	5	1	0.997	0.003	0.000
+2016-09-24	Bournemouth	Everton	0.694	1.157	1	0	0.197	0.312	0.491
+2016-09-24	Arsenal	Chelsea	1.662	0.614	3	0	0.656	0.236	0.108
+2016-09-25	West Ham	Southampton	0.694	2.979	0	3	0.030	0.085	0.886
+2016-09-26	Burnley	Watford	0.570	0.776	2	0	0.233	0.391	0.375
+2016-09-30	Everton	Crystal Palace	1.154	0.477	1	1	0.557	0.307	0.136
+2016-10-01	Swansea	Liverpool	2.658	2.022	1	2	0.543	0.229	0.228
+2016-10-01	Sunderland	West Bromwich Albion	1.193	0.882	1	1	0.459	0.302	0.239
+2016-10-01	Hull	Chelsea	0.273	1.992	0	2	0.030	0.138	0.833
+2016-10-01	Watford	Bournemouth	1.234	1.355	2	2	0.326	0.288	0.386
+2016-10-01	West Ham	Middlesbrough	0.883	0.853	1	1	0.334	0.345	0.321
+2016-10-02	Manchester United	Stoke	2.810	1.200	1	1	0.765	0.164	0.071
+2016-10-02	Leicester	Southampton	0.446	0.921	0	0	0.163	0.363	0.474
+2016-10-02	Tottenham	Manchester City	1.700	0.910	2	0	0.592	0.255	0.153
+2016-10-02	Burnley	Arsenal	0.609	1.854	0	1	0.061	0.209	0.730
+2016-10-15	Chelsea	Leicester	3.116	0.183	3	0	0.968	0.029	0.003
+2016-10-15	Arsenal	Swansea	3.505	1.750	3	2	0.755	0.135	0.110
+2016-10-15	Bournemouth	Hull	2.925	0.389	6	1	0.924	0.063	0.013
+2016-10-15	Manchester City	Everton	2.692	0.144	1	1	0.967	0.031	0.002
+2016-10-15	Stoke	Sunderland	2.295	0.588	2	0	0.814	0.136	0.050
+2016-10-15	West Bromwich Albion	Tottenham	1.304	1.323	1	1	0.367	0.296	0.337
+2016-10-15	Crystal Palace	West Ham	1.946	0.874	0	1	0.682	0.210	0.108
+2016-10-16	Middlesbrough	Watford	0.529	0.089	0	1	0.400	0.551	0.049
+2016-10-16	Southampton	Burnley	4.212	1.031	3	1	0.950	0.039	0.011
+2016-10-17	Liverpool	Manchester United	0.270	0.538	0	0	0.142	0.494	0.364
+2016-10-22	Bournemouth	Tottenham	0.523	0.745	0	0	0.229	0.407	0.363
+2016-10-22	West Ham	Sunderland	1.196	0.808	1	0	0.451	0.310	0.240
+2016-10-22	Swansea	Watford	1.332	0.479	0	0	0.624	0.269	0.107
+2016-10-22	Leicester	Crystal Palace	1.704	1.656	3	1	0.385	0.249	0.365
+2016-10-22	Hull	Stoke	0.702	1.043	0	2	0.239	0.328	0.432
+2016-10-22	Burnley	Everton	0.906	0.753	2	1	0.394	0.356	0.250
+2016-10-22	Arsenal	Middlesbrough	0.712	1.556	0	0	0.132	0.248	0.620
+2016-10-22	Liverpool	West Bromwich Albion	2.295	0.686	2	1	0.759	0.172	0.069
+2016-10-23	Manchester City	Southampton	1.153	0.564	1	1	0.514	0.322	0.165
+2016-10-23	Chelsea	Manchester United	2.252	0.743	4	0	0.762	0.159	0.079
+2016-10-29	Sunderland	Arsenal	0.853	2.483	1	4	0.037	0.162	0.801
+2016-10-29	Tottenham	Leicester	1.698	0.741	1	1	0.633	0.269	0.098
+2016-10-29	Watford	Hull	1.150	0.251	1	0	0.621	0.309	0.070
+2016-10-29	West Bromwich Albion	Manchester City	0.597	2.480	0	4	0.048	0.130	0.823
+2016-10-29	Middlesbrough	Bournemouth	1.443	1.546	2	0	0.334	0.289	0.378
+2016-10-29	Manchester United	Burnley	2.724	0.328	0	0	0.887	0.089	0.024
+2016-10-29	Crystal Palace	Liverpool	0.496	2.261	2	4	0.052	0.143	0.804
+2016-10-30	Everton	West Ham	2.009	0.945	2	0	0.655	0.211	0.133
+2016-10-30	Southampton	Chelsea	0.422	1.148	0	2	0.124	0.316	0.559
+2016-11-01	Stoke	Swansea	2.164	1.101	3	1	0.650	0.219	0.132
+2016-11-05	Bournemouth	Sunderland	2.646	1.137	1	2	0.734	0.181	0.085
+2016-11-05	Burnley	Crystal Palace	2.257	2.059	3	2	0.430	0.267	0.303
+2016-11-05	Manchester City	Middlesbrough	2.496	0.209	1	1	0.914	0.074	0.011
+2016-11-05	West Ham	Stoke	0.405	0.810	1	1	0.170	0.400	0.430
+2016-11-05	Chelsea	Everton	1.941	0.013	5	0	0.902	0.097	0.001
+2016-11-06	Arsenal	Tottenham	0.676	1.196	1	1	0.168	0.303	0.529
+2016-11-06	Liverpool	Watford	4.184	0.771	6	1	0.954	0.036	0.010
+2016-11-06	Hull	Southampton	0.561	2.030	2	1	0.063	0.168	0.769
+2016-11-06	Swansea	Manchester United	0.513	1.000	1	3	0.155	0.348	0.498
+2016-11-06	Leicester	West Bromwich Albion	0.630	0.782	1	2	0.258	0.404	0.338
+2016-11-19	Manchester United	Arsenal	0.511	0.576	1	1	0.244	0.435	0.320
+2016-11-19	Southampton	Liverpool	0.094	1.688	0	0	0.012	0.156	0.832
+2016-11-19	Stoke	Bournemouth	1.604	1.240	0	1	0.456	0.292	0.252
+2016-11-19	Sunderland	Hull	0.952	1.251	3	0	0.268	0.293	0.440
+2016-11-19	Watford	Leicester	0.720	1.197	2	1	0.170	0.326	0.504
+2016-11-19	Everton	Swansea	1.549	1.075	1	1	0.480	0.318	0.202
+2016-11-19	Crystal Palace	Manchester City	0.432	1.394	1	2	0.094	0.250	0.656
+2016-11-19	Tottenham	West Ham	2.534	1.767	3	2	0.579	0.252	0.169
+2016-11-20	Middlesbrough	Chelsea	0.560	1.687	0	1	0.094	0.219	0.686
+2016-11-22	West Bromwich Albion	Burnley	1.405	0.571	4	0	0.595	0.285	0.120
+2016-11-26	Burnley	Manchester City	0.476	2.257	1	2	0.039	0.123	0.838
+2016-11-26	Hull	West Bromwich Albion	0.424	1.402	1	1	0.098	0.253	0.649
+2016-11-26	Swansea	Crystal Palace	3.396	2.282	5	4	0.658	0.198	0.144
+2016-11-26	Liverpool	Sunderland	2.025	0.291	2	0	0.851	0.126	0.022
+2016-11-26	Leicester	Middlesbrough	2.048	0.425	2	2	0.852	0.120	0.028
+2016-11-26	Chelsea	Tottenham	1.249	0.423	2	1	0.613	0.281	0.107
+2016-11-27	Watford	Stoke	0.542	0.705	0	1	0.249	0.395	0.356
+2016-11-27	Arsenal	Bournemouth	2.870	2.049	3	1	0.568	0.221	0.211
+2016-11-27	Southampton	Everton	2.806	0.615	1	0	0.886	0.086	0.029
+2016-11-27	Manchester United	West Ham	1.445	0.749	1	1	0.539	0.276	0.185
+2016-12-03	Sunderland	Leicester	1.428	1.138	2	1	0.438	0.267	0.295
+2016-12-03	Manchester City	Chelsea	2.241	1.285	1	3	0.630	0.212	0.158
+2016-12-03	Crystal Palace	Southampton	2.201	0.764	3	0	0.786	0.148	0.066
+2016-12-03	Stoke	Burnley	1.129	0.774	2	0	0.461	0.314	0.225
+2016-12-03	Tottenham	Swansea	3.977	0.034	5	0	0.999	0.001	0.000
+2016-12-03	West Bromwich Albion	Watford	1.177	1.476	3	1	0.248	0.313	0.439
+2016-12-03	West Ham	Arsenal	0.882	2.969	1	5	0.048	0.112	0.841
+2016-12-04	Bournemouth	Liverpool	2.544	1.265	4	3	0.748	0.176	0.076
+2016-12-04	Everton	Manchester United	1.650	0.541	1	1	0.717	0.207	0.077
+2016-12-06	Middlesbrough	Hull	1.950	0.221	1	0	0.846	0.131	0.023
+2016-12-10	Watford	Everton	1.493	1.097	3	2	0.472	0.276	0.252
+2016-12-10	Hull	Crystal Palace	2.166	1.501	3	3	0.541	0.252	0.207
+2016-12-10	Swansea	Sunderland	2.182	0.672	3	0	0.786	0.151	0.063
+2016-12-10	Arsenal	Stoke	1.580	1.294	3	1	0.417	0.287	0.295
+2016-12-10	Burnley	Bournemouth	2.152	1.002	3	2	0.690	0.206	0.104
+2016-12-10	Leicester	Manchester City	2.606	0.970	4	2	0.793	0.133	0.074
+2016-12-11	Chelsea	West Bromwich Albion	0.551	0.213	1	0	0.375	0.509	0.116
+2016-12-11	Manchester United	Tottenham	1.049	0.720	1	0	0.432	0.329	0.238
+2016-12-11	Southampton	Middlesbrough	1.729	0.494	1	0	0.746	0.207	0.046
+2016-12-11	Liverpool	West Ham	1.791	0.650	2	2	0.672	0.226	0.102
+2016-12-13	Bournemouth	Leicester	0.641	1.675	1	0	0.099	0.231	0.671
+2016-12-13	Everton	Arsenal	1.460	1.351	2	1	0.377	0.295	0.327
+2016-12-14	Middlesbrough	Liverpool	0.162	2.135	0	3	0.012	0.091	0.897
+2016-12-14	Sunderland	Chelsea	0.474	1.225	0	1	0.135	0.299	0.566
+2016-12-14	West Ham	Burnley	1.670	0.923	1	0	0.567	0.336	0.097
+2016-12-15	Crystal Palace	Manchester United	0.710	1.273	1	2	0.167	0.322	0.511
+2016-12-15	West Bromwich Albion	Swansea	1.783	1.072	3	1	0.544	0.268	0.189
+2016-12-15	Manchester City	Watford	1.624	0.497	2	0	0.676	0.233	0.090
+2016-12-15	Stoke	Southampton	0.334	0.723	0	0	0.154	0.424	0.422
+2016-12-15	Tottenham	Hull	2.831	0.571	3	0	0.913	0.071	0.016
+2016-12-17	Crystal Palace	Chelsea	0.356	0.814	0	1	0.149	0.408	0.444
+2016-12-17	Middlesbrough	Swansea	1.715	0.602	3	0	0.710	0.201	0.088
+2016-12-17	West Ham	Hull	1.922	1.135	1	0	0.586	0.240	0.175
+2016-12-17	Stoke	Leicester	2.518	1.256	2	2	0.713	0.186	0.101
+2016-12-17	Sunderland	Watford	1.135	1.076	1	0	0.341	0.343	0.315
+2016-12-17	West Bromwich Albion	Manchester United	0.600	0.983	0	2	0.199	0.350	0.451
+2016-12-18	Bournemouth	Southampton	0.493	1.695	1	3	0.050	0.187	0.763
+2016-12-18	Manchester City	Arsenal	1.519	0.610	2	1	0.612	0.275	0.113
+2016-12-18	Tottenham	Burnley	1.508	1.170	2	1	0.423	0.292	0.285
+2016-12-20	Everton	Liverpool	0.457	1.878	0	1	0.051	0.175	0.775
+2016-12-26	Leicester	Everton	0.377	1.255	0	2	0.088	0.271	0.641
+2016-12-26	Watford	Crystal Palace	0.959	1.538	1	1	0.145	0.335	0.520
+2016-12-26	Swansea	West Ham	0.955	3.406	1	4	0.030	0.075	0.895
+2016-12-26	Manchester United	Sunderland	2.321	0.489	3	1	0.815	0.132	0.053
+2016-12-26	Arsenal	West Bromwich Albion	1.979	0.688	1	0	0.696	0.214	0.090
+2016-12-26	Burnley	Middlesbrough	0.276	0.699	1	0	0.126	0.430	0.443
+2016-12-26	Chelsea	Bournemouth	1.713	0.651	3	0	0.687	0.226	0.086
+2016-12-26	Hull	Manchester City	0.350	2.222	0	3	0.019	0.099	0.881
+2016-12-27	Liverpool	Stoke	1.667	0.389	4	1	0.734	0.205	0.061
+2016-12-28	Southampton	Tottenham	0.404	1.610	1	4	0.062	0.197	0.742
+2016-12-31	Hull	Everton	0.853	1.278	2	2	0.238	0.293	0.469
+2016-12-31	Leicester	West Ham	1.108	1.583	1	0	0.252	0.262	0.486
+2016-12-31	Manchester United	Middlesbrough	2.540	0.645	2	1	0.808	0.135	0.058
+2016-12-31	Burnley	Sunderland	2.725	0.466	4	1	0.907	0.074	0.019
+2016-12-31	Chelsea	Stoke	1.947	0.858	4	2	0.653	0.222	0.124
+2016-12-31	Southampton	West Bromwich Albion	0.372	0.667	1	2	0.176	0.438	0.386
+2016-12-31	Swansea	Bournemouth	0.515	2.436	0	3	0.031	0.108	0.861
+2016-12-31	Liverpool	Manchester City	0.257	0.352	1	0	0.169	0.591	0.240
+2017-01-01	Watford	Tottenham	1.263	3.065	1	4	0.066	0.134	0.799
+2017-01-01	Arsenal	Crystal Palace	1.671	0.221	2	0	0.774	0.188	0.038
+2017-01-02	Everton	Southampton	2.350	1.011	3	0	0.742	0.167	0.091
+2017-01-02	Manchester City	Burnley	0.617	0.642	2	1	0.295	0.402	0.303
+2017-01-02	Middlesbrough	Leicester	0.697	0.477	0	0	0.369	0.429	0.201
+2017-01-02	West Bromwich Albion	Hull	0.884	0.992	3	1	0.298	0.335	0.367
+2017-01-02	Sunderland	Liverpool	1.911	2.332	2	2	0.254	0.280	0.467
+2017-01-02	West Ham	Manchester United	0.800	1.649	0	2	0.107	0.266	0.627
+2017-01-03	Bournemouth	Arsenal	1.559	1.126	3	3	0.483	0.285	0.232
+2017-01-04	Crystal Palace	Swansea	0.331	1.189	1	2	0.089	0.286	0.625
+2017-01-04	Stoke	Watford	1.854	0.510	2	0	0.768	0.172	0.059
+2017-01-05	Tottenham	Chelsea	1.009	0.913	2	0	0.371	0.332	0.298
+2017-01-14	Tottenham	West Bromwich Albion	2.655	0.165	4	0	0.941	0.053	0.007
+2017-01-14	Watford	Middlesbrough	0.836	0.325	0	0	0.486	0.383	0.131
+2017-01-14	Sunderland	Stoke	1.137	1.229	1	3	0.335	0.290	0.375
+2017-01-14	Swansea	Arsenal	0.488	2.318	0	4	0.034	0.110	0.856
+2017-01-14	Hull	Bournemouth	1.189	1.435	3	1	0.265	0.313	0.421
+2017-01-14	Burnley	Southampton	0.465	0.962	1	0	0.166	0.358	0.476
+2017-01-14	West Ham	Crystal Palace	1.723	1.062	3	0	0.530	0.337	0.133
+2017-01-14	Leicester	Chelsea	0.179	0.739	0	3	0.074	0.431	0.495
+2017-01-15	Manchester United	Liverpool	1.032	1.461	1	1	0.223	0.292	0.485
+2017-01-15	Everton	Manchester City	0.573	0.569	4	0	0.291	0.425	0.283
+2017-01-21	Liverpool	Swansea	1.240	1.605	2	3	0.256	0.264	0.480
+2017-01-21	Middlesbrough	West Ham	0.959	2.656	1	3	0.077	0.142	0.781
+2017-01-21	Bournemouth	Watford	1.148	1.087	2	2	0.349	0.334	0.318
+2017-01-21	Crystal Palace	Everton	0.464	0.950	0	1	0.173	0.361	0.466
+2017-01-21	Stoke	Manchester United	0.354	1.743	1	1	0.057	0.196	0.747
+2017-01-21	West Bromwich Albion	Sunderland	1.328	0.441	2	0	0.637	0.261	0.102
+2017-01-21	Manchester City	Tottenham	2.527	1.124	2	2	0.724	0.188	0.088
+2017-01-22	Southampton	Leicester	2.499	0.936	3	0	0.769	0.164	0.068
+2017-01-22	Arsenal	Burnley	1.864	1.299	2	1	0.502	0.286	0.211
+2017-01-22	Chelsea	Hull	1.472	0.315	2	0	0.740	0.206	0.054
+2017-01-31	Arsenal	Watford	1.078	0.918	1	2	0.354	0.344	0.302
+2017-01-31	Bournemouth	Crystal Palace	0.321	1.607	0	2	0.047	0.188	0.766
+2017-01-31	Burnley	Leicester	1.830	0.776	1	0	0.652	0.219	0.129
+2017-01-31	Middlesbrough	West Bromwich Albion	1.181	1.253	1	1	0.331	0.332	0.336
+2017-01-31	Sunderland	Tottenham	0.228	0.683	0	0	0.108	0.458	0.435
+2017-01-31	Swansea	Southampton	0.760	0.907	2	1	0.270	0.349	0.380
+2017-01-31	Liverpool	Chelsea	1.205	1.067	1	1	0.354	0.358	0.288
+2017-02-01	West Ham	Manchester City	0.495	2.665	0	4	0.018	0.077	0.905
+2017-02-01	Manchester United	Hull	1.482	0.396	0	0	0.681	0.243	0.076
+2017-02-01	Stoke	Everton	1.736	0.870	1	1	0.618	0.238	0.144
+2017-02-04	Chelsea	Arsenal	1.955	0.950	3	1	0.647	0.218	0.134
+2017-02-04	Crystal Palace	Sunderland	2.460	0.837	0	4	0.776	0.157	0.068
+2017-02-04	Everton	Bournemouth	2.760	2.150	6	3	0.513	0.223	0.263
+2017-02-04	Hull	Liverpool	1.886	1.125	2	0	0.597	0.231	0.172
+2017-02-04	Watford	Burnley	1.663	1.478	2	1	0.391	0.304	0.305
+2017-02-04	West Bromwich Albion	Stoke	1.850	1.108	1	0	0.552	0.257	0.191
+2017-02-04	Southampton	West Ham	1.063	0.918	1	3	0.358	0.319	0.323
+2017-02-04	Tottenham	Middlesbrough	2.101	0.505	1	0	0.816	0.144	0.041
+2017-02-05	Manchester City	Swansea	2.880	0.114	2	1	0.987	0.013	0.001
+2017-02-05	Leicester	Manchester United	0.492	1.987	0	3	0.064	0.154	0.781
+2017-02-11	Arsenal	Hull	3.123	0.466	2	0	0.960	0.033	0.007
+2017-02-11	Manchester United	Watford	2.627	0.641	2	0	0.830	0.125	0.045
+2017-02-11	Middlesbrough	Everton	0.651	0.832	0	0	0.253	0.372	0.375
+2017-02-11	Stoke	Crystal Palace	0.721	0.202	1	0	0.491	0.423	0.086
+2017-02-11	Sunderland	Southampton	0.198	1.727	0	4	0.029	0.174	0.797
+2017-02-11	West Ham	West Bromwich Albion	1.176	0.770	2	2	0.461	0.317	0.222
+2017-02-11	Liverpool	Tottenham	2.380	0.622	2	0	0.835	0.119	0.046
+2017-02-12	Burnley	Chelsea	0.906	0.800	1	1	0.362	0.346	0.292
+2017-02-12	Swansea	Leicester	0.693	0.673	2	0	0.315	0.386	0.299
+2017-02-13	Bournemouth	Manchester City	0.152	2.953	0	2	0.004	0.031	0.965
+2017-02-25	Chelsea	Swansea	1.226	0.280	3	1	0.629	0.300	0.070
+2017-02-25	Crystal Palace	Middlesbrough	0.809	0.829	1	0	0.300	0.358	0.342
+2017-02-25	Everton	Sunderland	1.704	0.506	2	0	0.687	0.216	0.097
+2017-02-25	Hull	Burnley	1.590	0.473	1	1	0.714	0.215	0.071
+2017-02-25	West Bromwich Albion	Bournemouth	1.612	1.227	2	1	0.453	0.327	0.220
+2017-02-25	Watford	West Ham	1.213	1.481	1	1	0.251	0.345	0.404
+2017-02-26	Tottenham	Stoke	1.890	0.744	4	0	0.673	0.232	0.095
+2017-02-27	Leicester	Liverpool	1.547	0.790	3	1	0.574	0.252	0.174
+2017-03-04	Manchester United	Bournemouth	2.538	0.816	1	1	0.822	0.146	0.032
+2017-03-04	Leicester	Hull	1.813	1.122	3	1	0.548	0.256	0.197
+2017-03-04	Stoke	Middlesbrough	2.976	0.275	2	0	0.955	0.038	0.007
+2017-03-04	Swansea	Burnley	1.445	0.934	3	2	0.469	0.303	0.228
+2017-03-04	Watford	Southampton	1.401	1.337	3	4	0.367	0.298	0.335
+2017-03-04	West Bromwich Albion	Crystal Palace	0.375	1.392	0	2	0.083	0.258	0.660
+2017-03-04	Liverpool	Arsenal	2.704	0.729	3	1	0.836	0.120	0.043
+2017-03-05	Tottenham	Everton	1.702	0.808	3	2	0.598	0.249	0.152
+2017-03-05	Sunderland	Manchester City	0.738	2.480	0	2	0.046	0.125	0.830
+2017-03-06	West Ham	Chelsea	0.451	2.011	1	2	0.038	0.139	0.823
+2017-03-08	Manchester City	Stoke	1.305	0.337	0	0	0.667	0.257	0.076
+2017-03-11	Bournemouth	West Ham	3.682	1.253	3	2	0.878	0.079	0.042
+2017-03-11	Everton	West Bromwich Albion	2.175	0.127	3	0	0.910	0.082	0.008
+2017-03-11	Hull	Swansea	1.988	1.441	2	1	0.521	0.242	0.236
+2017-03-12	Liverpool	Burnley	0.966	0.835	2	1	0.370	0.349	0.281
+2017-03-18	West Bromwich Albion	Arsenal	2.117	0.995	3	1	0.669	0.213	0.118
+2017-03-18	West Ham	Leicester	2.322	2.170	2	3	0.419	0.229	0.352
+2017-03-18	Sunderland	Burnley	1.033	1.187	0	0	0.296	0.303	0.401
+2017-03-18	Stoke	Chelsea	0.952	1.955	1	2	0.114	0.253	0.633
+2017-03-18	Everton	Hull	2.631	0.529	4	0	0.871	0.098	0.031
+2017-03-18	Crystal Palace	Watford	0.376	0.191	1	0	0.272	0.605	0.123
+2017-03-18	Bournemouth	Swansea	1.008	0.377	2	0	0.533	0.340	0.127
+2017-03-19	Middlesbrough	Manchester United	1.090	2.475	1	3	0.087	0.170	0.743
+2017-03-19	Tottenham	Southampton	1.643	0.840	2	1	0.599	0.268	0.133
+2017-03-19	Manchester City	Liverpool	2.555	1.941	1	1	0.532	0.217	0.251
+2017-04-01	Liverpool	Everton	0.625	1.442	3	1	0.126	0.251	0.624
+2017-04-01	Burnley	Tottenham	0.447	2.363	0	2	0.034	0.110	0.857
+2017-04-01	Chelsea	Crystal Palace	3.168	1.574	1	2	0.743	0.156	0.101
+2017-04-01	Hull	West Ham	0.779	1.246	2	1	0.209	0.327	0.464
+2017-04-01	Leicester	Stoke	1.974	1.367	2	0	0.522	0.251	0.227
+2017-04-01	Manchester United	West Bromwich Albion	0.987	0.200	0	0	0.578	0.355	0.067
+2017-04-01	Watford	Sunderland	1.958	0.350	1	0	0.800	0.155	0.045
+2017-04-01	Southampton	Bournemouth	1.003	2.063	0	0	0.133	0.206	0.661
+2017-04-02	Swansea	Middlesbrough	0.644	0.748	0	0	0.263	0.383	0.354
+2017-04-02	Arsenal	Manchester City	0.738	1.400	2	2	0.163	0.292	0.545
+2017-04-04	Burnley	Stoke	0.349	1.173	1	0	0.090	0.297	0.613
+2017-04-04	Watford	West Bromwich Albion	0.692	1.481	2	0	0.093	0.283	0.623
+2017-04-04	Leicester	Sunderland	0.929	0.701	2	0	0.396	0.347	0.257
+2017-04-04	Manchester United	Everton	1.674	0.589	1	1	0.696	0.214	0.090
+2017-04-05	Arsenal	West Ham	2.160	0.304	3	0	0.855	0.120	0.026
+2017-04-05	Hull	Middlesbrough	2.233	1.307	4	2	0.596	0.233	0.172
+2017-04-05	Swansea	Tottenham	0.873	2.224	1	3	0.066	0.203	0.731
+2017-04-05	Southampton	Crystal Palace	3.343	1.731	3	1	0.738	0.151	0.111
+2017-04-05	Chelsea	Manchester City	1.369	2.261	2	1	0.148	0.243	0.610
+2017-04-05	Liverpool	Bournemouth	2.173	1.312	2	2	0.600	0.230	0.170
+2017-04-08	Tottenham	Watford	1.188	0.370	4	0	0.586	0.305	0.108
+2017-04-08	Stoke	Liverpool	2.140	1.022	1	2	0.687	0.194	0.118
+2017-04-08	West Bromwich Albion	Southampton	2.017	0.910	0	1	0.677	0.206	0.116
+2017-04-08	West Ham	Swansea	1.206	0.308	1	0	0.608	0.307	0.085
+2017-04-08	Middlesbrough	Burnley	0.685	0.810	0	0	0.276	0.370	0.354
+2017-04-08	Manchester City	Hull	2.337	0.358	3	1	0.876	0.100	0.024
+2017-04-08	Bournemouth	Chelsea	0.384	1.521	1	3	0.082	0.234	0.684
+2017-04-09	Sunderland	Manchester United	0.977	1.694	0	3	0.175	0.259	0.566
+2017-04-09	Everton	Leicester	2.646	0.836	4	2	0.820	0.128	0.053
+2017-04-10	Crystal Palace	Arsenal	2.160	0.442	3	0	0.844	0.120	0.035
+2017-04-15	Tottenham	Bournemouth	3.286	0.212	4	0	0.966	0.029	0.006
+2017-04-15	Stoke	Hull	2.018	1.177	3	1	0.599	0.230	0.171
+2017-04-15	Sunderland	West Ham	1.141	1.428	2	2	0.263	0.290	0.447
+2017-04-15	Watford	Swansea	1.220	0.641	1	0	0.533	0.299	0.167
+2017-04-15	Everton	Burnley	1.674	1.147	3	1	0.483	0.285	0.232
+2017-04-15	Crystal Palace	Leicester	1.679	0.468	2	2	0.704	0.215	0.081
+2017-04-15	Southampton	Manchester City	0.617	2.742	0	3	0.032	0.096	0.872
+2017-04-16	West Bromwich Albion	Liverpool	0.590	1.300	0	1	0.155	0.285	0.560
+2017-04-16	Manchester United	Chelsea	0.807	0.133	2	0	0.538	0.408	0.053
+2017-04-17	Middlesbrough	Arsenal	1.721	1.069	1	2	0.543	0.253	0.204
+2017-04-22	Bournemouth	Middlesbrough	3.277	0.207	4	0	0.966	0.030	0.004
+2017-04-22	Hull	Watford	1.423	1.159	2	0	0.429	0.311	0.260
+2017-04-22	Swansea	Stoke	0.476	1.695	2	0	0.064	0.187	0.749
+2017-04-22	West Ham	Everton	0.668	0.104	0	0	0.470	0.480	0.050
+2017-04-23	Burnley	Manchester United	0.343	2.247	0	2	0.017	0.088	0.895
+2017-04-23	Liverpool	Crystal Palace	0.894	1.217	1	2	0.240	0.306	0.454
+2017-04-25	Chelsea	Southampton	1.444	1.330	4	2	0.355	0.309	0.337
+2017-04-26	Arsenal	Leicester	0.410	0.595	1	0	0.205	0.455	0.340
+2017-04-26	Middlesbrough	Sunderland	0.826	0.446	1	0	0.450	0.382	0.168
+2017-04-26	Crystal Palace	Tottenham	0.322	1.006	0	1	0.106	0.342	0.552
+2017-04-27	Manchester City	Manchester United	1.415	0.421	0	0	0.654	0.260	0.086
+2017-04-29	Southampton	Hull	1.248	0.472	0	0	0.636	0.272	0.092
+2017-04-29	Stoke	West Ham	1.355	0.651	0	0	0.563	0.280	0.157
+2017-04-29	Sunderland	Bournemouth	1.667	1.531	0	1	0.409	0.262	0.329
+2017-04-29	West Bromwich Albion	Leicester	0.809	0.571	0	1	0.374	0.383	0.243
+2017-04-29	Crystal Palace	Burnley	0.633	1.386	0	2	0.146	0.265	0.590
+2017-04-30	Manchester United	Swansea	1.992	0.776	1	1	0.720	0.185	0.095
+2017-04-30	Everton	Chelsea	0.685	1.819	0	3	0.100	0.210	0.691
+2017-04-30	Middlesbrough	Manchester City	1.177	3.107	2	2	0.041	0.121	0.839
+2017-04-30	Tottenham	Arsenal	3.460	0.590	2	0	0.947	0.044	0.009
+2017-05-01	Watford	Liverpool	0.437	0.557	0	1	0.236	0.464	0.300
+2017-05-05	West Ham	Tottenham	2.210	0.451	1	0	0.863	0.110	0.027
+2017-05-06	Manchester City	Crystal Palace	2.698	0.242	5	0	0.915	0.073	0.013
+2017-05-06	Bournemouth	Stoke	1.307	2.302	2	2	0.144	0.217	0.639
+2017-05-06	Burnley	West Bromwich Albion	1.086	0.829	2	2	0.409	0.333	0.258
+2017-05-06	Hull	Sunderland	1.217	1.955	0	2	0.193	0.243	0.564
+2017-05-06	Leicester	Watford	1.006	0.512	3	0	0.481	0.336	0.182
+2017-05-06	Swansea	Everton	2.092	0.270	1	0	0.902	0.084	0.015
+2017-05-07	Liverpool	Southampton	1.360	0.182	0	0	0.787	0.188	0.025
+2017-05-07	Arsenal	Manchester United	1.040	0.576	2	0	0.484	0.336	0.180
+2017-05-08	Chelsea	Middlesbrough	2.280	0.072	3	0	0.923	0.073	0.004
+2017-05-10	Southampton	Arsenal	1.253	1.360	0	2	0.319	0.298	0.382
+2017-05-12	Everton	Watford	1.130	1.549	1	0	0.241	0.283	0.476
+2017-05-12	West Bromwich Albion	Chelsea	0.529	1.770	0	1	0.079	0.210	0.711
+2017-05-13	Manchester City	Leicester	1.988	1.625	2	1	0.441	0.289	0.270
+2017-05-13	Bournemouth	Burnley	1.550	1.151	2	1	0.463	0.270	0.268
+2017-05-13	Middlesbrough	Southampton	1.329	1.526	1	2	0.296	0.297	0.407
+2017-05-13	Sunderland	Swansea	1.038	0.344	0	2	0.566	0.332	0.102
+2017-05-13	Stoke	Arsenal	1.302	2.636	1	4	0.082	0.177	0.741
+2017-05-14	Crystal Palace	Hull	2.733	0.518	4	0	0.902	0.075	0.023
+2017-05-14	West Ham	Liverpool	1.040	3.290	0	4	0.026	0.097	0.877
+2017-05-14	Tottenham	Manchester United	2.107	1.037	2	1	0.652	0.215	0.134
+2017-05-15	Chelsea	Watford	2.653	0.883	4	3	0.788	0.143	0.069
+2017-05-16	Arsenal	Sunderland	3.839	0.272	2	0	0.980	0.018	0.003
+2017-05-16	Manchester City	West Bromwich Albion	2.580	0.388	3	1	0.921	0.073	0.006
+2017-05-17	Southampton	Manchester United	1.665	0.458	0	0	0.729	0.205	0.066
+2017-05-18	Leicester	Tottenham	0.726	2.649	1	6	0.040	0.117	0.844
+2017-05-21	Arsenal	Everton	3.351	1.883	3	1	0.705	0.164	0.131
+2017-05-21	Burnley	West Ham	1.708	1.673	1	2	0.367	0.298	0.335
+2017-05-21	Chelsea	Sunderland	2.739	0.694	5	1	0.828	0.124	0.048
+2017-05-21	Hull	Tottenham	0.813	3.890	1	7	0.012	0.040	0.948
+2017-05-21	Leicester	Bournemouth	2.453	0.871	1	1	0.787	0.160	0.053
+2017-05-21	Liverpool	Middlesbrough	2.170	0.900	3	0	0.691	0.193	0.116
+2017-05-21	Manchester United	Crystal Palace	1.039	0.302	2	0	0.600	0.316	0.084
+2017-05-21	Southampton	Stoke	1.355	0.983	0	1	0.454	0.282	0.264
+2017-05-21	Swansea	West Bromwich Albion	1.746	1.607	2	1	0.418	0.243	0.339
+2017-05-21	Watford	Manchester City	0.826	3.266	0	5	0.020	0.074	0.906
