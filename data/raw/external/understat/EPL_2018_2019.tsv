@@ -1,0 +1,380 @@
+2018-08-10	Manchester United	Leicester	1.514	1.738	2	1	0.281	0.328	0.391
+2018-08-11	Newcastle United	Tottenham	0.974	2.581	1	2	0.080	0.148	0.772
+2018-08-11	Watford	Brighton	1.424	0.455	2	0	0.644	0.257	0.099
+2018-08-11	Huddersfield	Chelsea	0.396	2.314	0	3	0.021	0.101	0.877
+2018-08-11	Fulham	Crystal Palace	0.638	1.078	0	2	0.200	0.324	0.475
+2018-08-11	Bournemouth	Cardiff	2.600	1.507	2	0	0.677	0.210	0.112
+2018-08-11	Wolverhampton Wanderers	Everton	0.891	0.715	2	2	0.358	0.378	0.264
+2018-08-12	Southampton	Burnley	1.020	1.408	0	0	0.255	0.279	0.466
+2018-08-12	Liverpool	West Ham	4.344	0.404	4	0	0.989	0.009	0.002
+2018-08-12	Arsenal	Manchester City	0.445	2.018	0	2	0.045	0.143	0.812
+2018-08-18	Cardiff	Newcastle United	1.155	1.554	0	0	0.237	0.293	0.470
+2018-08-18	West Ham	Bournemouth	1.103	1.691	1	2	0.196	0.294	0.510
+2018-08-18	Tottenham	Fulham	3.267	1.443	3	1	0.781	0.136	0.083
+2018-08-18	Leicester	Wolverhampton Wanderers	0.223	1.093	2	0	0.057	0.292	0.651
+2018-08-18	Everton	Southampton	2.020	1.775	2	1	0.432	0.269	0.299
+2018-08-18	Chelsea	Arsenal	1.718	2.458	3	2	0.231	0.203	0.566
+2018-08-19	Manchester City	Huddersfield	4.604	0.664	6	1	0.979	0.018	0.003
+2018-08-19	Burnley	Watford	0.393	1.917	1	3	0.030	0.123	0.847
+2018-08-19	Brighton	Manchester United	1.637	1.566	3	2	0.354	0.347	0.299
+2018-08-20	Crystal Palace	Liverpool	0.369	2.822	0	2	0.011	0.056	0.933
+2018-08-25	Wolverhampton Wanderers	Manchester City	1.264	1.843	1	1	0.220	0.264	0.516
+2018-08-25	Southampton	Leicester	0.542	0.518	1	2	0.276	0.448	0.276
+2018-08-25	Huddersfield	Cardiff	0.203	1.064	0	0	0.061	0.319	0.620
+2018-08-25	Bournemouth	Everton	2.589	0.544	2	2	0.876	0.094	0.030
+2018-08-25	Arsenal	West Ham	1.785	1.179	3	1	0.525	0.247	0.227
+2018-08-25	Liverpool	Brighton	1.814	0.536	1	0	0.713	0.207	0.080
+2018-08-26	Watford	Crystal Palace	1.146	1.219	2	1	0.321	0.315	0.365
+2018-08-26	Fulham	Burnley	1.925	1.569	4	2	0.447	0.262	0.291
+2018-08-26	Newcastle United	Chelsea	0.209	1.497	1	2	0.029	0.176	0.795
+2018-08-27	Manchester United	Tottenham	1.403	1.808	0	3	0.269	0.244	0.487
+2018-09-01	Leicester	Liverpool	0.981	1.227	1	2	0.263	0.325	0.412
+2018-09-01	West Ham	Wolverhampton Wanderers	0.889	1.223	0	1	0.241	0.304	0.454
+2018-09-01	Everton	Huddersfield	0.616	0.660	1	1	0.272	0.406	0.322
+2018-09-01	Crystal Palace	Southampton	2.352	3.136	0	2	0.228	0.208	0.564
+2018-09-01	Chelsea	Bournemouth	1.164	0.951	2	0	0.387	0.312	0.301
+2018-09-01	Brighton	Fulham	2.682	1.516	2	2	0.674	0.194	0.132
+2018-09-01	Manchester City	Newcastle United	2.469	0.555	2	1	0.834	0.132	0.034
+2018-09-02	Cardiff	Arsenal	0.774	1.410	2	3	0.195	0.270	0.535
+2018-09-02	Burnley	Manchester United	1.099	2.904	0	2	0.064	0.138	0.798
+2018-09-02	Watford	Tottenham	0.454	0.583	2	1	0.220	0.447	0.333
+2018-09-15	Tottenham	Liverpool	0.788	3.010	1	2	0.032	0.086	0.882
+2018-09-15	Newcastle United	Arsenal	0.412	0.905	1	2	0.159	0.372	0.469
+2018-09-15	Manchester City	Fulham	4.916	0.343	3	0	0.996	0.003	0.001
+2018-09-15	Huddersfield	Crystal Palace	0.877	0.747	0	1	0.366	0.349	0.285
+2018-09-15	Chelsea	Cardiff	2.671	0.828	4	1	0.824	0.133	0.043
+2018-09-15	Bournemouth	Leicester	2.227	1.825	4	2	0.480	0.253	0.267
+2018-09-15	Watford	Manchester United	1.175	1.649	1	2	0.218	0.273	0.509
+2018-09-16	Wolverhampton Wanderers	Burnley	3.392	0.209	1	0	0.965	0.031	0.004
+2018-09-16	Everton	West Ham	1.268	1.524	1	3	0.279	0.285	0.436
+2018-09-17	Southampton	Brighton	2.195	1.971	2	2	0.418	0.293	0.289
+2018-09-22	Fulham	Watford	1.772	1.761	1	1	0.377	0.257	0.366
+2018-09-22	Manchester United	Wolverhampton Wanderers	0.623	1.119	1	1	0.179	0.312	0.509
+2018-09-22	Liverpool	Southampton	1.779	0.310	3	0	0.858	0.122	0.020
+2018-09-22	Leicester	Huddersfield	1.804	0.688	3	1	0.676	0.216	0.108
+2018-09-22	Crystal Palace	Newcastle United	0.931	0.229	0	0	0.540	0.374	0.086
+2018-09-22	Cardiff	Manchester City	0.098	3.084	0	5	0.003	0.035	0.962
+2018-09-22	Burnley	Bournemouth	2.294	0.976	4	0	0.737	0.175	0.088
+2018-09-22	Brighton	Tottenham	0.817	2.117	1	2	0.084	0.188	0.728
+2018-09-23	West Ham	Chelsea	1.018	1.883	0	0	0.161	0.250	0.589
+2018-09-23	Arsenal	Everton	0.931	1.065	2	0	0.287	0.328	0.385
+2018-09-29	West Ham	Manchester United	1.303	0.866	3	1	0.485	0.316	0.199
+2018-09-29	Wolverhampton Wanderers	Southampton	1.425	0.680	2	0	0.568	0.273	0.159
+2018-09-29	Newcastle United	Leicester	0.397	1.343	0	2	0.070	0.243	0.687
+2018-09-29	Manchester City	Brighton	2.907	0.230	2	0	0.948	0.045	0.006
+2018-09-29	Huddersfield	Tottenham	0.339	2.337	0	2	0.017	0.086	0.896
+2018-09-29	Everton	Fulham	2.315	0.536	3	0	0.841	0.126	0.033
+2018-09-29	Arsenal	Watford	1.571	2.621	2	0	0.166	0.199	0.635
+2018-09-29	Chelsea	Liverpool	1.776	1.741	1	1	0.376	0.254	0.370
+2018-09-30	Cardiff	Burnley	1.567	0.112	1	2	0.801	0.180	0.018
+2018-10-01	Bournemouth	Crystal Palace	1.971	0.386	2	1	0.837	0.127	0.036
+2018-10-05	Brighton	West Ham	1.026	1.437	1	0	0.245	0.293	0.462
+2018-10-06	Watford	Bournemouth	1.066	3.285	0	4	0.028	0.074	0.899
+2018-10-06	Tottenham	Cardiff	2.652	1.138	1	0	0.744	0.168	0.088
+2018-10-06	Leicester	Everton	1.105	1.150	1	2	0.337	0.310	0.353
+2018-10-06	Crystal Palace	Wolverhampton Wanderers	1.037	0.756	0	1	0.423	0.358	0.219
+2018-10-06	Burnley	Huddersfield	0.353	1.025	1	1	0.112	0.342	0.546
+2018-10-06	Manchester United	Newcastle United	2.406	1.560	3	2	0.588	0.205	0.207
+2018-10-07	Fulham	Arsenal	1.316	1.137	1	5	0.403	0.287	0.310
+2018-10-07	Southampton	Chelsea	1.487	3.547	0	3	0.065	0.113	0.822
+2018-10-07	Liverpool	Manchester City	0.434	1.075	0	0	0.103	0.306	0.592
+2018-10-20	Chelsea	Manchester United	2.212	1.115	2	2	0.668	0.217	0.115
+2018-10-20	Wolverhampton Wanderers	Watford	0.474	1.068	0	2	0.146	0.324	0.530
+2018-10-20	West Ham	Tottenham	0.544	1.118	0	1	0.165	0.315	0.520
+2018-10-20	Newcastle United	Brighton	1.712	0.676	0	1	0.639	0.234	0.127
+2018-10-20	Manchester City	Burnley	4.486	0.370	5	0	0.985	0.013	0.003
+2018-10-20	Cardiff	Fulham	1.756	0.948	4	2	0.564	0.253	0.182
+2018-10-20	Bournemouth	Southampton	0.840	0.590	0	0	0.401	0.385	0.214
+2018-10-20	Huddersfield	Liverpool	0.638	0.664	0	1	0.286	0.401	0.313
+2018-10-21	Everton	Crystal Palace	1.928	1.502	2	0	0.464	0.275	0.262
+2018-10-22	Arsenal	Leicester	2.916	0.932	3	1	0.850	0.107	0.043
+2018-10-27	Liverpool	Cardiff	2.302	0.643	4	1	0.833	0.140	0.027
+2018-10-27	Fulham	Bournemouth	0.384	2.106	0	3	0.029	0.113	0.859
+2018-10-27	Brighton	Wolverhampton Wanderers	1.013	1.380	1	0	0.259	0.301	0.440
+2018-10-27	Watford	Huddersfield	2.296	0.480	3	0	0.843	0.118	0.038
+2018-10-27	Southampton	Newcastle United	1.192	0.298	0	0	0.613	0.308	0.079
+2018-10-27	Leicester	West Ham	1.953	1.560	1	1	0.455	0.288	0.257
+2018-10-28	Crystal Palace	Arsenal	2.381	0.845	2	2	0.800	0.147	0.053
+2018-10-28	Burnley	Chelsea	0.270	3.016	0	4	0.009	0.055	0.937
+2018-10-28	Manchester United	Everton	2.514	1.673	2	1	0.600	0.233	0.167
+2018-10-29	Tottenham	Manchester City	0.442	1.936	0	1	0.044	0.168	0.787
+2018-11-03	Bournemouth	Manchester United	1.928	3.292	1	2	0.142	0.162	0.697
+2018-11-03	West Ham	Burnley	2.557	0.883	4	2	0.775	0.151	0.074
+2018-11-03	Newcastle United	Watford	0.692	2.545	1	0	0.050	0.128	0.822
+2018-11-03	Everton	Brighton	2.593	0.676	3	1	0.854	0.117	0.029
+2018-11-03	Cardiff	Leicester	0.922	2.183	0	1	0.082	0.181	0.736
+2018-11-03	Arsenal	Liverpool	1.623	1.196	1	1	0.491	0.262	0.247
+2018-11-03	Wolverhampton Wanderers	Tottenham	2.406	1.631	2	3	0.580	0.251	0.169
+2018-11-04	Manchester City	Southampton	2.763	1.815	6	1	0.604	0.204	0.192
+2018-11-04	Chelsea	Crystal Palace	1.887	0.455	3	1	0.767	0.172	0.060
+2018-11-05	Huddersfield	Fulham	0.514	0.354	1	0	0.316	0.490	0.194
+2018-11-10	Cardiff	Brighton	1.943	0.767	2	1	0.722	0.201	0.077
+2018-11-10	Southampton	Watford	1.202	1.076	1	1	0.387	0.300	0.313
+2018-11-10	Newcastle United	Bournemouth	2.575	1.917	2	1	0.543	0.232	0.225
+2018-11-10	Leicester	Burnley	1.509	0.368	0	0	0.691	0.231	0.078
+2018-11-10	Huddersfield	West Ham	1.175	1.441	1	1	0.267	0.300	0.432
+2018-11-10	Crystal Palace	Tottenham	0.688	1.554	0	1	0.122	0.255	0.623
+2018-11-11	Liverpool	Fulham	2.224	0.571	2	0	0.794	0.151	0.054
+2018-11-11	Chelsea	Everton	1.163	0.198	0	0	0.669	0.278	0.053
+2018-11-11	Manchester City	Manchester United	2.028	0.971	3	1	0.666	0.235	0.099
+2018-11-11	Arsenal	Wolverhampton Wanderers	0.966	1.865	1	1	0.138	0.237	0.625
+2018-11-24	West Ham	Manchester City	0.830	2.959	0	4	0.016	0.074	0.909
+2018-11-24	Watford	Liverpool	0.673	1.453	0	3	0.116	0.279	0.605
+2018-11-24	Manchester United	Crystal Palace	1.342	1.053	0	0	0.436	0.289	0.275
+2018-11-24	Fulham	Southampton	1.387	1.672	3	2	0.291	0.272	0.437
+2018-11-24	Everton	Cardiff	2.481	0.879	1	0	0.786	0.156	0.058
+2018-11-24	Brighton	Leicester	0.862	1.125	1	1	0.236	0.326	0.438
+2018-11-24	Tottenham	Chelsea	3.346	0.963	3	1	0.867	0.091	0.042
+2018-11-25	Bournemouth	Arsenal	0.651	1.710	1	2	0.107	0.221	0.673
+2018-11-25	Wolverhampton Wanderers	Huddersfield	0.701	0.627	0	2	0.323	0.389	0.288
+2018-11-26	Burnley	Newcastle United	1.495	1.677	1	2	0.294	0.296	0.410
+2018-11-30	Cardiff	Wolverhampton Wanderers	1.093	0.988	2	1	0.369	0.333	0.298
+2018-12-01	Newcastle United	West Ham	1.126	2.627	0	3	0.089	0.151	0.760
+2018-12-01	Manchester City	Bournemouth	2.836	0.715	3	1	0.881	0.095	0.024
+2018-12-01	Leicester	Watford	1.418	1.199	2	0	0.422	0.312	0.266
+2018-12-01	Huddersfield	Brighton	0.558	1.680	1	2	0.082	0.218	0.700
+2018-12-01	Crystal Palace	Burnley	2.038	0.302	2	0	0.799	0.164	0.036
+2018-12-01	Southampton	Manchester United	0.624	0.905	2	2	0.238	0.347	0.415
+2018-12-02	Chelsea	Fulham	2.171	0.285	2	0	0.858	0.116	0.027
+2018-12-02	Arsenal	Tottenham	2.714	1.093	4	2	0.784	0.158	0.058
+2018-12-02	Liverpool	Everton	3.076	1.230	1	0	0.833	0.123	0.044
+2018-12-04	Brighton	Crystal Palace	1.252	1.533	3	1	0.255	0.329	0.416
+2018-12-04	Bournemouth	Huddersfield	1.074	1.563	2	1	0.254	0.267	0.479
+2018-12-04	West Ham	Cardiff	1.575	1.934	3	1	0.250	0.261	0.489
+2018-12-04	Watford	Manchester City	1.672	2.519	1	2	0.190	0.226	0.585
+2018-12-05	Wolverhampton Wanderers	Chelsea	0.683	1.107	2	1	0.211	0.336	0.453
+2018-12-05	Fulham	Leicester	1.476	1.216	1	1	0.426	0.275	0.299
+2018-12-05	Burnley	Liverpool	1.058	2.739	1	3	0.024	0.131	0.844
+2018-12-05	Everton	Newcastle United	2.109	1.522	1	1	0.516	0.261	0.223
+2018-12-05	Manchester United	Arsenal	1.337	1.732	2	2	0.243	0.291	0.467
+2018-12-05	Tottenham	Southampton	1.736	1.824	3	1	0.347	0.266	0.386
+2018-12-08	Bournemouth	Liverpool	0.279	1.806	0	4	0.016	0.108	0.876
+2018-12-08	West Ham	Crystal Palace	1.536	0.935	3	2	0.534	0.282	0.185
+2018-12-08	Manchester United	Fulham	3.154	1.233	4	1	0.813	0.130	0.057
+2018-12-08	Cardiff	Southampton	1.558	0.501	1	0	0.664	0.231	0.105
+2018-12-08	Burnley	Brighton	1.813	0.952	1	0	0.608	0.240	0.152
+2018-12-08	Arsenal	Huddersfield	2.022	0.308	1	0	0.836	0.132	0.032
+2018-12-08	Chelsea	Manchester City	0.526	0.740	2	0	0.229	0.404	0.367
+2018-12-08	Leicester	Tottenham	0.358	0.918	0	2	0.101	0.339	0.560
+2018-12-09	Newcastle United	Wolverhampton Wanderers	0.460	1.578	1	2	0.080	0.207	0.713
+2018-12-10	Everton	Watford	1.727	1.630	2	2	0.387	0.278	0.335
+2018-12-15	Manchester City	Everton	1.798	1.623	3	1	0.413	0.267	0.321
+2018-12-15	Wolverhampton Wanderers	Bournemouth	2.022	0.527	2	0	0.807	0.143	0.051
+2018-12-15	Watford	Cardiff	1.650	0.486	3	2	0.689	0.220	0.091
+2018-12-15	Tottenham	Burnley	1.746	0.451	1	0	0.735	0.199	0.067
+2018-12-15	Huddersfield	Newcastle United	0.671	0.931	0	1	0.229	0.345	0.426
+2018-12-15	Crystal Palace	Leicester	0.397	0.895	1	0	0.145	0.367	0.488
+2018-12-15	Fulham	West Ham	1.034	0.753	0	2	0.415	0.344	0.240
+2018-12-16	Southampton	Arsenal	1.212	1.858	3	2	0.193	0.257	0.550
+2018-12-16	Brighton	Chelsea	0.261	1.611	1	2	0.030	0.169	0.801
+2018-12-16	Liverpool	Manchester United	2.604	0.658	3	1	0.837	0.125	0.039
+2018-12-21	Wolverhampton Wanderers	Liverpool	0.764	2.164	0	2	0.094	0.174	0.733
+2018-12-22	Arsenal	Burnley	1.466	1.032	3	1	0.462	0.306	0.232
+2018-12-22	West Ham	Watford	2.065	2.330	0	2	0.318	0.239	0.443
+2018-12-22	Newcastle United	Fulham	0.290	0.245	0	0	0.202	0.627	0.172
+2018-12-22	Manchester City	Crystal Palace	1.271	1.146	2	3	0.351	0.325	0.323
+2018-12-22	Huddersfield	Southampton	1.004	2.602	1	3	0.073	0.148	0.779
+2018-12-22	Chelsea	Leicester	2.405	0.456	0	1	0.856	0.110	0.034
+2018-12-22	Bournemouth	Brighton	0.893	0.825	2	0	0.348	0.343	0.309
+2018-12-22	Cardiff	Manchester United	1.272	2.725	1	5	0.087	0.175	0.739
+2018-12-23	Everton	Tottenham	1.001	2.555	2	6	0.079	0.158	0.763
+2018-12-26	Fulham	Wolverhampton Wanderers	1.277	1.359	1	1	0.304	0.321	0.375
+2018-12-26	Tottenham	Bournemouth	2.235	1.217	5	0	0.650	0.222	0.129
+2018-12-26	Manchester United	Huddersfield	1.798	1.406	3	1	0.458	0.286	0.256
+2018-12-26	Liverpool	Newcastle United	3.250	0.456	4	0	0.952	0.039	0.009
+2018-12-26	Leicester	Manchester City	1.557	1.348	2	1	0.410	0.279	0.311
+2018-12-26	Crystal Palace	Cardiff	2.432	1.059	0	0	0.692	0.186	0.122
+2018-12-26	Burnley	Everton	1.886	1.887	1	5	0.358	0.297	0.346
+2018-12-26	Brighton	Arsenal	1.385	0.789	1	1	0.544	0.314	0.142
+2018-12-26	Watford	Chelsea	1.244	2.196	1	2	0.142	0.219	0.638
+2018-12-27	Southampton	West Ham	1.287	1.270	1	2	0.343	0.362	0.295
+2018-12-29	Watford	Newcastle United	1.056	0.662	1	1	0.430	0.356	0.213
+2018-12-29	Tottenham	Wolverhampton Wanderers	0.278	1.209	1	3	0.068	0.272	0.659
+2018-12-29	Leicester	Cardiff	1.516	0.493	0	1	0.687	0.229	0.084
+2018-12-29	Fulham	Huddersfield	1.724	0.277	1	0	0.810	0.152	0.038
+2018-12-29	Brighton	Everton	1.603	0.656	1	0	0.650	0.232	0.118
+2018-12-29	Liverpool	Arsenal	3.705	1.082	5	1	0.933	0.054	0.013
+2018-12-30	Crystal Palace	Chelsea	0.199	0.741	0	1	0.087	0.429	0.484
+2018-12-30	Southampton	Manchester City	0.221	2.968	1	3	0.008	0.047	0.945
+2018-12-30	Burnley	West Ham	2.899	0.656	2	0	0.883	0.087	0.029
+2018-12-30	Manchester United	Bournemouth	3.419	0.706	4	1	0.945	0.043	0.012
+2019-01-01	Everton	Leicester	0.871	0.644	0	1	0.377	0.370	0.253
+2019-01-01	Arsenal	Fulham	4.433	1.713	4	1	0.890	0.073	0.037
+2019-01-01	Cardiff	Tottenham	1.079	1.383	0	3	0.246	0.353	0.402
+2019-01-02	Wolverhampton Wanderers	Crystal Palace	0.656	1.947	0	2	0.067	0.195	0.738
+2019-01-02	West Ham	Brighton	0.639	0.687	2	2	0.282	0.398	0.320
+2019-01-02	Huddersfield	Burnley	0.622	2.663	1	2	0.037	0.102	0.861
+2019-01-02	Chelsea	Southampton	0.851	0.158	0	0	0.536	0.401	0.063
+2019-01-02	Bournemouth	Watford	2.848	0.977	3	3	0.808	0.134	0.058
+2019-01-02	Newcastle United	Manchester United	0.692	2.675	0	2	0.044	0.108	0.849
+2019-01-03	Manchester City	Liverpool	1.004	1.380	2	1	0.248	0.293	0.459
+2019-01-12	West Ham	Arsenal	0.669	0.686	1	0	0.297	0.399	0.304
+2019-01-12	Leicester	Southampton	1.760	1.417	1	2	0.449	0.286	0.265
+2019-01-12	Crystal Palace	Watford	1.162	1.563	1	2	0.263	0.264	0.473
+2019-01-12	Cardiff	Huddersfield	0.125	0.395	0	0	0.080	0.615	0.305
+2019-01-12	Burnley	Fulham	0.810	0.903	2	1	0.290	0.367	0.343
+2019-01-12	Brighton	Liverpool	0.384	2.267	0	1	0.023	0.100	0.877
+2019-01-12	Chelsea	Newcastle United	1.324	0.395	2	1	0.634	0.273	0.093
+2019-01-13	Everton	Bournemouth	1.781	1.528	2	0	0.441	0.257	0.303
+2019-01-13	Tottenham	Manchester United	1.804	0.958	0	1	0.587	0.232	0.182
+2019-01-14	Manchester City	Wolverhampton Wanderers	3.119	0.099	3	0	0.981	0.018	0.001
+2019-01-19	Wolverhampton Wanderers	Leicester	2.217	1.338	4	3	0.601	0.210	0.189
+2019-01-19	Watford	Burnley	1.070	1.973	0	0	0.158	0.232	0.610
+2019-01-19	Southampton	Everton	1.060	1.312	2	1	0.271	0.294	0.435
+2019-01-19	Newcastle United	Cardiff	2.518	0.256	3	0	0.930	0.060	0.010
+2019-01-19	Manchester United	Brighton	2.640	0.635	2	1	0.858	0.107	0.035
+2019-01-19	Liverpool	Crystal Palace	2.830	0.695	4	3	0.884	0.087	0.029
+2019-01-19	Bournemouth	West Ham	1.248	0.972	2	0	0.416	0.339	0.245
+2019-01-19	Arsenal	Chelsea	2.094	0.755	2	0	0.719	0.185	0.096
+2019-01-20	Huddersfield	Manchester City	0.764	2.014	0	3	0.079	0.207	0.713
+2019-01-20	Fulham	Tottenham	0.938	1.933	1	2	0.140	0.212	0.648
+2019-01-29	Wolverhampton Wanderers	West Ham	2.036	0.130	3	0	0.873	0.114	0.013
+2019-01-29	Huddersfield	Everton	0.731	1.060	0	1	0.214	0.341	0.445
+2019-01-29	Fulham	Brighton	3.461	2.369	4	2	0.630	0.190	0.180
+2019-01-29	Arsenal	Cardiff	2.693	0.598	2	1	0.866	0.099	0.035
+2019-01-29	Manchester United	Burnley	3.234	0.935	2	2	0.876	0.093	0.032
+2019-01-29	Newcastle United	Manchester City	0.992	1.339	2	1	0.247	0.334	0.419
+2019-01-30	Bournemouth	Chelsea	2.151	0.719	4	0	0.749	0.173	0.078
+2019-01-30	Southampton	Crystal Palace	1.333	1.533	1	1	0.295	0.284	0.421
+2019-01-30	Tottenham	Watford	1.362	0.480	2	1	0.651	0.255	0.095
+2019-01-30	Liverpool	Leicester	0.576	1.127	1	1	0.155	0.313	0.532
+2019-02-02	Tottenham	Newcastle United	3.104	0.400	1	0	0.941	0.047	0.012
+2019-02-02	Everton	Wolverhampton Wanderers	1.363	1.857	1	3	0.228	0.270	0.502
+2019-02-02	Crystal Palace	Fulham	2.196	0.561	2	0	0.833	0.132	0.035
+2019-02-02	Chelsea	Huddersfield	2.942	0.260	5	0	0.947	0.046	0.006
+2019-02-02	Burnley	Southampton	2.002	0.788	1	1	0.699	0.206	0.096
+2019-02-02	Brighton	Watford	1.835	0.279	0	0	0.790	0.170	0.040
+2019-02-02	Cardiff	Bournemouth	2.531	0.352	2	0	0.911	0.073	0.016
+2019-02-03	Leicester	Manchester United	1.401	1.497	0	1	0.334	0.281	0.385
+2019-02-03	Manchester City	Arsenal	3.031	0.704	3	1	0.950	0.045	0.005
+2019-02-04	West Ham	Liverpool	0.791	1.125	1	1	0.238	0.321	0.441
+2019-02-06	Everton	Manchester City	0.112	2.609	0	2	0.003	0.040	0.957
+2019-02-09	Fulham	Manchester United	2.187	2.132	0	3	0.390	0.256	0.354
+2019-02-09	Crystal Palace	West Ham	2.684	1.747	1	1	0.599	0.220	0.182
+2019-02-09	Watford	Everton	1.533	0.641	1	0	0.661	0.236	0.102
+2019-02-09	Southampton	Cardiff	1.707	0.981	1	2	0.586	0.300	0.114
+2019-02-09	Liverpool	Bournemouth	2.530	0.391	3	0	0.874	0.098	0.028
+2019-02-09	Huddersfield	Arsenal	1.968	1.468	1	2	0.501	0.266	0.233
+2019-02-09	Brighton	Burnley	1.316	1.830	1	3	0.227	0.260	0.513
+2019-02-10	Tottenham	Leicester	1.211	3.022	3	1	0.075	0.133	0.792
+2019-02-10	Manchester City	Chelsea	4.042	0.902	6	0	0.944	0.043	0.013
+2019-02-11	Wolverhampton Wanderers	Newcastle United	2.310	0.435	1	1	0.856	0.113	0.031
+2019-02-22	West Ham	Fulham	2.729	1.236	3	1	0.753	0.177	0.070
+2019-02-22	Cardiff	Watford	1.900	2.758	1	5	0.167	0.233	0.601
+2019-02-23	Burnley	Tottenham	1.085	0.845	2	1	0.414	0.340	0.246
+2019-02-23	Newcastle United	Huddersfield	3.033	0.134	2	0	0.954	0.041	0.005
+2019-02-23	Bournemouth	Wolverhampton Wanderers	2.133	1.203	1	1	0.644	0.245	0.111
+2019-02-23	Leicester	Crystal Palace	0.947	1.577	1	4	0.177	0.259	0.564
+2019-02-24	Manchester United	Liverpool	0.475	0.381	0	0	0.280	0.502	0.219
+2019-02-24	Arsenal	Southampton	2.351	0.613	2	0	0.827	0.126	0.047
+2019-02-26	Leicester	Brighton	1.922	1.206	2	1	0.557	0.236	0.207
+2019-02-26	Huddersfield	Wolverhampton Wanderers	1.462	0.573	1	0	0.642	0.257	0.101
+2019-02-26	Cardiff	Everton	0.219	1.142	0	3	0.062	0.293	0.645
+2019-02-26	Newcastle United	Burnley	1.703	1.742	2	0	0.338	0.284	0.378
+2019-02-27	Arsenal	Bournemouth	3.187	0.886	5	1	0.869	0.091	0.040
+2019-02-27	Southampton	Fulham	1.158	0.799	2	0	0.445	0.321	0.235
+2019-02-27	Crystal Palace	Manchester United	1.693	1.541	1	3	0.407	0.271	0.322
+2019-02-27	Chelsea	Tottenham	0.626	0.722	2	0	0.246	0.395	0.359
+2019-02-27	Manchester City	West Ham	3.677	0.400	1	0	0.983	0.015	0.002
+2019-02-27	Liverpool	Watford	2.743	0.630	5	0	0.863	0.105	0.031
+2019-03-02	Tottenham	Arsenal	1.768	3.457	1	1	0.056	0.138	0.806
+2019-03-02	Wolverhampton Wanderers	Cardiff	3.208	0.702	2	0	0.914	0.067	0.019
+2019-03-02	Manchester United	Southampton	2.542	0.578	3	2	0.865	0.100	0.035
+2019-03-02	Burnley	Crystal Palace	1.909	0.706	1	3	0.692	0.203	0.105
+2019-03-02	Brighton	Huddersfield	1.399	0.201	1	0	0.754	0.209	0.037
+2019-03-02	Bournemouth	Manchester City	0.000	1.595	0	1	0.000	0.172	0.828
+2019-03-02	West Ham	Newcastle United	1.889	1.185	2	0	0.564	0.238	0.198
+2019-03-03	Watford	Leicester	1.365	0.795	2	1	0.540	0.285	0.175
+2019-03-03	Fulham	Chelsea	0.898	1.536	1	2	0.208	0.266	0.526
+2019-03-03	Everton	Liverpool	0.242	0.811	0	0	0.091	0.393	0.516
+2019-03-09	Crystal Palace	Brighton	1.443	0.129	1	2	0.825	0.160	0.015
+2019-03-09	Southampton	Tottenham	2.078	1.269	2	1	0.594	0.227	0.179
+2019-03-09	Newcastle United	Everton	2.379	1.151	3	2	0.696	0.197	0.107
+2019-03-09	Leicester	Fulham	2.135	0.151	3	1	0.901	0.087	0.012
+2019-03-09	Huddersfield	Bournemouth	0.339	2.164	0	2	0.016	0.082	0.902
+2019-03-09	Cardiff	West Ham	3.493	0.296	2	0	0.987	0.011	0.001
+2019-03-09	Manchester City	Watford	3.757	0.407	3	1	0.984	0.015	0.002
+2019-03-10	Liverpool	Burnley	4.123	0.472	4	2	0.997	0.003	0.000
+2019-03-10	Chelsea	Wolverhampton Wanderers	1.047	0.609	1	1	0.428	0.369	0.203
+2019-03-10	Arsenal	Manchester United	1.527	2.370	2	0	0.167	0.227	0.606
+2019-03-16	West Ham	Huddersfield	1.881	1.669	4	3	0.407	0.279	0.315
+2019-03-16	Burnley	Leicester	1.170	0.609	1	2	0.513	0.313	0.174
+2019-03-16	Bournemouth	Newcastle United	1.617	1.028	2	2	0.528	0.304	0.169
+2019-03-17	Fulham	Liverpool	0.916	2.734	1	2	0.035	0.121	0.843
+2019-03-17	Everton	Chelsea	2.240	1.244	2	0	0.655	0.212	0.134
+2019-03-30	Fulham	Manchester City	0.661	2.315	0	2	0.058	0.158	0.784
+2019-03-30	Manchester United	Watford	1.981	1.352	2	1	0.560	0.263	0.176
+2019-03-30	Leicester	Bournemouth	1.893	0.790	2	0	0.652	0.235	0.113
+2019-03-30	Crystal Palace	Huddersfield	2.847	0.927	2	0	0.828	0.114	0.058
+2019-03-30	Burnley	Wolverhampton Wanderers	0.573	0.398	2	0	0.344	0.459	0.197
+2019-03-30	Brighton	Southampton	0.561	0.857	0	1	0.208	0.365	0.426
+2019-03-30	West Ham	Everton	0.089	2.660	0	2	0.003	0.040	0.957
+2019-03-31	Cardiff	Chelsea	0.446	2.078	1	2	0.050	0.144	0.806
+2019-03-31	Liverpool	Tottenham	1.093	1.048	2	1	0.342	0.321	0.337
+2019-04-01	Arsenal	Newcastle United	1.045	0.044	2	0	0.685	0.302	0.013
+2019-04-02	Wolverhampton Wanderers	Manchester United	1.650	2.038	2	1	0.273	0.256	0.472
+2019-04-02	Watford	Fulham	1.593	1.909	4	1	0.297	0.245	0.458
+2019-04-03	Chelsea	Brighton	3.124	0.441	3	0	0.938	0.051	0.011
+2019-04-03	Tottenham	Crystal Palace	2.574	0.564	2	0	0.842	0.123	0.035
+2019-04-03	Manchester City	Cardiff	3.539	0.136	2	0	0.982	0.017	0.001
+2019-04-05	Southampton	Liverpool	0.718	2.007	1	3	0.081	0.199	0.721
+2019-04-06	Newcastle United	Crystal Palace	0.943	0.908	0	1	0.298	0.355	0.347
+2019-04-06	Huddersfield	Leicester	1.623	3.619	1	4	0.057	0.127	0.816
+2019-04-06	Bournemouth	Burnley	1.209	1.389	1	3	0.292	0.302	0.406
+2019-04-07	Everton	Arsenal	2.694	0.202	1	0	0.931	0.061	0.008
+2019-04-08	Chelsea	West Ham	2.233	0.471	2	0	0.813	0.136	0.051
+2019-04-12	Leicester	Newcastle United	0.877	0.946	0	1	0.306	0.338	0.356
+2019-04-13	Tottenham	Huddersfield	2.786	0.984	4	0	0.809	0.136	0.055
+2019-04-13	Southampton	Wolverhampton Wanderers	3.808	0.643	3	1	0.962	0.029	0.009
+2019-04-13	Fulham	Everton	1.663	1.291	2	0	0.454	0.279	0.267
+2019-04-13	Burnley	Cardiff	2.844	0.872	2	0	0.857	0.108	0.035
+2019-04-13	Brighton	Bournemouth	0.207	2.769	0	5	0.006	0.046	0.948
+2019-04-13	Manchester United	West Ham	2.651	1.428	2	1	0.693	0.186	0.121
+2019-04-14	Crystal Palace	Manchester City	0.318	2.862	1	3	0.011	0.058	0.932
+2019-04-14	Liverpool	Chelsea	1.308	0.873	2	0	0.467	0.311	0.223
+2019-04-15	Watford	Arsenal	1.126	2.267	0	1	0.115	0.208	0.677
+2019-04-16	Brighton	Cardiff	0.589	0.819	0	2	0.229	0.378	0.393
+2019-04-20	Manchester City	Tottenham	2.062	1.199	1	0	0.597	0.235	0.169
+2019-04-20	Wolverhampton Wanderers	Brighton	2.604	0.115	0	0	0.944	0.051	0.006
+2019-04-20	West Ham	Leicester	1.366	0.806	2	2	0.512	0.291	0.197
+2019-04-20	Huddersfield	Watford	1.091	1.085	1	2	0.351	0.315	0.334
+2019-04-20	Bournemouth	Fulham	2.837	2.617	0	1	0.429	0.236	0.336
+2019-04-20	Newcastle United	Southampton	1.230	1.271	3	1	0.352	0.286	0.362
+2019-04-21	Everton	Manchester United	1.520	0.306	4	0	0.736	0.212	0.051
+2019-04-21	Cardiff	Liverpool	1.119	2.424	0	2	0.093	0.196	0.711
+2019-04-21	Arsenal	Crystal Palace	1.542	2.562	2	3	0.168	0.203	0.629
+2019-04-22	Chelsea	Burnley	1.282	0.789	2	2	0.470	0.323	0.207
+2019-04-23	Watford	Southampton	1.273	2.120	1	1	0.178	0.222	0.600
+2019-04-23	Tottenham	Brighton	1.003	0.143	1	0	0.605	0.347	0.048
+2019-04-24	Wolverhampton Wanderers	Arsenal	0.982	0.940	3	1	0.335	0.335	0.330
+2019-04-24	Manchester United	Manchester City	0.515	0.530	0	2	0.263	0.455	0.282
+2019-04-26	Liverpool	Huddersfield	3.589	0.162	5	0	0.979	0.019	0.003
+2019-04-27	Tottenham	West Ham	1.354	0.992	0	1	0.454	0.283	0.263
+2019-04-27	Watford	Wolverhampton Wanderers	0.896	2.444	1	2	0.054	0.150	0.796
+2019-04-27	Southampton	Bournemouth	2.735	2.622	3	3	0.398	0.246	0.356
+2019-04-27	Fulham	Cardiff	0.519	1.113	1	0	0.153	0.323	0.523
+2019-04-27	Crystal Palace	Everton	0.261	1.152	0	0	0.084	0.309	0.607
+2019-04-27	Brighton	Newcastle United	1.205	0.438	1	1	0.609	0.281	0.111
+2019-04-28	Leicester	Arsenal	3.680	0.601	3	0	0.947	0.042	0.011
+2019-04-28	Burnley	Manchester City	0.090	2.349	0	1	0.006	0.073	0.920
+2019-04-28	Manchester United	Chelsea	1.125	1.630	1	1	0.229	0.270	0.501
+2019-05-03	Everton	Burnley	1.765	0.473	2	0	0.756	0.188	0.056
+2019-05-04	Bournemouth	Tottenham	2.226	0.713	1	0	0.752	0.168	0.080
+2019-05-04	Wolverhampton Wanderers	Fulham	2.094	0.512	1	0	0.799	0.154	0.047
+2019-05-04	West Ham	Southampton	1.999	0.444	3	0	0.832	0.132	0.037
+2019-05-04	Cardiff	Crystal Palace	1.500	1.810	2	3	0.313	0.243	0.443
+2019-05-04	Newcastle United	Liverpool	1.297	1.481	2	3	0.309	0.294	0.396
+2019-05-05	Huddersfield	Manchester United	0.737	1.880	1	1	0.127	0.219	0.654
+2019-05-05	Chelsea	Watford	2.965	1.271	3	0	0.759	0.143	0.099
+2019-05-05	Arsenal	Brighton	2.362	1.906	1	1	0.476	0.260	0.264
+2019-05-06	Manchester City	Leicester	1.086	0.537	1	0	0.502	0.328	0.170
+2019-05-12	Watford	West Ham	2.070	3.201	1	4	0.157	0.190	0.654
+2019-05-12	Tottenham	Everton	0.883	2.069	2	2	0.078	0.209	0.713
+2019-05-12	Southampton	Huddersfield	0.941	0.857	1	1	0.353	0.351	0.296
+2019-05-12	Manchester United	Cardiff	1.896	1.711	0	2	0.405	0.259	0.336
+2019-05-12	Liverpool	Wolverhampton Wanderers	1.702	0.884	2	0	0.589	0.245	0.166
+2019-05-12	Leicester	Chelsea	0.345	1.267	0	0	0.080	0.270	0.651
+2019-05-12	Fulham	Newcastle United	0.570	1.959	0	4	0.061	0.160	0.779
+2019-05-12	Crystal Palace	Bournemouth	2.859	1.898	5	3	0.616	0.198	0.185
+2019-05-12	Burnley	Arsenal	1.729	2.873	1	3	0.151	0.190	0.658
+2019-05-12	Brighton	Manchester City	0.595	2.222	1	4	0.057	0.163	0.780

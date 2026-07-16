@@ -1,0 +1,380 @@
+2024-08-16	Manchester United	Fulham	2.043	0.419	1	0	0.807	0.149	0.044
+2024-08-17	Ipswich	Liverpool	0.343	3.929	0	2	0.003	0.018	0.979
+2024-08-17	Arsenal	Wolverhampton Wanderers	1.628	0.576	2	0	0.653	0.231	0.116
+2024-08-17	Everton	Brighton	0.405	1.791	0	3	0.048	0.164	0.788
+2024-08-17	Newcastle United	Southampton	0.433	1.955	1	0	0.038	0.164	0.798
+2024-08-17	Nottingham Forest	Bournemouth	1.244	1.909	1	1	0.199	0.254	0.547
+2024-08-17	West Ham	Aston Villa	2.805	2.670	1	2	0.412	0.232	0.356
+2024-08-18	Brentford	Crystal Palace	1.381	1.148	2	1	0.425	0.314	0.261
+2024-08-18	Chelsea	Manchester City	1.061	1.180	0	2	0.304	0.325	0.372
+2024-08-19	Leicester	Tottenham	1.026	1.408	1	1	0.254	0.295	0.451
+2024-08-24	Brighton	Manchester United	2.142	1.286	2	1	0.601	0.239	0.160
+2024-08-24	Crystal Palace	West Ham	1.376	1.534	0	2	0.332	0.268	0.401
+2024-08-24	Fulham	Leicester	1.962	0.857	2	1	0.660	0.215	0.125
+2024-08-24	Manchester City	Ipswich	3.078	0.480	4	1	0.944	0.050	0.006
+2024-08-24	Southampton	Nottingham Forest	0.215	2.865	0	1	0.007	0.050	0.944
+2024-08-24	Tottenham	Everton	2.611	0.649	4	0	0.840	0.112	0.048
+2024-08-24	Aston Villa	Arsenal	1.317	1.414	0	2	0.311	0.302	0.386
+2024-08-25	Wolverhampton Wanderers	Chelsea	2.418	2.029	2	6	0.489	0.223	0.288
+2024-08-25	Bournemouth	Newcastle United	2.535	1.893	1	1	0.540	0.233	0.227
+2024-08-25	Liverpool	Brentford	2.719	0.457	2	0	0.889	0.089	0.021
+2024-08-31	Arsenal	Brighton	2.418	1.817	1	1	0.528	0.224	0.249
+2024-08-31	Brentford	Southampton	3.863	1.647	3	1	0.835	0.103	0.063
+2024-08-31	Everton	Bournemouth	2.556	2.957	2	3	0.303	0.216	0.481
+2024-08-31	Ipswich	Fulham	0.707	1.189	1	1	0.203	0.312	0.485
+2024-08-31	Leicester	Aston Villa	0.775	2.164	1	2	0.065	0.179	0.756
+2024-08-31	Nottingham Forest	Wolverhampton Wanderers	1.411	0.938	1	1	0.473	0.323	0.204
+2024-08-31	West Ham	Manchester City	0.947	3.193	1	3	0.048	0.107	0.844
+2024-09-01	Newcastle United	Tottenham	1.587	1.633	2	1	0.352	0.286	0.362
+2024-09-01	Chelsea	Crystal Palace	2.977	0.460	1	1	0.943	0.046	0.011
+2024-09-01	Manchester United	Liverpool	1.501	2.104	0	3	0.241	0.246	0.513
+2024-09-14	Southampton	Manchester United	1.356	3.027	0	3	0.063	0.153	0.783
+2024-09-14	Brighton	Ipswich	1.757	0.721	0	0	0.664	0.245	0.091
+2024-09-14	Fulham	West Ham	2.886	0.683	1	1	0.868	0.097	0.035
+2024-09-14	Liverpool	Nottingham Forest	1.170	0.590	0	1	0.522	0.324	0.153
+2024-09-14	Crystal Palace	Leicester	2.887	1.652	2	2	0.678	0.187	0.135
+2024-09-14	Manchester City	Brentford	1.553	1.051	2	1	0.477	0.285	0.238
+2024-09-14	Aston Villa	Everton	3.159	0.852	3	2	0.892	0.084	0.024
+2024-09-14	Bournemouth	Chelsea	1.537	0.933	0	1	0.530	0.290	0.180
+2024-09-15	Tottenham	Arsenal	0.793	1.121	0	1	0.234	0.316	0.450
+2024-09-15	Wolverhampton Wanderers	Newcastle United	1.470	1.483	1	2	0.358	0.269	0.373
+2024-09-21	West Ham	Chelsea	0.758	2.397	0	3	0.078	0.150	0.772
+2024-09-21	Southampton	Ipswich	2.898	1.645	1	1	0.695	0.178	0.127
+2024-09-21	Leicester	Everton	1.338	1.824	1	1	0.259	0.262	0.479
+2024-09-21	Liverpool	Bournemouth	2.437	1.470	3	0	0.597	0.206	0.197
+2024-09-21	Fulham	Newcastle United	3.211	1.098	3	1	0.827	0.112	0.060
+2024-09-21	Aston Villa	Wolverhampton Wanderers	2.374	0.520	3	1	0.845	0.113	0.042
+2024-09-21	Tottenham	Brentford	3.895	0.894	3	1	0.940	0.046	0.014
+2024-09-21	Crystal Palace	Manchester United	1.669	2.351	0	0	0.225	0.232	0.543
+2024-09-22	Brighton	Nottingham Forest	1.568	1.369	2	2	0.389	0.310	0.301
+2024-09-22	Manchester City	Arsenal	2.756	1.284	2	2	0.720	0.178	0.102
+2024-09-28	Newcastle United	Manchester City	1.343	1.265	1	1	0.387	0.295	0.319
+2024-09-28	Nottingham Forest	Fulham	0.614	1.436	0	1	0.118	0.259	0.623
+2024-09-28	Everton	Crystal Palace	1.110	1.124	2	1	0.339	0.315	0.347
+2024-09-28	Arsenal	Leicester	6.053	0.338	4	2	0.999	0.001	0.000
+2024-09-28	Brentford	West Ham	0.370	0.879	1	1	0.151	0.390	0.459
+2024-09-28	Chelsea	Brighton	3.658	1.207	4	2	0.878	0.085	0.038
+2024-09-28	Wolverhampton Wanderers	Liverpool	0.749	2.117	1	2	0.058	0.172	0.769
+2024-09-29	Ipswich	Aston Villa	1.846	1.145	2	2	0.558	0.251	0.191
+2024-09-29	Manchester United	Tottenham	0.601	5.407	0	3	0.001	0.004	0.996
+2024-09-30	Bournemouth	Southampton	1.442	0.696	3	1	0.574	0.273	0.152
+2024-10-05	Crystal Palace	Liverpool	0.609	2.073	0	1	0.072	0.165	0.763
+2024-10-05	Leicester	Bournemouth	0.912	1.950	1	0	0.121	0.225	0.654
+2024-10-05	Manchester City	Fulham	1.367	2.758	3	2	0.127	0.166	0.708
+2024-10-05	West Ham	Ipswich	4.394	1.185	4	1	0.950	0.039	0.011
+2024-10-05	Arsenal	Southampton	3.252	1.273	3	1	0.806	0.126	0.068
+2024-10-05	Brentford	Wolverhampton Wanderers	4.135	0.696	5	3	0.962	0.030	0.008
+2024-10-05	Everton	Newcastle United	0.692	1.790	0	0	0.081	0.247	0.672
+2024-10-06	Chelsea	Nottingham Forest	2.278	1.667	1	1	0.536	0.222	0.242
+2024-10-06	Aston Villa	Manchester United	0.533	0.449	0	0	0.291	0.468	0.241
+2024-10-06	Brighton	Tottenham	1.972	1.093	3	2	0.611	0.222	0.167
+2024-10-19	Tottenham	West Ham	1.441	0.859	4	1	0.508	0.276	0.217
+2024-10-19	Fulham	Aston Villa	2.631	1.436	1	3	0.690	0.184	0.126
+2024-10-19	Ipswich	Everton	1.174	1.608	0	2	0.248	0.270	0.482
+2024-10-19	Manchester United	Brentford	1.766	0.893	2	1	0.595	0.239	0.166
+2024-10-19	Newcastle United	Brighton	1.937	1.678	0	1	0.438	0.241	0.321
+2024-10-19	Southampton	Leicester	2.428	2.838	2	3	0.281	0.241	0.478
+2024-10-19	Bournemouth	Arsenal	2.184	0.741	2	0	0.762	0.179	0.059
+2024-10-20	Wolverhampton Wanderers	Manchester City	0.761	1.366	1	2	0.202	0.288	0.510
+2024-10-20	Liverpool	Chelsea	2.225	1.339	2	1	0.623	0.226	0.151
+2024-10-21	Nottingham Forest	Crystal Palace	1.886	0.835	1	0	0.642	0.213	0.145
+2024-10-25	Leicester	Nottingham Forest	0.832	2.545	1	3	0.047	0.141	0.813
+2024-10-26	Manchester City	Southampton	3.163	0.370	1	0	0.947	0.045	0.008
+2024-10-26	Aston Villa	Bournemouth	1.974	0.329	1	1	0.816	0.142	0.042
+2024-10-26	Brentford	Ipswich	4.097	1.657	4	3	0.850	0.090	0.060
+2024-10-26	Brighton	Wolverhampton Wanderers	1.513	1.111	2	2	0.466	0.270	0.264
+2024-10-26	Everton	Fulham	0.885	1.495	1	1	0.187	0.284	0.529
+2024-10-27	Chelsea	Newcastle United	1.618	1.742	2	1	0.317	0.276	0.407
+2024-10-27	Crystal Palace	Tottenham	0.979	1.019	1	0	0.319	0.326	0.354
+2024-10-27	West Ham	Manchester United	2.993	2.626	2	1	0.482	0.222	0.296
+2024-10-27	Arsenal	Liverpool	1.088	1.353	2	2	0.261	0.313	0.427
+2024-11-02	Newcastle United	Arsenal	0.860	0.911	1	0	0.312	0.345	0.343
+2024-11-02	Bournemouth	Manchester City	2.449	2.353	2	1	0.407	0.236	0.357
+2024-11-02	Ipswich	Leicester	1.336	2.339	1	1	0.162	0.204	0.634
+2024-11-02	Liverpool	Brighton	1.810	1.016	2	1	0.579	0.234	0.186
+2024-11-02	Nottingham Forest	West Ham	2.350	0.132	3	0	0.918	0.073	0.009
+2024-11-02	Southampton	Everton	0.540	1.786	1	0	0.077	0.203	0.720
+2024-11-02	Wolverhampton Wanderers	Crystal Palace	1.650	2.648	2	2	0.163	0.210	0.628
+2024-11-03	Tottenham	Aston Villa	2.098	2.487	4	1	0.268	0.260	0.472
+2024-11-03	Manchester United	Chelsea	2.160	1.211	1	1	0.628	0.229	0.143
+2024-11-04	Fulham	Brentford	1.430	0.739	2	1	0.529	0.293	0.177
+2024-11-09	Brentford	Bournemouth	1.565	2.492	3	2	0.176	0.214	0.610
+2024-11-09	Crystal Palace	Fulham	1.960	2.253	0	2	0.318	0.233	0.449
+2024-11-09	West Ham	Everton	1.124	0.866	0	0	0.432	0.304	0.264
+2024-11-09	Wolverhampton Wanderers	Southampton	0.913	0.793	2	0	0.368	0.359	0.273
+2024-11-09	Brighton	Manchester City	2.871	2.603	2	1	0.443	0.231	0.327
+2024-11-09	Liverpool	Aston Villa	2.682	1.663	2	0	0.625	0.200	0.175
+2024-11-10	Nottingham Forest	Newcastle United	1.179	1.869	1	3	0.193	0.259	0.548
+2024-11-10	Manchester United	Leicester	1.237	0.417	3	0	0.598	0.294	0.107
+2024-11-10	Tottenham	Ipswich	1.751	2.184	1	2	0.253	0.256	0.491
+2024-11-10	Chelsea	Arsenal	1.241	1.960	1	1	0.203	0.242	0.555
+2024-11-23	Leicester	Chelsea	0.968	2.817	1	2	0.034	0.117	0.849
+2024-11-23	Bournemouth	Brighton	1.912	1.231	1	2	0.524	0.261	0.215
+2024-11-23	Arsenal	Nottingham Forest	1.660	0.403	3	0	0.718	0.211	0.071
+2024-11-23	Everton	Brentford	1.595	1.343	0	0	0.408	0.277	0.314
+2024-11-23	Aston Villa	Crystal Palace	3.045	1.614	2	2	0.719	0.165	0.116
+2024-11-23	Fulham	Wolverhampton Wanderers	0.717	1.339	1	4	0.173	0.301	0.526
+2024-11-23	Manchester City	Tottenham	2.159	3.304	0	4	0.167	0.177	0.656
+2024-11-24	Southampton	Liverpool	1.540	3.188	2	3	0.074	0.155	0.771
+2024-11-24	Ipswich	Manchester United	1.987	1.269	1	1	0.571	0.244	0.185
+2024-11-25	Newcastle United	West Ham	1.498	0.943	0	2	0.524	0.265	0.211
+2024-11-29	Brighton	Southampton	1.870	0.935	1	1	0.606	0.230	0.164
+2024-11-30	Brentford	Leicester	2.219	0.908	4	1	0.709	0.197	0.094
+2024-11-30	Crystal Palace	Newcastle United	2.296	0.021	1	1	0.942	0.057	0.001
+2024-11-30	Nottingham Forest	Ipswich	1.766	0.463	1	0	0.763	0.180	0.057
+2024-11-30	Wolverhampton Wanderers	Bournemouth	0.866	3.079	2	4	0.026	0.077	0.897
+2024-11-30	West Ham	Arsenal	1.235	3.999	2	5	0.022	0.060	0.918
+2024-12-01	Chelsea	Aston Villa	1.949	0.875	3	0	0.644	0.218	0.138
+2024-12-01	Manchester United	Everton	1.762	0.767	4	0	0.646	0.231	0.122
+2024-12-01	Tottenham	Fulham	1.011	1.573	1	1	0.210	0.279	0.511
+2024-12-01	Liverpool	Manchester City	3.701	0.745	2	0	0.956	0.035	0.010
+2024-12-03	Ipswich	Crystal Palace	0.472	1.654	0	1	0.082	0.219	0.699
+2024-12-03	Leicester	West Ham	2.781	2.877	3	1	0.389	0.198	0.413
+2024-12-04	Everton	Wolverhampton Wanderers	1.499	0.848	4	0	0.531	0.293	0.176
+2024-12-04	Manchester City	Nottingham Forest	3.202	0.802	3	0	0.885	0.084	0.031
+2024-12-04	Newcastle United	Liverpool	1.521	2.228	3	3	0.229	0.224	0.547
+2024-12-04	Southampton	Chelsea	1.910	5.833	1	5	0.009	0.024	0.967
+2024-12-04	Arsenal	Manchester United	2.967	0.256	2	0	0.971	0.026	0.003
+2024-12-04	Aston Villa	Brentford	3.217	1.133	3	1	0.830	0.113	0.057
+2024-12-05	Fulham	Brighton	0.667	1.099	3	1	0.201	0.328	0.471
+2024-12-05	Bournemouth	Tottenham	3.277	0.624	1	0	0.910	0.067	0.022
+2024-12-07	Aston Villa	Southampton	2.513	0.386	1	0	0.886	0.092	0.022
+2024-12-07	Brentford	Newcastle United	1.746	1.956	4	2	0.326	0.242	0.432
+2024-12-07	Crystal Palace	Manchester City	1.215	1.585	2	2	0.267	0.265	0.469
+2024-12-07	Manchester United	Nottingham Forest	1.470	0.651	2	3	0.607	0.262	0.132
+2024-12-08	Fulham	Arsenal	0.151	2.433	1	1	0.001	0.026	0.972
+2024-12-08	Ipswich	Bournemouth	1.567	3.491	1	2	0.063	0.113	0.824
+2024-12-08	Leicester	Brighton	1.424	1.122	2	2	0.451	0.286	0.263
+2024-12-08	Tottenham	Chelsea	3.255	2.573	3	4	0.534	0.207	0.259
+2024-12-09	West Ham	Wolverhampton Wanderers	1.198	1.476	2	1	0.293	0.269	0.438
+2024-12-14	Liverpool	Fulham	2.097	1.286	2	2	0.582	0.226	0.192
+2024-12-14	Arsenal	Everton	1.309	0.132	0	0	0.724	0.245	0.031
+2024-12-14	Wolverhampton Wanderers	Ipswich	1.237	1.733	1	2	0.224	0.257	0.519
+2024-12-14	Newcastle United	Leicester	3.955	0.187	4	0	0.991	0.008	0.001
+2024-12-14	Nottingham Forest	Aston Villa	2.286	0.389	2	1	0.860	0.111	0.029
+2024-12-15	Brighton	Crystal Palace	1.323	3.006	1	3	0.085	0.141	0.774
+2024-12-15	Manchester City	Manchester United	0.638	2.047	1	2	0.059	0.163	0.778
+2024-12-15	Chelsea	Brentford	2.591	1.659	2	1	0.586	0.213	0.201
+2024-12-15	Southampton	Tottenham	1.274	3.893	0	5	0.024	0.067	0.909
+2024-12-16	Bournemouth	West Ham	2.048	1.818	1	1	0.421	0.245	0.334
+2024-12-21	Aston Villa	Manchester City	2.060	1.096	2	1	0.625	0.217	0.158
+2024-12-21	Brentford	Nottingham Forest	0.769	0.965	0	2	0.270	0.345	0.386
+2024-12-21	West Ham	Brighton	1.229	1.344	1	1	0.308	0.296	0.396
+2024-12-21	Ipswich	Newcastle United	1.064	3.234	0	4	0.049	0.108	0.843
+2024-12-21	Crystal Palace	Arsenal	1.605	3.054	1	5	0.089	0.159	0.752
+2024-12-22	Fulham	Southampton	1.253	0.280	0	0	0.644	0.282	0.074
+2024-12-22	Everton	Chelsea	1.071	1.516	0	0	0.201	0.314	0.485
+2024-12-22	Manchester United	Bournemouth	2.285	1.828	0	3	0.475	0.255	0.269
+2024-12-22	Leicester	Wolverhampton Wanderers	0.789	1.135	0	3	0.232	0.322	0.446
+2024-12-22	Tottenham	Liverpool	1.202	5.202	3	6	0.004	0.018	0.978
+2024-12-26	Manchester City	Everton	2.520	0.653	1	1	0.826	0.132	0.042
+2024-12-26	Bournemouth	Crystal Palace	1.202	0.500	0	0	0.546	0.307	0.147
+2024-12-26	Chelsea	Fulham	1.556	1.779	1	2	0.305	0.262	0.434
+2024-12-26	Newcastle United	Aston Villa	2.829	0.226	3	0	0.944	0.049	0.007
+2024-12-26	Nottingham Forest	Tottenham	1.300	1.058	1	0	0.423	0.308	0.269
+2024-12-26	Southampton	West Ham	2.198	1.901	0	1	0.442	0.253	0.305
+2024-12-26	Wolverhampton Wanderers	Manchester United	0.826	0.359	2	0	0.521	0.357	0.122
+2024-12-26	Liverpool	Leicester	1.899	0.221	3	1	0.831	0.141	0.027
+2024-12-27	Brighton	Brentford	1.335	0.961	0	0	0.446	0.293	0.260
+2024-12-27	Arsenal	Ipswich	2.165	0.078	1	0	0.923	0.072	0.004
+2024-12-29	Leicester	Manchester City	1.842	1.580	0	2	0.440	0.264	0.296
+2024-12-29	Crystal Palace	Southampton	3.054	1.219	2	1	0.808	0.139	0.053
+2024-12-29	Everton	Nottingham Forest	0.615	2.028	0	2	0.073	0.167	0.761
+2024-12-29	Fulham	Bournemouth	0.962	1.707	2	2	0.191	0.245	0.564
+2024-12-29	Tottenham	Wolverhampton Wanderers	2.284	0.641	2	2	0.804	0.145	0.051
+2024-12-29	West Ham	Liverpool	0.518	3.299	0	5	0.013	0.058	0.929
+2024-12-30	Aston Villa	Brighton	1.880	0.938	2	2	0.633	0.226	0.141
+2024-12-30	Ipswich	Chelsea	1.501	1.606	2	0	0.327	0.281	0.392
+2024-12-30	Manchester United	Newcastle United	1.001	2.242	0	2	0.120	0.188	0.692
+2025-01-01	Brentford	Arsenal	0.273	1.998	1	3	0.017	0.099	0.884
+2025-01-04	Tottenham	Newcastle United	1.003	2.430	1	2	0.090	0.172	0.738
+2025-01-04	Bournemouth	Everton	2.619	0.561	1	0	0.883	0.088	0.029
+2025-01-04	Aston Villa	Leicester	2.346	0.815	2	1	0.800	0.159	0.042
+2025-01-04	Crystal Palace	Chelsea	1.277	1.515	1	1	0.299	0.275	0.426
+2025-01-04	Manchester City	West Ham	1.980	1.533	4	1	0.495	0.241	0.264
+2025-01-04	Southampton	Brentford	0.250	5.549	0	5	0.000	0.002	0.998
+2025-01-04	Brighton	Arsenal	1.765	1.811	1	1	0.358	0.282	0.360
+2025-01-05	Fulham	Ipswich	2.655	1.443	2	2	0.698	0.199	0.102
+2025-01-05	Liverpool	Manchester United	2.862	1.675	2	2	0.656	0.193	0.151
+2025-01-06	Wolverhampton Wanderers	Nottingham Forest	1.905	2.572	0	3	0.211	0.244	0.545
+2025-01-14	Brentford	Manchester City	2.391	2.653	2	2	0.344	0.208	0.448
+2025-01-14	West Ham	Fulham	0.937	2.836	3	2	0.045	0.119	0.835
+2025-01-14	Chelsea	Bournemouth	2.538	1.148	2	2	0.730	0.182	0.088
+2025-01-14	Nottingham Forest	Liverpool	0.529	2.723	1	1	0.025	0.092	0.883
+2025-01-15	Everton	Aston Villa	1.231	1.285	0	1	0.342	0.293	0.365
+2025-01-15	Leicester	Crystal Palace	2.099	2.265	0	2	0.332	0.242	0.426
+2025-01-15	Newcastle United	Wolverhampton Wanderers	2.133	1.474	3	0	0.537	0.224	0.239
+2025-01-15	Arsenal	Tottenham	2.255	0.777	2	1	0.739	0.175	0.086
+2025-01-16	Ipswich	Brighton	0.268	1.063	0	2	0.080	0.333	0.587
+2025-01-16	Manchester United	Southampton	3.108	1.367	3	1	0.755	0.145	0.100
+2025-01-18	Newcastle United	Bournemouth	0.838	2.702	1	4	0.070	0.134	0.796
+2025-01-18	Brentford	Liverpool	1.200	4.162	0	2	0.025	0.064	0.911
+2025-01-18	Leicester	Fulham	0.677	2.368	0	2	0.038	0.135	0.826
+2025-01-18	West Ham	Crystal Palace	0.221	1.626	0	2	0.024	0.152	0.824
+2025-01-18	Arsenal	Aston Villa	1.645	1.206	2	2	0.469	0.278	0.253
+2025-01-19	Everton	Tottenham	2.561	1.357	3	2	0.667	0.194	0.138
+2025-01-19	Manchester United	Brighton	1.318	2.172	1	3	0.147	0.233	0.620
+2025-01-19	Nottingham Forest	Southampton	2.364	1.259	3	2	0.703	0.213	0.085
+2025-01-19	Ipswich	Manchester City	0.796	3.202	0	6	0.031	0.081	0.888
+2025-01-20	Chelsea	Wolverhampton Wanderers	3.149	1.067	3	1	0.875	0.097	0.028
+2025-01-25	Bournemouth	Nottingham Forest	2.825	0.996	5	0	0.813	0.120	0.067
+2025-01-25	Brighton	Everton	0.644	0.871	0	1	0.201	0.368	0.431
+2025-01-25	Liverpool	Ipswich	2.168	0.805	4	1	0.752	0.187	0.060
+2025-01-25	Southampton	Newcastle United	0.826	3.083	1	3	0.034	0.092	0.874
+2025-01-25	Wolverhampton Wanderers	Arsenal	0.515	0.887	0	1	0.195	0.365	0.440
+2025-01-25	Manchester City	Chelsea	2.232	1.498	3	1	0.560	0.226	0.214
+2025-01-26	Crystal Palace	Brentford	1.232	1.920	1	2	0.172	0.264	0.565
+2025-01-26	Tottenham	Leicester	1.275	1.405	1	2	0.277	0.357	0.366
+2025-01-26	Aston Villa	West Ham	0.908	1.679	1	1	0.172	0.240	0.588
+2025-01-26	Fulham	Manchester United	0.561	0.202	0	1	0.380	0.507	0.112
+2025-02-01	Nottingham Forest	Brighton	4.068	0.756	7	0	0.969	0.026	0.005
+2025-02-01	Bournemouth	Liverpool	1.653	2.722	0	2	0.170	0.194	0.637
+2025-02-01	Everton	Leicester	3.113	0.447	4	0	0.930	0.053	0.016
+2025-02-01	Ipswich	Southampton	1.948	1.176	1	2	0.576	0.259	0.165
+2025-02-01	Newcastle United	Fulham	1.227	1.609	1	2	0.257	0.282	0.461
+2025-02-01	Wolverhampton Wanderers	Aston Villa	2.001	0.743	2	0	0.720	0.194	0.086
+2025-02-02	Brentford	Tottenham	1.665	0.945	0	2	0.556	0.251	0.194
+2025-02-02	Manchester United	Crystal Palace	1.507	2.446	0	2	0.155	0.207	0.637
+2025-02-02	Arsenal	Manchester City	1.532	0.743	5	1	0.583	0.268	0.150
+2025-02-03	Chelsea	West Ham	1.391	1.187	2	1	0.412	0.275	0.313
+2025-02-12	Everton	Liverpool	0.911	0.929	2	2	0.309	0.350	0.341
+2025-02-14	Brighton	Chelsea	2.069	0.650	3	0	0.755	0.173	0.072
+2025-02-15	Leicester	Arsenal	0.233	1.750	0	2	0.028	0.154	0.818
+2025-02-15	Aston Villa	Ipswich	2.898	0.333	1	1	0.932	0.056	0.011
+2025-02-15	Fulham	Nottingham Forest	2.210	0.331	2	1	0.840	0.127	0.033
+2025-02-15	Manchester City	Newcastle United	2.120	0.157	4	0	0.895	0.092	0.013
+2025-02-15	Southampton	Bournemouth	0.974	2.087	1	3	0.106	0.208	0.686
+2025-02-15	West Ham	Brentford	0.673	1.965	0	1	0.094	0.191	0.716
+2025-02-15	Crystal Palace	Everton	2.306	1.016	1	2	0.701	0.186	0.113
+2025-02-16	Liverpool	Wolverhampton Wanderers	1.868	1.053	2	1	0.612	0.235	0.152
+2025-02-16	Tottenham	Manchester United	1.971	1.427	1	0	0.514	0.236	0.249
+2025-02-19	Aston Villa	Liverpool	1.023	2.043	2	2	0.146	0.222	0.632
+2025-02-21	Leicester	Brentford	0.728	2.035	0	4	0.092	0.195	0.714
+2025-02-22	Everton	Manchester United	2.104	0.646	2	2	0.764	0.170	0.066
+2025-02-22	Bournemouth	Wolverhampton Wanderers	0.630	2.101	0	1	0.061	0.169	0.770
+2025-02-22	Arsenal	West Ham	1.373	1.027	0	1	0.424	0.311	0.265
+2025-02-22	Fulham	Crystal Palace	0.234	1.462	0	2	0.039	0.201	0.760
+2025-02-22	Ipswich	Tottenham	1.154	1.587	1	4	0.224	0.286	0.490
+2025-02-22	Southampton	Brighton	0.154	5.120	0	4	0.000	0.002	0.998
+2025-02-22	Aston Villa	Chelsea	2.694	2.174	2	1	0.507	0.249	0.244
+2025-02-23	Newcastle United	Nottingham Forest	3.459	2.386	4	3	0.636	0.202	0.162
+2025-02-23	Manchester City	Liverpool	0.582	0.807	0	2	0.231	0.376	0.394
+2025-02-25	Brighton	Bournemouth	2.579	1.702	2	1	0.593	0.214	0.193
+2025-02-25	Wolverhampton Wanderers	Fulham	0.929	1.435	1	2	0.231	0.264	0.505
+2025-02-25	Crystal Palace	Aston Villa	4.025	0.667	4	1	0.985	0.013	0.002
+2025-02-25	Chelsea	Southampton	2.982	0.845	4	0	0.841	0.111	0.048
+2025-02-26	Brentford	Everton	1.340	1.450	1	1	0.308	0.327	0.364
+2025-02-26	Nottingham Forest	Arsenal	0.509	1.318	0	0	0.124	0.282	0.594
+2025-02-26	Tottenham	Manchester City	1.284	2.386	0	1	0.144	0.197	0.659
+2025-02-26	Manchester United	Ipswich	1.402	1.045	3	2	0.458	0.339	0.203
+2025-02-26	Liverpool	Newcastle United	1.400	0.459	2	0	0.632	0.273	0.096
+2025-02-27	West Ham	Leicester	1.704	0.290	2	0	0.844	0.131	0.025
+2025-03-08	Nottingham Forest	Manchester City	0.501	0.721	1	0	0.222	0.410	0.367
+2025-03-08	Brighton	Fulham	1.944	0.708	2	1	0.734	0.201	0.065
+2025-03-08	Crystal Palace	Ipswich	3.139	1.633	1	0	0.723	0.167	0.110
+2025-03-08	Liverpool	Southampton	4.990	0.512	3	1	0.993	0.006	0.001
+2025-03-08	Brentford	Aston Villa	0.638	1.296	0	1	0.163	0.295	0.542
+2025-03-08	Wolverhampton Wanderers	Everton	0.812	1.367	1	1	0.194	0.287	0.518
+2025-03-09	Chelsea	Leicester	1.768	0.108	1	0	0.887	0.103	0.010
+2025-03-09	Tottenham	Bournemouth	1.351	2.225	2	2	0.169	0.236	0.596
+2025-03-09	Manchester United	Arsenal	1.311	1.830	1	1	0.249	0.250	0.500
+2025-03-10	West Ham	Newcastle United	0.824	1.630	0	1	0.132	0.272	0.596
+2025-03-15	Everton	West Ham	1.189	0.516	1	1	0.562	0.299	0.140
+2025-03-15	Ipswich	Nottingham Forest	0.521	1.307	2	4	0.128	0.280	0.592
+2025-03-15	Manchester City	Brighton	2.026	2.111	2	2	0.355	0.246	0.399
+2025-03-15	Southampton	Wolverhampton Wanderers	1.282	0.541	1	2	0.586	0.287	0.126
+2025-03-15	Bournemouth	Brentford	2.027	1.603	1	2	0.474	0.250	0.276
+2025-03-16	Arsenal	Chelsea	0.696	0.286	1	0	0.415	0.450	0.135
+2025-03-16	Fulham	Tottenham	1.040	1.409	2	0	0.247	0.284	0.469
+2025-03-16	Leicester	Manchester United	1.305	1.139	0	3	0.402	0.290	0.309
+2025-04-01	Arsenal	Fulham	2.302	1.442	2	1	0.587	0.255	0.158
+2025-04-01	Wolverhampton Wanderers	West Ham	1.104	1.731	1	0	0.195	0.269	0.536
+2025-04-01	Nottingham Forest	Manchester United	0.512	1.867	1	0	0.077	0.191	0.732
+2025-04-02	Brighton	Aston Villa	0.558	1.207	0	3	0.151	0.295	0.554
+2025-04-02	Bournemouth	Ipswich	1.996	1.413	1	2	0.532	0.248	0.220
+2025-04-02	Manchester City	Leicester	2.072	0.105	2	0	0.877	0.112	0.012
+2025-04-02	Newcastle United	Brentford	2.266	1.532	2	1	0.548	0.238	0.214
+2025-04-02	Southampton	Crystal Palace	0.687	0.938	1	1	0.239	0.351	0.410
+2025-04-02	Liverpool	Everton	1.297	0.823	1	0	0.479	0.301	0.220
+2025-04-03	Chelsea	Tottenham	1.304	1.403	1	0	0.319	0.301	0.380
+2025-04-05	Everton	Arsenal	1.229	1.403	1	1	0.319	0.303	0.378
+2025-04-05	Crystal Palace	Brighton	0.444	1.272	2	1	0.104	0.265	0.631
+2025-04-05	Ipswich	Wolverhampton Wanderers	0.872	2.810	1	2	0.035	0.122	0.843
+2025-04-05	West Ham	Bournemouth	0.908	1.949	2	2	0.103	0.214	0.682
+2025-04-05	Aston Villa	Nottingham Forest	2.633	0.968	2	1	0.773	0.141	0.087
+2025-04-06	Brentford	Chelsea	1.361	1.478	0	0	0.345	0.270	0.385
+2025-04-06	Fulham	Liverpool	1.728	1.406	3	2	0.456	0.260	0.284
+2025-04-06	Tottenham	Southampton	2.648	0.780	3	1	0.826	0.123	0.051
+2025-04-06	Manchester United	Manchester City	1.233	0.688	0	0	0.501	0.313	0.186
+2025-04-07	Leicester	Newcastle United	0.355	3.441	0	3	0.002	0.017	0.980
+2025-04-12	Manchester City	Crystal Palace	4.597	1.338	5	2	0.953	0.037	0.009
+2025-04-12	Brighton	Leicester	3.698	1.984	2	2	0.757	0.141	0.102
+2025-04-12	Nottingham Forest	Everton	0.424	1.260	0	1	0.115	0.281	0.604
+2025-04-12	Southampton	Aston Villa	0.412	2.999	0	3	0.007	0.040	0.953
+2025-04-12	Arsenal	Brentford	0.767	0.589	1	1	0.353	0.393	0.254
+2025-04-13	Chelsea	Ipswich	2.908	1.603	2	2	0.683	0.169	0.148
+2025-04-13	Liverpool	West Ham	1.429	1.466	2	1	0.348	0.274	0.379
+2025-04-13	Wolverhampton Wanderers	Tottenham	2.230	1.629	4	2	0.517	0.258	0.225
+2025-04-13	Newcastle United	Manchester United	2.638	0.787	4	1	0.841	0.117	0.042
+2025-04-14	Bournemouth	Fulham	1.858	1.072	1	0	0.585	0.252	0.163
+2025-04-16	Newcastle United	Crystal Palace	2.329	2.375	5	0	0.358	0.243	0.399
+2025-04-19	Brentford	Brighton	2.955	1.241	4	2	0.770	0.139	0.091
+2025-04-19	Crystal Palace	Bournemouth	0.338	0.664	0	0	0.164	0.455	0.381
+2025-04-19	Everton	Manchester City	0.817	1.880	0	2	0.110	0.219	0.671
+2025-04-19	West Ham	Southampton	0.984	0.923	1	1	0.349	0.325	0.326
+2025-04-19	Aston Villa	Newcastle United	3.054	1.272	4	1	0.776	0.142	0.082
+2025-04-20	Fulham	Chelsea	0.306	0.752	1	2	0.130	0.430	0.440
+2025-04-20	Ipswich	Arsenal	0.193	2.814	0	4	0.007	0.055	0.938
+2025-04-20	Manchester United	Wolverhampton Wanderers	1.140	0.188	0	1	0.661	0.287	0.052
+2025-04-20	Leicester	Liverpool	0.232	4.527	0	1	0.001	0.008	0.992
+2025-04-21	Tottenham	Nottingham Forest	2.402	0.558	1	2	0.826	0.135	0.039
+2025-04-22	Manchester City	Aston Villa	1.362	1.859	2	1	0.242	0.256	0.502
+2025-04-23	Arsenal	Crystal Palace	1.921	2.505	2	2	0.246	0.242	0.512
+2025-04-26	Chelsea	Everton	0.768	0.917	1	0	0.270	0.347	0.383
+2025-04-26	Brighton	West Ham	1.294	1.241	3	2	0.362	0.304	0.334
+2025-04-26	Newcastle United	Ipswich	4.115	0.127	3	0	0.996	0.004	0.000
+2025-04-26	Southampton	Fulham	0.936	1.996	1	2	0.150	0.230	0.620
+2025-04-26	Wolverhampton Wanderers	Leicester	2.577	1.050	3	0	0.771	0.181	0.049
+2025-04-27	Bournemouth	Manchester United	0.610	1.910	1	1	0.092	0.196	0.712
+2025-04-27	Liverpool	Tottenham	2.511	0.513	5	1	0.857	0.112	0.031
+2025-05-01	Nottingham Forest	Brentford	0.671	1.521	0	2	0.144	0.249	0.607
+2025-05-02	Manchester City	Wolverhampton Wanderers	0.859	0.622	1	0	0.385	0.389	0.226
+2025-05-03	Aston Villa	Fulham	1.290	0.703	1	0	0.535	0.291	0.174
+2025-05-03	Everton	Ipswich	0.808	1.144	2	2	0.230	0.334	0.436
+2025-05-03	Leicester	Southampton	1.607	0.551	2	0	0.662	0.235	0.103
+2025-05-03	Arsenal	Bournemouth	2.055	1.418	1	2	0.521	0.256	0.223
+2025-05-04	West Ham	Tottenham	1.152	0.847	1	1	0.436	0.334	0.230
+2025-05-04	Brighton	Newcastle United	0.688	1.638	1	1	0.105	0.255	0.640
+2025-05-04	Brentford	Manchester United	3.587	1.134	4	3	0.887	0.080	0.033
+2025-05-04	Chelsea	Liverpool	3.519	1.427	3	1	0.832	0.108	0.060
+2025-05-05	Crystal Palace	Nottingham Forest	2.340	0.637	1	1	0.815	0.133	0.052
+2025-05-10	Fulham	Everton	1.209	1.326	1	3	0.322	0.296	0.382
+2025-05-10	Ipswich	Brentford	0.717	1.321	0	1	0.182	0.294	0.524
+2025-05-10	Southampton	Manchester City	0.137	1.585	0	0	0.023	0.209	0.768
+2025-05-10	Wolverhampton Wanderers	Brighton	0.734	1.413	0	2	0.131	0.292	0.578
+2025-05-10	Bournemouth	Aston Villa	1.023	1.124	0	1	0.274	0.384	0.342
+2025-05-11	Newcastle United	Chelsea	1.670	0.646	2	0	0.658	0.232	0.110
+2025-05-11	Manchester United	West Ham	2.313	2.160	0	2	0.399	0.248	0.353
+2025-05-11	Nottingham Forest	Leicester	1.769	1.229	2	2	0.506	0.265	0.229
+2025-05-11	Tottenham	Crystal Palace	0.807	3.985	0	2	0.014	0.045	0.941
+2025-05-11	Liverpool	Arsenal	2.747	2.188	2	2	0.514	0.223	0.263
+2025-05-16	Aston Villa	Tottenham	1.691	0.523	2	0	0.681	0.234	0.085
+2025-05-16	Chelsea	Manchester United	1.296	0.338	1	0	0.663	0.262	0.075
+2025-05-18	Everton	Southampton	2.678	1.050	2	0	0.804	0.151	0.045
+2025-05-18	West Ham	Nottingham Forest	0.850	2.148	1	2	0.106	0.184	0.709
+2025-05-18	Brentford	Fulham	2.430	1.617	2	3	0.601	0.232	0.168
+2025-05-18	Leicester	Ipswich	0.789	1.370	2	0	0.205	0.284	0.511
+2025-05-18	Arsenal	Newcastle United	1.160	2.246	1	0	0.138	0.203	0.659
+2025-05-19	Brighton	Liverpool	2.178	3.065	3	2	0.206	0.197	0.597
+2025-05-20	Crystal Palace	Wolverhampton Wanderers	1.685	1.429	4	2	0.433	0.262	0.305
+2025-05-20	Manchester City	Bournemouth	1.598	0.962	3	1	0.544	0.266	0.189
+2025-05-25	Nottingham Forest	Chelsea	1.580	1.309	0	1	0.416	0.309	0.274
+2025-05-25	Newcastle United	Everton	1.159	1.073	0	1	0.364	0.311	0.324
+2025-05-25	Manchester United	Aston Villa	2.963	0.335	2	0	0.938	0.053	0.009
+2025-05-25	Liverpool	Crystal Palace	1.921	1.414	1	1	0.496	0.262	0.241
+2025-05-25	Tottenham	Brighton	1.853	3.116	1	4	0.125	0.191	0.684
+2025-05-25	Southampton	Arsenal	0.598	2.407	1	2	0.058	0.137	0.805
+2025-05-25	Wolverhampton Wanderers	Brentford	1.109	1.972	1	1	0.179	0.222	0.599
+2025-05-25	Bournemouth	Leicester	2.724	0.157	2	0	0.937	0.058	0.005
+2025-05-25	Ipswich	West Ham	0.893	0.967	1	3	0.308	0.339	0.353
+2025-05-25	Fulham	Manchester City	2.218	2.459	0	2	0.336	0.235	0.429

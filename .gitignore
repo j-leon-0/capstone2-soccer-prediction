@@ -230,3 +230,8 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Regenerable raw scrape caches (re-fetch with scripts/scrape/fetch_*.py;
+# the processed extracts in data/processed/external/ are committed instead)
+data/raw/external/clubelo/
+data/raw/external/transfermarkt/
