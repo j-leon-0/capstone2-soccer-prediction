@@ -15,6 +15,15 @@ CORE_COLUMNS = [
     "HY", "AY", "HR", "AR"
 ]
 
+ODDS_COLUMNS = [
+    "B365H", "B365D", "B365A",
+    "AvgH", "AvgD", "AvgA",
+    "B365CH", "B365CD", "B365CA",
+    "AvgCH", "AvgCD", "AvgCA",
+]
+
+OUTPUT_COLUMNS = CORE_COLUMNS + ODDS_COLUMNS
+
 
 def get_season_from_filename(file_path: Path) -> str:
     return file_path.stem.replace("epl_", "")
@@ -25,11 +34,11 @@ def clean_file(file_path: Path) -> pd.DataFrame:
 
     df["Season"] = get_season_from_filename(file_path)
 
-    for col in CORE_COLUMNS:
+    for col in OUTPUT_COLUMNS:
         if col not in df.columns:
             df[col] = None
 
-    df = df[CORE_COLUMNS]
+    df = df[OUTPUT_COLUMNS]
 
     df["Date"] = pd.to_datetime(
         df["Date"],
