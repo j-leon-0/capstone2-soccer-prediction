@@ -86,6 +86,43 @@ python scripts/pipeline/build_external_features.py       # combine -> epl_extern
 > dropped from all modeling. Modeling and honest results live in
 > `notebooks/jero_external_features_modeling.ipynb`.
 
+## Results
+
+`scripts/models/epl_best_model.py` is the current best model: a calibrated ensemble
+(LightGBM, Random Forest, HistGradientBoosting, Logistic Regression) over market odds +
+Elo + xG form + squad value + table/form features, blended with the closing betting-market
+odds at a weight tuned on validation. Protocol: train on seasons ≤ 2023-24, tune the blend
+weight on 2024-25, evaluate **once** on the held-out 2025-26 season, no leakage across
+the split. Full metrics: `data/processed/epl_best_model_metrics.csv` and
+`epl_best_model_binary_metrics.csv`; see the dashboard (`dashboard/index.html`) for a
+visual summary.
+
+### 3-class result (Home / Draw / Away): the market is the ceiling
+
+| Model | Accuracy | Balanced Acc | Macro F1 | Log Loss |
+|---|---|---|---|---|
+| **Market (closing odds)** | **49.5%** | 0.441 | 0.371 | 1.012 |
+| Calibrated ensemble | 47.4% | 0.441 | 0.365 | 1.037 |
+| Ensemble × market blend | 49.5% (tuned w = 0.00) | 0.441 | 0.371 | 1.012 |
+
+The tuned blend weight came out to `w = 0.00` on the test season — the validation search
+found that pure closing odds outperformed any admixture of the model ensemble. This matches
+the project's working thesis: the betting market is close to the accuracy ceiling (~50%) for
+the full 3-way outcome, and no legitimate pre-match feature set beats it by much.
+
+### Binary reframings: where the model has genuine skill
+
+| Question | Accuracy | AUC | Base rate | Skill vs. base rate |
+|---|---|---|---|---|
+| Home win vs. not | 64.5% | 0.687 | 42.6% | Yes |
+| Away win vs. not | 68.2% | 0.665 | 30.0% | Yes |
+| Draw vs. not | 72.6% | 0.520 | 27.4% | No — accuracy tracks the base rate |
+
+Reframed as binary yes/no questions, the model shows real, non-trivial predictive skill
+(AUC well above 0.5) on "does the home/away team win," but essentially none on "is it a
+draw" — a widely known hard case in soccer prediction, since draws aren't a distinct
+outcome class so much as two teams' win probabilities happening to cancel out.
+
 ## Environment Setup
 
 ### 1. Create a Virtual Environment
